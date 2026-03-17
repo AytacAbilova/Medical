@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/layout/Header";
 import AOSProvider from "../providers/AOSProvider";
-import Hero from "@/components/home/hero";
-// import herovideo from "../../public/assets/videos/hero.mp4";
+import HeroWrapper from "@/components/home/heroWrapper";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -78,33 +78,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="az">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="headercontainer rounded-[40px] overflow-hidden">
           <Header />
           <AOSProvider />
-          <video
-            className="hero-video"
-            autoPlay
-            muted
-            loop
-            playsInline
-            aria-hidden="true"
-          >
-            <source src="/assets/videos/hero2.mp4" type="video/mp4" />
-          </video>
-          <div className="hero-overlayy" />
-          <Hero />
+          <HeroWrapper />
         </div>
-
         {children}
       </body>
     </html>

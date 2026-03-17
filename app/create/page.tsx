@@ -75,7 +75,7 @@ import terasJudiGece from "../../public/assets/teraslar/terasJudiGece.png";
 import terasLuca from "../../public/assets/teraslar/terasLuca.png";
 import terasLucaGece from "../../public/assets/teraslar/teraslucaGece.png";
 
-export default function Home() {
+export default function Create() {
   // =========================
   // THEME
   // =========================

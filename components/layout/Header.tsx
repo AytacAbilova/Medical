@@ -8,42 +8,42 @@ import { useEffect } from "react";
 export default function Header() {
 
   useEffect(() => {
-  const cursor = document.getElementById("magic-cursor");
-  const ball = document.getElementById("ball");
+    const cursor = document.getElementById("magic-cursor");
+    const ball = document.getElementById("ball");
 
-  if (!cursor || !ball) return;
+    if (!cursor || !ball) return;
 
-  let mouseX = 0;
-  let mouseY = 0;
-  let ballX = 0;
-  let ballY = 0;
+    let mouseX = 0;
+    let mouseY = 0;
+    let ballX = 0;
+    let ballY = 0;
 
-  const speed = 0.15; // ↓ bunu dəyişərək gecikməni tənzimləyə bilərsən
+    const speed = 0.15; // ↓ bunu dəyişərək gecikməni tənzimləyə bilərsən
 
-  const moveCursor = (e: MouseEvent) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+    const moveCursor = (e: MouseEvent) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
 
-    cursor.style.opacity = "1";
-    cursor.style.visibility = "visible";
-  };
+      cursor.style.opacity = "1";
+      cursor.style.visibility = "visible";
+    };
 
-  const animate = () => {
-    ballX += (mouseX - ballX) * speed;
-    ballY += (mouseY - ballY) * speed;
+    const animate = () => {
+      ballX += (mouseX - ballX) * speed;
+      ballY += (mouseY - ballY) * speed;
 
-    ball.style.transform = `translate(${ballX}px, ${ballY}px)`;
+      ball.style.transform = `translate(${ballX}px, ${ballY}px)`;
 
-    requestAnimationFrame(animate);
-  };
+      requestAnimationFrame(animate);
+    };
 
-  window.addEventListener("mousemove", moveCursor);
-  animate();
+    window.addEventListener("mousemove", moveCursor);
+    animate();
 
-  return () => {
-    window.removeEventListener("mousemove", moveCursor);
-  };
-}, []);
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+    };
+  }, []);
 
   return (
     <>
@@ -122,9 +122,6 @@ export default function Header() {
                 </ul>
               </li>
 
-              <li>
-                <Link href="/blog">Blog</Link>
-              </li>
 
               <li className="has-dropdown">
                 <span>Pages</span>
@@ -135,13 +132,13 @@ export default function Header() {
               </li>
 
               <li className="mobile-only">
-                <Link href="/contact">Contact Us</Link>
+                <Link href="/contact">Bizimlə əlaqə</Link>
               </li>
             </ul>
           </nav>
 
           {/* CTA Button */}
-     <Button link={"/create"} text={'Contact us'} type={1}/>
+          <Button link={"/contact"} text={'Bizimlə əlaqə'} type={1} />
         </div>
       </header>
     </>
