@@ -88,24 +88,24 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-     <div className="headercontainer rounded-[40px] overflow-hidden">
-        <Header />   
-        <AOSProvider />
-<video
-  className="hero-video"
-  autoPlay
-  muted
-  loop
-  playsInline
-  aria-hidden="true"
->
-  <source src="/assets/videos/hero2.mp4" type="video/mp4" />
-</video>
-      <div className="hero-overlayy" />
-      <Hero/>
-       </div> 
-       
-       {children}
+        <div className="headercontainer rounded-[40px] overflow-hidden">
+          <Header />
+          <AOSProvider />
+          <video
+            className="hero-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-hidden="true"
+          >
+            <source src="/assets/videos/hero2.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-overlayy" />
+          <Hero />
+        </div>
+
+        {children}
       </body>
     </html>
   );
