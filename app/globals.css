@@ -29,32 +29,38 @@ body {
 }
 
 
-body{
+body {
   /* #102948 #2A69AC */
-  
-	--e-global-color-primary					: #12223B;
-	--e-global-color-secondary					: #E9F7FE;
-	--e-global-color-text						: #667282;
-	--e-global-color-accent						: #FFB703;
-	--e-global-color-4271826					: #FFFFFF;
-	--e-global-color-17c0fac					: #12223B30;
-	--e-global-color-f6d07ed					: #FFFFFF20;
-	--e-global-typography-primary-font-family	: "Manrope", sans-serif;
-	--e-global-typography-text-font-family      : "DM Sans", sans-serif;
+
+  --e-global-color-primary: #12223B;
+  --e-global-color-secondary: #E9F7FE;
+  --e-global-color-text: #667282;
+  --e-global-color-accent: #FFB703;
+  --e-global-color-4271826: #FFFFFF;
+  --e-global-color-17c0fac: #12223B30;
+  --e-global-color-f6d07ed: #FFFFFF20;
+  --e-global-typography-primary-font-family: "Manrope", sans-serif;
+  --e-global-typography-text-font-family: "DM Sans", sans-serif;
 }
 
-h1{
-    font-family: var(--font-manrope);
-    perspective: 400px;
+h1 {
+  font-family: var(--font-manrope);
+  perspective: 400px;
 }
 
-p, a, li, label, span{ font-family: var(--font-dm-sans);}
+p,
+a,
+li,
+label,
+span {
+  font-family: var(--font-dm-sans);
+}
 
-.headercontainer{
-   position: relative;
-   border-radius: 40px;
-   margin: 40px;
-   height: 90vh;
+.headercontainer {
+  position: relative;
+  border-radius: 40px;
+  margin: 40px;
+  /* height: 90vh; */
 }
 
 #ball {
@@ -70,30 +76,33 @@ p, a, li, label, span{ font-family: var(--font-dm-sans);}
 }
 
 
-#magic-cursor{
-        position: absolute;
-    width: 10px !important;
-    height: 10px !important;
-    pointer-events: none;
-    z-index: 1000000;
+#magic-cursor {
+  position: absolute;
+  width: 10px !important;
+  height: 10px !important;
+  pointer-events: none;
+  z-index: 1000000;
 
-    opacity: 0;
-    visibility: inherit;
+  opacity: 0;
+  visibility: inherit;
 }
-.hero-video{
-    object-fit: cover;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 0;
+
+.hero-video,
+.hero-image {
+  object-fit: cover;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
 
 }
-.hero-overlayy{
-      z-index: 2;
-    background: linear-gradient(#00000066);
-    position: absolute;
-    inset: 0;
+
+.hero-overlayy {
+  z-index: 2;
+  background: linear-gradient(#00000066);
+  position: absolute;
+  inset: 0;
 }
 
 
@@ -104,7 +113,7 @@ p, a, li, label, span{ font-family: var(--font-dm-sans);}
 ========================= */
 
 @media (max-width: 768px) {
-    .hero-text {
-        font-size: 16px;
-    }
+  .hero-text {
+    font-size: 16px;
+  }
 }
