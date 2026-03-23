@@ -66,14 +66,17 @@ import lucaGreyOrta from "../../public/assets/ortakafeller/lucaGreyOrta.png";
 import lucaGreyOrtaGece from "../../public/assets/ortakafeller/lucaGreyOrtaGece.png";
 
 // teraslar
-import terasLight from "../../public/assets/teraslar/terasLight.png";
-import terasLightGece from "../../public/assets/teraslar/terasLightGece.png";
+import terasLight from "../../public/assets/teraslar/villa3.png";
+import terasLightGece from "../../public/assets/teraslar/villa3gece.png";
 
-import terasJudi from "../../public/assets/teraslar/terasJudi.png";
-import terasJudiGece from "../../public/assets/teraslar/terasJudiGece.png";
+import terasJudi from "../../public/assets/teraslar/villa2.png";
+import terasJudiGece from "../../public/assets/teraslar/villa3gece.png";
 
-import terasLuca from "../../public/assets/teraslar/terasLuca.png";
-import terasLucaGece from "../../public/assets/teraslar/teraslucaGece.png";
+import terasLuca from "../../public/assets/teraslar/hovuz.png";
+import terasLucaGece from "../../public/assets/teraslar/hovuzgece.png";
+
+import mavivilla from "../../public/assets/teraslar/mavivilla.png";
+import mavivillagece from "../../public/assets/teraslar/mavivillagece.png";
 
 export default function Create() {
   // =========================
@@ -103,15 +106,15 @@ export default function Create() {
   // =========================
   // STATES
   // =========================
-  const [hovuzTipi, setHovuzTipi] = useState<HovuzTipi>("klassikCam");
-  const [hovuzModeli, setHovuzModeli] = useState<HovuzModeli>("a151");
+  const [hovuzTipi, setHovuzTipi] = useState<HovuzTipi>("kare");
+  const [hovuzModeli, setHovuzModeli] = useState<HovuzModeli>("bali");
 
   const { Option, OptGroup } = Select;
 
   // kafellər
   const [kenar, setKenar] = useState<keyof typeof kenarKafelleri>("superstone");
   const [orta, setOrta] = useState<keyof typeof ortaKafeller>("superstone");
-  const [terasTipi, setTerasTipi] = useState<keyof typeof teras>("luca");
+  const [terasTipi, setTerasTipi] = useState<keyof typeof teras>("judi");
 
   const mode = isNight ? "gece" : "gunduz";
 
@@ -229,6 +232,10 @@ export default function Create() {
       gunduz: terasLuca,
       gece: terasLucaGece,
     },
+      mavivilla: {
+      gunduz: mavivilla,
+      gece: mavivillagece,
+    },
   } as const;
   // =========================
   // HANDLERS
@@ -258,8 +265,8 @@ if (hovuzTipi === "klassikCam") {
       <Image fill src={hovuzSrc} alt="hovuz" className="object-cover z-10" />
 
       {/* KAFELLƏR */}
-      <Image fill src={kenarSrc} alt="kenar" className="object-cover z-20" />
-      <Image fill src={ortaSrc} alt="orta" className="object-cover z-20" />
+      <Image fill src={kenarSrc} alt="kenar" className="object-cover z-22" />
+      <Image fill src={ortaSrc} alt="orta" className="object-cover z-22" />
       <Image fill src={terasSrc} alt="teras" className="object-cover z-20" />
 
       {/* =========================
@@ -347,16 +354,29 @@ if (hovuzTipi === "klassikCam") {
                 ))}
               </OptGroup>
 
-              {/* TERAS */}
-              <OptGroup label="Teras">
-                {Object.keys(teras).map((k) => (
-                  <Option key={`teras.${k}`} value={`teras.${k}`}>
-                    {k}
-                  </Option>
-                ))}
-              </OptGroup>
+      
             </Select>
           </Form.Item>
+<Form.Item label={<span className="text-white">Teras</span>}>
+  <Select
+    value={terasTipi}
+    onChange={(val) => {
+      setTerasTipi(val);
+
+      // 🔥 xüsusi qayda
+      if (val === "mavivilla") {
+        setHovuzTipi("kare");
+        setHovuzModeli("judiGrey");
+      }
+    }}
+  >
+    {Object.keys(teras).map((k) => (
+      <Option key={k} value={k}>
+        {k}
+      </Option>
+    ))}
+  </Select>
+</Form.Item>
         </Form>
       </div>
     </div>

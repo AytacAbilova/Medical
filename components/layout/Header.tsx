@@ -12,6 +12,8 @@ export default function Header() {
     const ball = document.getElementById("ball");
 
     if (!cursor || !ball) return;
+    // constants/services.ts
+
 
     let mouseX = 0;
     let mouseY = 0;
@@ -44,6 +46,16 @@ export default function Header() {
       window.removeEventListener("mousemove", moveCursor);
     };
   }, []);
+   const services = [
+  { title: "Hovuz Tikintisi", slug: "hovuz-tikintisi" },
+  { title: "Türk Hamamı", slug: "turk-hamami" },
+  { title: "Sauna", slug: "sauna" },
+  { title: "Buxar Otağı", slug: "buxar-otagi" },
+  { title: "Rus Hamamı (Banya)", slug: "rus-hamami" },
+  { title: "Spa və Relax Zonaları", slug: "spa-zonalari" },
+  { title: "Masaj Otaqları", slug: "masaj-otagi" },
+  { title: "Duz Otaqları", slug: "duz-otagi" },
+];
 
   return (
     <>
@@ -83,34 +95,26 @@ export default function Header() {
             <ul className="menu">
               <li className="has-dropdown">
                 <Link href="/">Home</Link>
-                <ul className="dropdown">
-                  <li>
-                    <Link href="/">Home – Image</Link>
-                  </li>
-                  <li>
-                    <Link href="/home-slider">Home – Slider</Link>
-                  </li>
-                  <li>
-                    <Link href="/home-video">Home – Video</Link>
-                  </li>
-                </ul>
+               
+                
               </li>
 
               <li>
                 <Link href="/about">About Us</Link>
               </li>
+<li className="has-dropdown">
+  <Link href="/services">Xidmətlər</Link>
 
-              <li className="has-dropdown">
-                <Link href="/services">Services</Link>
-                <ul className="dropdown">
-                  <li><Link href="/services/building-construction">Building Construction</Link></li>
-                  <li><Link href="/services/architecture-design">Architecture Design</Link></li>
-                  <li><Link href="/services/building-renovation">Building Renovation</Link></li>
-                  <li><Link href="/services/flooring-roofing">Flooring & Roofing</Link></li>
-                  <li><Link href="/services/building-maintenance">Building Maintenance</Link></li>
-                  <li><Link href="/services/project-management">Project Management</Link></li>
-                </ul>
-              </li>
+  <ul className="dropdown">
+    {services.map((s) => (
+      <li key={s.slug}>
+        <Link href={`/services/${s.slug}`}>
+          {s.title}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</li>
 
               <li className="has-dropdown">
                 <Link href="/projects">Projects</Link>
