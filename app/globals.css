@@ -63,6 +63,21 @@ span {
   /* height: 90vh; */
 }
 
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .headercontainer {
+    margin: 16px;
+    border-radius: 20px;
+  }
+}
+
+/* 📱 Small mobile */
+@media (max-width: 480px) {
+  .headercontainer {
+    margin: 10px;
+    border-radius: 16px;
+  }
+}
 #ball {
   position: fixed;
   background: #2a69ac;
