@@ -107,7 +107,7 @@ export default function Header({ locale = "az" }: any) {
                 <Link href="/services">Xidmətlər</Link>
 
                 <ul className="dropdown">
-                  {servicesContent[locale].map((s) => (
+                  {servicesContent[locale].map((s:any) => (
                     <li key={s.slug}>
                       <Link href={`/services/${s.slug}`}>
                         {s.title}

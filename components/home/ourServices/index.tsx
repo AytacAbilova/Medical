@@ -46,7 +46,7 @@ export default function OurServices({ locale = 'az' }: Props) {
               1024: { slidesPerView: 4 },
             }}
           >
-            {services.map((s, i) => (
+            {services.map((s:any, i:any) => (
               <SwiperSlide key={i}>
                 <div
                   onClick={() => router.push(`/services/${s.slug}`)}

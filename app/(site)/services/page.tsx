@@ -18,7 +18,7 @@ export default function Services({ locale = "az" }: Props) {
       <section className="max-w-[1400px] mx-auto px-6 md:px-10 py-24">
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {services.map((s, i) => (
+          {services.map((s:any, i:any) => (
             <article
               key={i}
               onClick={() => router.push(`/services/${s.slug}`)}

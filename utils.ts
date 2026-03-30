@@ -1,4 +1,4 @@
-export const servicesContent = {
+export const servicesContent :any= {
   az: [
     {
       title: "Hovuzların Növləri",

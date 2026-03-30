@@ -12,7 +12,7 @@ export default function ServiceDetail({ locale = "az" }: Props) {
   const slug = params.slug as string;
 
 
-  const service = servicesContent[locale].find(s => s.slug === slug);
+  const service = servicesContent[locale].find((s:any) => s.slug === slug);
 
   if (!service) {
     return (
@@ -34,14 +34,14 @@ export default function ServiceDetail({ locale = "az" }: Props) {
       </h1>
 
       <div className="space-y-10">
-        {service.sections.map((section, i) => (
+        {service.sections.map((section:any, i:any) => (
           <div key={i}>
             <h2 className="text-2xl font-bold mb-4 text-gray-800">
               {section.title}
             </h2>
 
             <ul className="space-y-2 text-gray-700">
-              {section.items.map((item, idx) => (
+              {section.items.map((item:any, idx:any) => (
                 <li key={idx} className="flex gap-2">
                   <span className="text-[#2A69AC]">•</span>
                   {item}

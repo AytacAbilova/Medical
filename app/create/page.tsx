@@ -77,7 +77,7 @@ interface ImageLayerProps {
   isActive: boolean;
   zIndex: number;
   alt: string;
-  style:any
+  style?:any
 }
 
 function ImageLayer({ img, isActive, zIndex, alt,style }: ImageLayerProps) {
