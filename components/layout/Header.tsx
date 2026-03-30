@@ -46,17 +46,58 @@ export default function Header() {
       window.removeEventListener("mousemove", moveCursor);
     };
   }, []);
-   const services = [
-  { title: "Hovuz Tikintisi", slug: "hovuz-tikintisi" },
-  { title: "Türk Hamamı", slug: "turk-hamami" },
-  { title: "Sauna", slug: "sauna" },
-  { title: "Buxar Otağı", slug: "buxar-otagi" },
-  { title: "Rus Hamamı (Banya)", slug: "rus-hamami" },
-  { title: "Spa və Relax Zonaları", slug: "spa-zonalari" },
-  { title: "Masaj Otaqları", slug: "masaj-otagi" },
-  { title: "Duz Otaqları", slug: "duz-otagi" },
+//    const services = [
+//   { title: "Hovuz Tikintisi", slug: "hovuz-tikintisi" },
+//   { title: "Türk Hamamı", slug: "turk-hamami" },
+//   { title: "Sauna", slug: "sauna" },
+//   { title: "Buxar Otağı", slug: "buxar-otagi" },
+//   { title: "Rus Hamamı (Banya)", slug: "rus-hamami" },
+//   { title: "Spa və Relax Zonaları", slug: "spa-zonalari" },
+//   { title: "Masaj Otaqları", slug: "masaj-otagi" },
+//   { title: "Duz Otaqları", slug: "duz-otagi" },
+// ];
+const services = [
+  { 
+    title: "Hovuz Tikintisi", 
+    slug: "hovuz-tikintisi",
+    desc: "Fərdi və ictimai hovuzların layihələndirilməsi və tikintisi."
+  },
+  { 
+    title: "Türk Hamamı", 
+    slug: "turk-hamami",
+    desc: "Ənənəvi və müasir türk hamamlarının dizayn və quraşdırılması."
+  },
+  { 
+    title: "Sauna", 
+    slug: "sauna",
+    desc: "Fin, infraqırmızı və digər sauna sistemləri."
+  },
+  { 
+    title: "Buxar Otağı", 
+    slug: "buxar-otagi",
+    desc: "Yüksək rütubətli buxar otaqları və spa həlləri."
+  },
+  { 
+    title: "Rus Hamamı (Banya)", 
+    slug: "rus-hamami",
+    desc: "Ənənəvi rus hamamı və kontrast terapiya sistemləri."
+  },
+  { 
+    title: "Spa və Relax Zonaları", 
+    slug: "spa-zonalari",
+    desc: "Tam spa zonalarının dizayn və qurulması."
+  },
+  { 
+    title: "Masaj Otaqları", 
+    slug: "masaj-otagi",
+    desc: "Peşəkar masaj və relaksasiya otaqları."
+  },
+  { 
+    title: "Duz Otaqları", 
+    slug: "duz-otagi",
+    desc: "Halotherapy (duz terapiyası) otaqları."
+  },
 ];
-
   return (
     <>
       {/* Preloader */}

@@ -42,7 +42,7 @@ import judiGreyKareGece from "../../public/assets/hovuzlar/kare/judiGreyGece.png
 // Kənar kafellər
 import light from "../../public/assets/kenarkafeller/light.png";
 import lightGece from "../../public/assets/kenarkafeller/lightgece.png";
-import superstone from "../../public/assets/kenarkafeller/superstone.png";
+import superstone from "../../public/assets/teraslar/bbb.png";
 import superstoneGece from "../../public/assets/kenarkafeller/superstonegece.png";
 import judiGrey from "../../public/assets/kenarkafeller/judigrey.png";
 import judiGreyGece from "../../public/assets/kenarkafeller/judigreygece.png";
@@ -77,15 +77,16 @@ interface ImageLayerProps {
   isActive: boolean;
   zIndex: number;
   alt: string;
+  style:any
 }
 
-function ImageLayer({ img, isActive, zIndex, alt }: ImageLayerProps) {
+function ImageLayer({ img, isActive, zIndex, alt,style }: ImageLayerProps) {
   return (
     <Image
       src={img}
       alt={alt}
       className="absolute w-full h-full object-cover transition-opacity duration-300"
-      style={{ opacity: isActive ? 1 : 0, zIndex }}
+      style={{...style, opacity: isActive ? 1 : 0, zIndex }}
       width={100000}
       height={100000}
       quality={100}
@@ -181,6 +182,8 @@ export default function Create() {
           img={isNight ? val.gece : val.gunduz}
           isActive={key === ortaKey}
           zIndex={22}
+          style={{transform:'scale(1.01) translateX(3px)'}}
+
           alt={`orta-${key}`}
         />
       ))}

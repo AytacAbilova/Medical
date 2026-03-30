@@ -9,79 +9,131 @@ interface HeroProps {
   isHome?: boolean;
   img?: string;
   subTitle?: string;
+  locale?: "az" | "en";
 }
 
-export default function Hero({ text, video, isHome, img, subTitle }: HeroProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  useEffect(() => {
-    const video = videoRef.current;
+const heroContent = {
+  az: {
+    badge: "TURAN İNŞAAT MMC",
+    title: (
+      <>
+        Suya həyat, <br /> rahatlığa dəyər qatırıq
+      </>
+    ),
+    desc: "Turan İnşaat MMC lisenziyalı tikinti şirkəti olaraq hovuz, spa və sauna sistemlərinin layihələndirilməsi, tikintisi və quraşdırılması sahəsində peşəkar xidmət təqdim edir. Müasir texnologiyalar, keyfiyyətli materiallar və innovativ dizaynlarla komfortlu istirahət məkanları yaradırıq.",
+    cta1: "Öz hovuzunu yarat",
+    cta2: "Layihələrimizə bax",
+  },
+  en: {
+    badge: "TURAN CONSTRUCTION LLC",
+    title: (
+      <>
+        We bring life to water <br /> and value to comfort
+      </>
+    ),
+    desc: "Turan Construction LLC is a licensed company providing professional design, construction, and installation of pool, spa, and sauna systems. With modern technologies, high-quality materials, and innovative designs, we create premium relaxation spaces.",
+    cta1: "Create your pool",
+    cta2: "View projects",
+  },
+};
 
-    if (!video) return;
+export default function Hero({
+  text,
+  video,
+  isHome,
+  img,
+  subTitle,
+  locale = "az",
+}: HeroProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const content = heroContent[locale];
+
+  useEffect(() => {
+    const videoEl = videoRef.current;
+    if (!videoEl) return;
 
     const playVideo = () => {
-      video.play().catch(() => { });
+      videoEl.play().catch(() => {});
     };
 
     playVideo();
-
     document.addEventListener("touchstart", playVideo, { once: true });
 
     return () => {
       document.removeEventListener("touchstart", playVideo);
     };
   }, []);
-  const homeTitle = <>Premium hovuz və spa <br /> layihələrinin tikintisi</>;
-  const homeText =
-    "Hovuzlar, türk hamamı, sauna və spa məkanlarının layihələndirilməsi və tikintisi sahəsində peşəkar xidmət təqdim edirik. Müasir texnologiya, keyfiyyətli materiallar və təcrübəli komandamız ilə evinizdə və obyektinizdə komfortlu istirahət zonaları yaradırıq.";
 
   return (
-    <section className={`${isHome ? 'h-[calc(90vh-180px)] md:h-[calc(90vh-150px)]' : 'md:h-[250px]'}`}>
-      <div className={`flex items-center overflow-hidden text-white h-[calc(100%-100px)]`} id="content">
+      //   <section className={`${isHome ? 'h-[calc(90vh-180px)] md:h-[calc(90vh-150px)]' : 'md:h-[250px]'}`}>
+      // <div className={`flex items-center overflow-hidden text-white h-[calc(100%-100px)]`} id="content"></div>
+    <section
+      aria-label="Turan İnşaat Hero Section"
+      className={` ${
+        isHome
+          ? "h-[calc(90vh-180px)] md:h-[calc(90vh-150px)]"
+          : "md:h-[250px]"
+      }`}
+    >
+      <div className=" flex items-center overflow-hidden text-white h-full">
+        
+        {/* VIDEO */}
         {video && (
-          <video ref={videoRef} className="hero-video" autoPlay muted loop playsInline aria-hidden="true">
+          <video
+            ref={videoRef}
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
             <source src={video} type="video/mp4" />
           </video>
         )}
-        {
-          img &&
+
+        {/* IMAGE */}
+        {img && !video && (
           <Image
-
-            quality={100}
             src={img}
-            alt="Hero Image"
+            alt="Turan İnşaat hovuz və spa layihəsi"
             fill
-            className="object-cover brightness-75 hero-image"
+            priority
+            quality={100}
+            className="object-cover scale-105 brightness-75"
           />
-        }
-        <div className="absolute inset-0 bg-black/30" />
+        )}
 
-        <div className="hero-overlayy" />
+        {/* OVERLAY */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
+
+
+        {/* CONTENT */}
         <div className="relative z-30 text-center container mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="uppercase text-[#2A69AC] mb-4 sm:mb-5 text-[14px] sm:text-[16px] font-extrabold leading-[1.1em] tracking-[0.13em] font-manrope">
-            Turan İnşaat
+          
+          {/* BADGE */}
+          <h3 className="uppercase text-[#2A69AC] mb-4 text-[13px] sm:text-[15px] font-extrabold tracking-[0.2em]">
+            {content.badge}
           </h3>
 
-          <h1 className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] font-extrabold leading-[1.1em] tracking-[-0.03em] mb-5 sm:mb-6 font-manrope">
-            {isHome ? homeTitle : text}
+          {/* TITLE */}
+          <h1 className="text-[28px] sm:text-[42px] md:text-[56px] lg:text-[60px] font-extrabold leading-[1.05] tracking-tight mb-6">
+            {isHome ? content.title : text}
           </h1>
 
-
-          <p className="text-[14px] sm:text-[16px] md:text-[18px] max-w-3xl mx-auto leading-[1.5] sm:leading-[1.6] text-[#ddd] mb-8 sm:mb-10 font-dm-sans">
-            {isHome ? homeText : subTitle}
+          {/* DESCRIPTION */}
+          <p className="text-[15px]  md:text-[16px] max-w-3xl mx-auto text-gray-200 mb-10 leading-relaxed">
+            {isHome ? content.desc : subTitle}
           </p>
 
-
-
+          {/* CTA */}
           {isHome && (
-            <div className="flex justify-center gap-4 sm:gap-5 flex-wrap">
-              <Button text={"Öz hovuzunu yarat"} link={"/create"} type={2} />
-              <Button text={"Layihələrimizə bax"} link={"/projects"} type={4} />
+            <div className="flex justify-center gap-4 flex-wrap">
+              <Button text={content.cta1} link="/create" type={2} />
+              <Button text={content.cta2} link="/projects" type={4} />
             </div>
           )}
         </div>
       </div>
     </section>
-
-
   );
 }

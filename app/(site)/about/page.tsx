@@ -1,113 +1,171 @@
-'use client'
-import Image from 'next/image'
-import Button from '@/components/common/Button'
-import aboutImg from '@/public/assets/images/aboutUs.jpg'
-// import heroBg from '@/public/assets/images/heroAbout.jpg'
+"use client";
+import Image from "next/image";
+import Button from "@/components/common/Button";
+import certImg from "@/public/assets/images/certificate.png";
 
-export default function About() {
+interface Props {
+  locale?: "az" | "en";
+}
+
+const content = {
+  az: {
+    about: {
+      badge: "HAQQIMIZDA",
+      title:
+        "Su ilə rahatlığı birləşdirən peşəkar hovuz və spa həlləri",
+      desc: `Turan İnşaat MMC lisenziyalı tikinti şirkəti olaraq, su ilə rahatlığı birləşdirərək mükəmməl hovuz və spa həlləri təqdim edir. İllərin təcrübəsi və yenilikçi texnologiyalarla hovuz, spa və sauna sistemlərinin layihələndirilməsi, tikintisi və quraşdırılması sahəsində peşəkar xidmət göstəririk.`,
+      features: [
+        { title: "Fərdi dizayn", desc: "Hər layihə müştəri ehtiyacına uyğun hazırlanır" },
+        { title: "Premium materiallar", desc: "Uzunömürlü və yüksək keyfiyyətli materiallar" },
+        { title: "Zəmanətli icra", desc: "Peşəkar komanda və tam nəzarət" },
+        { title: "Müasir texnologiya", desc: "Ən son texnologiyalar ilə effektiv nəticə" },
+      ],
+      cta: "Pulsuz məsləhət al",
+      contact: "24/7 Əlaqə Mərkəzi",
+      licenseBadge: "Rəsmi lisenziya ilə fəaliyyət göstərir",
+    },
+    story: {
+      title: "Bizim hekayəmiz",
+      desc: `Turan İnşaat komandası uzun illərdir Azərbaycanda hovuz və spa layihələrinin həyata keçirilməsində peşəkar xidmət göstərir. Hər layihədə keyfiyyət, yenilik və müştəri məmnuniyyəti əsas prioritetimizdir.`,
+    },
+    testimonials: {
+      title: "Müştəri rəyləri",
+      items: [
+        { name: "Elvin Məmmədov", text: "Layihə gözlədiyimdən daha yaxşı alındı!" },
+        { name: "Leyla Hüseynova", text: "Peşəkar yanaşma və yüksək keyfiyyət." },
+        { name: "Rəşad Quliyev", text: "Tam ideal nəticə əldə etdik." },
+      ],
+    },
+  },
+  en: {
+    about: {
+      badge: "ABOUT US",
+      title:
+        "Professional pool and spa solutions combining comfort with water",
+      desc: `Turan Construction LLC is a licensed company combining water and relaxation to deliver premium pool and spa solutions. With years of experience and innovative technologies, we provide professional design, construction, and installation services.`,
+      features: [
+        { title: "Custom design", desc: "Each project is tailored to client needs" },
+        { title: "Premium materials", desc: "High-quality and long-lasting materials" },
+        { title: "Guaranteed execution", desc: "Professional team with full control" },
+        { title: "Modern technology", desc: "Latest tech for efficient results" },
+      ],
+      cta: "Get free consultation",
+      contact: "24/7 Contact Center",
+      licenseBadge: "Operating with official license",
+    },
+    story: {
+      title: "Our story",
+      desc: `Our team has been delivering premium pool and spa projects for years. Innovation, quality, and customer satisfaction are our main priorities.`,
+    },
+    testimonials: {
+      title: "Client reviews",
+      items: [
+        { name: "Elvin Mammadov", text: "Better than expected!" },
+        { name: "Leyla Huseynova", text: "Very professional team." },
+        { name: "Rashad Guliyev", text: "Perfect result overall." },
+      ],
+    },
+  },
+};
+
+export default function About({ locale = "az" }: Props) {
+  const t = content[locale];
+
   return (
-    <main className="bg-gray-50 font-dm-sans">
+    <main className="bg-gray-50">
+      {/* ABOUT */}
+      <section className="max-w-[1300px] justify-between mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-24 flex flex-col lg:flex-row items-center gap-20">
         
+        {/* TEXT */}
+        <div className="flex-1 flex flex-col gap-10">
+          <span className="text-[#C49B63] uppercase tracking-[0.2em] font-bold text-sm">
+            {t.about.badge}
+          </span>
 
-      {/* About Details */}
-      <section className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-28  flex flex-col lg:flex-row items-center gap-16">
-        
-        {/* Text Content */}
-        <div className="flex-1 flex flex-col gap-8">
-          <h2 className="text-[#0F172A] font-extrabold text-3xl sm:text-4xl md:text-4xlleading-tight font-manrope">
-            Premium hovuz və spa layihələrini peşəkar şəkildə həyata keçiririk
-          </h2>
-          <p className="text-slate-500 text-base sm:text-lg md:text-xl leading-relaxed">
-            Müasir texnologiyalar və keyfiyyətli materiallardan istifadə edərək
-            evlər, villalar və kommersiya obyektləri üçün estetik və uzunömürlü
-            istirahət zonaları yaradırıq. Hər layihədə detallara diqqət və müştəri
-            məmnuniyyəti əsas prioritetimizdir.
+          <h1 className="text-[#0F172A] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight">
+            {t.about.title}
+          </h1>
+
+          <p className="text-slate-600 text-base md:text-lg leading-relaxed">
+            {t.about.desc}
           </p>
 
-          {/* Features / Highlights */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {[
-              { title: 'Fərdi dizayn', desc: 'Hər layihə müştəri ehtiyacına uyğun hazırlanır.' },
-              { title: 'Premium materiallar', desc: 'Yüksək keyfiyyətli və uzunömürlü materiallar.' },
-              { title: 'Zəmanət və keyfiyyət', desc: 'Hər layihə peşəkar komanda tərəfindən icra olunur.' },
-              { title: 'Müasir texnologiya', desc: 'Ən son texnologiyalar ilə effektiv və estetik nəticələr.' },
-            ].map((feature, idx) => (
+          <div className="grid sm:grid-cols-2 gap-8">
+            {t.about.features.map((f, i) => (
               <div
-                key={idx}
-                className="bg-white p-6 sm:p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-500 group relative overflow-hidden"
+                key={i}
+                className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 border border-gray-100"
               >
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-[#FFB703] to-[#2A69AC] opacity-10 blur-xl group-hover:opacity-30 transition duration-500 rounded-3xl" />
-                <h3 className="text-[#FFB703] font-extrabold text-lg sm:text-xl mb-2 font-manrope relative z-10">
-                  {feature.title}
-                </h3>
-                <p className="text-slate-500 text-sm sm:text-base leading-relaxed relative z-10">
-                  {feature.desc}
-                </p>
+                <h3 className="text-[#C49B63] font-bold mb-3 text-lg">{f.title}</h3>
+                <p className="text-slate-500 text-sm">{f.desc}</p>
               </div>
             ))}
           </div>
 
-          {/* Call to Action */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-8">
-            <Button text="Pulsuz məsləhət al" link="/contact" type={2} />
-            <div className="flex flex-col mt-2 sm:mt-0">
-              <span className="text-slate-400 uppercase tracking-wider text-xs sm:text-sm">
-                24/7 Əlaqə Mərkəzi
+          <div className="flex flex-col sm:flex-row gap-8 items-start sm:items-center mt-6">
+            <Button text={t.about.cta} link="/contact" type={2} />
+            <div>
+              <span className="text-xs text-gray-400 uppercase tracking-wider">
+                {t.about.contact}
               </span>
-              <strong className="text-[#FFB703] font-extrabold text-lg sm:text-xl mt-1">
+              <div className="font-bold text-[#C49B63] text-lg mt-1">
                 +994 50 312 76 57
-              </strong>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Image Content */}
-        <div className="flex-1 w-full">
-          <div className="relative w-full h-[450px] sm:h-[550px] md:h-[650px] lg:h-[750px] rounded-[40px] overflow-hidden shadow-2xl">
-            <Image
-              src={aboutImg}
-              alt="Turan İnşaat"
-              fill
-              className="object-cover hover:scale-105 transition-transform duration-700"
-              quality={100}
-            />
+        {/* IMAGE */}
+        <div className="flex-1 flex justify-end relative w-full h-[400px] sm:h-[500px] lg:h-[900px] rounded-3xl">
+          <Image
+            src={certImg}
+            alt="Turan İnşaat hovuz və spa layihəsi"
+            width={500}
+            height={400}
+            className="object-contain transition-transform duration-700 hover:scale-105"
+            priority
+          />
+          {/* LICENSE BADGE */}
+          <div className="absolute top-4 right-4 bg-[#C49B63]/90 text-white px-4 py-2 rounded-lg font-bold text-sm shadow-md">
+            {t.about.licenseBadge}
           </div>
         </div>
       </section>
 
-      {/* History / Story Section */}
-      <section className="bg-[#F9FAFB] py-20 sm:py-28 px-6 sm:px-8 lg:px-12">
-        <div className="max-w-5xl mx-auto text-center flex flex-col gap-8">
-          <h2 className="text-[#0F172A] font-extrabold text-3xl sm:text-4xl  font-manrope">
-            Bizim hekayəmiz
+      {/* STORY + TESTIMONIALS COMBINED */}
+      <section className="bg-white">
+        <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-24  ">
+          
+          {/* STORY */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-extrabold mb-6">
+              {t.story.title}
+            </h2>
+            <p className="text-slate-600 text-base md:text-lg leading-relaxed max-w-[800px] mx-auto">
+              {t.story.desc}
+            </p>
+          </div>
+
+          {/* TESTIMONIALS */}
+          <h2 className="text-center text-3xl sm:text-4xl font-extrabold mb-12">
+            {t.testimonials.title}
           </h2>
-          <p className="text-slate-500 text-base sm:text-lg md:text-xl leading-relaxed">
-            Turan İnşaat komandası uzun illərdir ki, Azərbaycanda premium hovuz və spa
-            layihələrinin həyata keçirilməsində peşəkar xidmət göstərir. Hər layihədə
-            yenilik, keyfiyyət və müştəri məmnuniyyəti bizim əsas prioritetlərimizdir.
-            Komandamızın təcrübəsi və diqqəti hər detala yönəldilir.
-          </p>
-        </div>
-      </section>
 
-      {/* Optional: Testimonials or Clients Section */}
-      <section className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-28 ">
-        <h2 className="text-center text-[#0F172A] font-extrabold text-3xl sm:text-4xl  font-manrope mb-12">
-          Müştəri rəyləri
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { name: "Elvin Məmmədov", feedback: "Turan İnşaat ilə işləmək böyük zövq idi. Layihə tam gözlədiyim kimi oldu!" },
-            { name: "Leyla Hüseynova", feedback: "Hər detal diqqətlə hazırlanmışdı. Komanda çox peşəkardır!" },
-            { name: "Rəşad Quliyev", feedback: "Keyfiyyət və estetik baxımdan tam ideal bir nəticə aldıq." },
-          ].map((item, idx) => (
-            <div key={idx} className="bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-500">
-              <p className="text-slate-600 mb-4">"{item.feedback}"</p>
-              <strong className="text-[#FFB703] font-extrabold">{item.name}</strong>
-            </div>
-          ))}
+          <div className="grid md:grid-cols-3 gap-8">
+            {t.testimonials.items.map((item, i) => (
+              <div
+                key={i}
+                className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 border border-gray-100"
+              >
+                <p className="text-slate-600 mb-4 leading-relaxed">
+                  "{item.text}"
+                </p>
+                <strong className="text-[#C49B63]">{item.name}</strong>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </main>
-  )
+  );
 }
