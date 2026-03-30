@@ -48,6 +48,21 @@ export default function Projects() {
       image: "https://demo.awaikenthemes.com/builtup/wp-content/uploads/2024/06/our-project-1-1.jpg",
       video: "https://www.w3schools.com/html/mov_bbb.mp4"
     },
+  {
+      title: "Daşma hovuz (Bilgəh Mircəlal küç.)",
+      slug: "myclass-hovuz",
+      description: "Fitness mərkəzi üçün müasir filtrasiya sistemi ilə qurulmuş hovuz layihəsi.",
+      image: "https://i.pinimg.com/736x/83/31/41/833141387254914189437991760c3432.jpg",
+      video: "https://www.w3schools.com/html/mov_bbb.mp4"
+    },  {
+      title: "Daşma hovuz (Badamdar layihəsi)",
+      slug: "myclass-hovuz",
+      description: "Fitness mərkəzi üçün müasir filtrasiya sistemi ilə qurulmuş hovuz layihəsi.",
+      image: "https://i.pinimg.com/736x/83/31/41/833141387254914189437991760c3432.jpg",
+      video: "https://www.w3schools.com/html/mov_bbb.mp4"
+    },
+//     Daşma hovuz (Bilgəh Mircəlal küç.)
+// Daşma hovuz (Badamdar layihəsi)
   ];
 
   const handlePlayClick = (index: number) => {
