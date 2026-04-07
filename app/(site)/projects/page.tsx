@@ -1,175 +1,308 @@
-'use client'
-import { useState, useRef } from "react";
-import Button from "@/components/common/Button";
-import { FaPlay } from "react-icons/fa";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/effect-fade";
+"use client";
+import { useState, useRef, useEffect, use } from "react";
 
 export default function Projects() {
   const sectionRef = useRef<HTMLDivElement>(null);
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
+  const [selectedMedia, setSelectedMedia] = useState<string | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const projects = [
+    {
+      title: "Hyatt Regency – Çöl Hovuz",
+      slug: "hyatt-pool",
+      description: "Otellər üçün geniş açıq hovuz layihəsi.",
+      images: [
+        "/assets/projects/hyattRegency/hovuz1.jpg",
+        "/assets/projects/hyattRegency/hyattVideo.mp4",
+        "/assets/projects/hyattRegency/hovuz2.jpeg",
+
+      ],
+    },
+    {
+      title: "Goradil layihəsi",
+      slug: "goradil",
+      description: "Tikinti prosesi və hovuz tamamlanma mərhələləri.",
+      images: [
+        "/assets/projects/goradil/tikintiprocess2.png",
+        "/assets/projects/goradil/hovuz1.png",
+        "/assets/projects/goradil/hovuz2.png",
+        "/assets/projects/goradil/tikintiprocess1.png",
+      ],
+    },
+    {
+      title: "Villa Badam layihəsi",
+      slug: "villa-badam",
+      description: "Tikinti prosesi və hovuz tamamlanma mərhələləri.",
+      images: [
+        "/assets/projects/villabadam/video4.mp4",
+        "/assets/projects/villabadam/video3.mp4",
+        "/assets/projects/villabadam/video2.mp4",
+      ],
+    },
+    {
+      title: "Badamdar  layihəsi",
+      slug: "badamdar",
+      description: "Tikinti prosesi və hovuz tamamlanma mərhələləri.",
+      images: [
+        "/assets/projects/badamdar/hovuz1.jpeg",
+        "/assets/projects/badamdar/hovuz2.jpeg",
+        "/assets/projects/badamdar/hovuz3.jpeg",
+      ],
+    },
+    {
+      title: "Bilgeh  layihəsi",
+      slug: "bilgeh",
+      description: "Tikinti prosesi və hovuz tamamlanma mərhələləri.",
+      images: [
+        "/assets/projects/bilgeh/hovuz.JPG",
+        "/assets/projects/bilgeh/hovuz1.jpeg",
+        "/assets/projects/bilgeh/hovuz3.jpeg",
+        "/assets/projects/bilgeh/hovuz4.jpeg",
+                "/assets/projects/bilgeh/hovuz5.jpeg",
+                                "/assets/projects/bilgeh/hovuz6.jpeg",
+
+
+
+      ],
+    },
     {
       title: "My Class (Yasamal) – Hovuz",
       slug: "myclass-hovuz",
       description: "Fitness mərkəzi üçün müasir filtrasiya sistemi ilə qurulmuş hovuz layihəsi.",
       image: "https://i.pinimg.com/736x/83/31/41/833141387254914189437991760c3432.jpg",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4"
     },
     {
       title: "My Class (Yasamal) – Cakuzi",
       slug: "myclass-cakuzi",
       description: "Relaks və hidromasaj üçün premium jacuzzi sistemi.",
       image: "https://i.pinimg.com/1200x/39/be/20/39be2079cb4742d9b2d16fa225b80464.jpg",
-      video: "https://www.w3schools.com/html/movie.mp4"
     },
     {
       title: "My Class (Yasamal) – Sauna",
       slug: "myclass-sauna",
       description: "Fin sauna texnologiyası ilə hazırlanmış zona.",
       image: "https://i.pinimg.com/736x/22/31/ec/2231ec16f22e1b76f1b3be82a057f785.jpg",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4"
     },
     {
       title: "My Class (Yasamal) – Türk Hamamı",
       slug: "myclass-hamam",
       description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
       image: "https://i.pinimg.com/1200x/26/cc/5b/26cc5b9a58ef92af3266c7dfeaabceb0.jpg",
-      video: "https://www.w3schools.com/html/movie.mp4"
+    },
+
+    {
+      title: "Daşma hovuz (Bilgəh Mircəlal küç.)",
+      slug: "bilgeh",
+      description: "Daşma hovuz layihəsi.",
+      image: "https://i.pinimg.com/736x/83/31/41/833141387254914189437991760c3432.jpg",
     },
     {
-      title: "Hyatt Regency – Çöl Hovuz",
-      slug: "hyatt-pool",
-      description: "Otellər üçün geniş açıq hovuz layihəsi.",
-      image: "https://demo.awaikenthemes.com/builtup/wp-content/uploads/2024/06/our-project-1-1.jpg",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4"
-    },
-  {
-      title: "Daşma hovuz (Bilgəh Mircəlal küç.)",
-      slug: "myclass-hovuz",
-      description: "Fitness mərkəzi üçün müasir filtrasiya sistemi ilə qurulmuş hovuz layihəsi.",
-      image: "https://i.pinimg.com/736x/83/31/41/833141387254914189437991760c3432.jpg",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4"
-    },  {
       title: "Daşma hovuz (Badamdar layihəsi)",
-      slug: "myclass-hovuz",
-      description: "Fitness mərkəzi üçün müasir filtrasiya sistemi ilə qurulmuş hovuz layihəsi.",
+      slug: "badamdar",
+      description: "Daşma hovuz layihəsi.",
       image: "https://i.pinimg.com/736x/83/31/41/833141387254914189437991760c3432.jpg",
-      video: "https://www.w3schools.com/html/mov_bbb.mp4"
     },
-//     Daşma hovuz (Bilgəh Mircəlal küç.)
-// Daşma hovuz (Badamdar layihəsi)
-  ];
 
-  const handlePlayClick = (index: number) => {
+  ];
+  const openModal = (index: number) => {
     setActiveIndex(index);
+    setSelectedMedia(null);
+    setCurrentImageIndex(1);
     setModalOpen(true);
   };
 
+  const project = projects[activeIndex];
+  const mediaList = project.images ?? (project.image ? [project.image] : []);
+
+  const prevImage = () => {
+    setCurrentImageIndex(
+      (prev) => (prev - 1 + mediaList.length) % mediaList.length
+    );
+    setSelectedMedia(null);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % mediaList.length);
+    setSelectedMedia(null);
+  };
+
+  // Klaviatura Event Listener
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!modalOpen) return;
+
+      if (e.key === "ArrowLeft") {
+        prevImage();
+      } else if (e.key === "ArrowRight") {
+        nextImage();
+      } else if (e.key === "Escape") {
+        setModalOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [modalOpen, currentImageIndex]);
+
   return (
-    <section ref={sectionRef} className="py-10 bg-white text-gray-900">
+    <section ref={sectionRef} className="py-16 bg-white text-gray-900">
       <div className="max-w-[1300px] mx-auto px-6 md:px-10">
-
-        {/* 🔥 Swiper Featured - Fade effect */}
-        <Swiper
-          modules={[Autoplay, EffectFade]}
-          effect="fade"
-          fadeEffect={{ crossFade: true }}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-          loop
-          className="relative mb-20 rounded-3xl h-[400px] md:h-[500px]"
-        >
-          {projects.map((project, index) => (
-            <SwiperSlide key={project.slug}>
-              <div className="relative w-full h-full group cursor-pointer">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover rounded-3xl transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-opacity duration-700" />
-                <div className="absolute bottom-0 p-8 text-white transition-transform duration-700">
-                  <span className="text-[#C49B63] text-sm font-semibold">Premium Layihə</span>
-                  <h3 className="text-3xl font-bold mt-2">{project.title}</h3>
-                  <p className="mt-3 text-gray-300 max-w-xl">{project.description}</p>
-                </div>
-
-                {/* Hover play icon */}
-                <div
-                  onClick={() => handlePlayClick(index)}
-                  className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                >
-                  <div className="bg-black/60 p-5 rounded-full text-white text-3xl hover:text-[#C49B63] transition">
-                    <FaPlay />
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        {/* 🔽 Projects list */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
           {projects.map((project, i) => (
             <article
               key={project.slug}
-              onClick={() => {
-                setActiveIndex(i);
-                sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }}
+              onClick={() => openModal(i)}
               className="cursor-pointer group"
             >
               <div className="overflow-hidden rounded-2xl">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+                {project.images?.[0]?.endsWith(".mp4") ? (
+                  <video
+                    src={project.images[0]}
+                    className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+                    autoPlay
+                    muted
+                    loop
+                  />
+                ) : (
+                  <img
+                    src={project.images?.[0] || project.image}
+                    alt={project.title}
+                    className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                )}
               </div>
-              <h3 className="mt-4 text-xl font-bold group-hover:text-[#C49B63] transition-colors">{project.title}</h3>
+              <h3 className="mt-4 text-xl font-bold group-hover:text-[#C49B63] transition-colors">
+                {project.title}
+              </h3>
               <p className="text-gray-500 mt-2 text-sm">{project.description}</p>
             </article>
           ))}
         </div>
-
-        {/* Button */}
-        <div className="mt-20 flex justify-center">
-          <Button text="Əlaqə saxla" link="/contact" type={4} />
-        </div>
       </div>
 
-      {/* 🎬 Video Modal */}
+      {/* Modal */}
       {modalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-500"
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
           onClick={() => setModalOpen(false)}
         >
           <div
-            className="bg-black rounded-xl overflow-hidden w-[90%] max-w-5xl flex flex-col md:flex-row relative"
-            onClick={e => e.stopPropagation()}
+            className="bg-black w-full max-w-6xl h-[80vh] flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-2xl relative"
+            onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={() => setModalOpen(false)}
-              className="absolute top-3 right-3 text-white text-2xl font-bold hover:text-[#C49B63] transition"
-            >
-              &times;
-            </button>
+            {/* Left - Video/Image */}
+            <div className="w-full md:w-2/3 bg-black flex items-center justify-center relative">
+              <div className="w-full md:w-2/3 bg-black flex items-center justify-center relative">
+                {selectedMedia ? (
+                  selectedMedia.endsWith(".mp4") ? (
+                    <video
+                      src={selectedMedia}
+                      controls
+                      autoPlay
+                      className="w-full h-full object-contain rounded-l-2xl"
+                    />
+                  ) : (
+                    <img
+                      src={selectedMedia}
+                      alt="Selected"
+                      className="w-full h-full object-contain rounded-l-2xl"
+                    />
+                  )
+                ) : mediaList.length ? (
+                  mediaList[currentImageIndex].endsWith(".mp4") ? (
+                    <video
+                      src={mediaList[currentImageIndex]}
+                      controls
+                      autoPlay
+                      className="w-full h-full object-contain rounded-l-2xl"
+                    />
+                  ) : (
+                    <img
+                      src={mediaList[currentImageIndex]}
+                      alt={project.title}
+                      className="w-full h-full object-contain rounded-l-2xl"
+                    />
+                  )
+                ) : null}
 
-            <video
-              src={projects[activeIndex].video}
-              controls
-              autoPlay
-              className="w-full md:w-2/3 h-auto rounded-xl"
-            />
+                {mediaList.length > 1 && (
+                  <>
+                    <button onClick={prevImage} className="...">&#10094;</button>
+                    <button onClick={nextImage} className="...">&#10095;</button>
+                  </>
+                )}
+              </div>
+              {mediaList.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-black/40 backdrop-blur-sm text-white text-2xl md:text-3xl rounded-full shadow-lg hover:bg-[#C49B63] hover:scale-110 transition-all duration-300"
+                  >
+                    &#10094;
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-black/40 backdrop-blur-sm text-white text-2xl md:text-3xl rounded-full shadow-lg hover:bg-[#C49B63] hover:scale-110 transition-all duration-300"
+                  >
+                    &#10095;
+                  </button>
+                </>
+              )}
+            </div>
 
-            <div className="p-6 text-white md:w-1/3 flex flex-col justify-center">
-              <h3 className="text-2xl font-bold mb-4">{projects[activeIndex].title}</h3>
-              <p className="text-gray-300">{projects[activeIndex].description}</p>
+            {/* Right - Info & Thumbnails */}
+            <div className="md:w-1/3 bg-gray-900 p-6 flex flex-col justify-start">
+              {mediaList.length > 1 && (
+                <div className="flex gap-3 mb-6 overflow-x-auto">
+                  {mediaList.map((media, i) => (
+                    media.endsWith(".mp4") ? (
+                      <video
+                        key={i}
+                        src={media}
+                        onClick={() => {
+                          setCurrentImageIndex(i);
+                          setSelectedMedia(null);
+                        }}
+                        className={`w-20 h-20 object-cover cursor-pointer rounded-lg border-2 transition ${i === currentImageIndex
+                          ? "border-[#C49B63]"
+                          : "border-gray-700 hover:border-[#C49B63]"
+                          }`}
+                        muted
+                      />
+                    ) : (
+                      <img
+                        key={i}
+                        src={media}
+                        onClick={() => {
+                          setCurrentImageIndex(i);
+                          setSelectedMedia(null);
+                        }}
+                        className={`w-20 h-20 object-cover cursor-pointer rounded-lg border-2 transition ${i === currentImageIndex
+                          ? "border-[#C49B63]"
+                          : "border-gray-700 hover:border-[#C49B63]"
+                          }`}
+                      />
+                    )
+                  ))}
+                </div>
+              )}
+
+              <h3 className="text-2xl font-bold text-white mb-2">
+                {project.title}
+              </h3>
+              <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+
+              {selectedMedia && (
+                <button
+                  onClick={() => setSelectedMedia(null)}
+                  className="mt-auto px-4 py-2 bg-[#C49B63] rounded-lg text-black font-semibold hover:bg-yellow-500 transition"
+                >
+                  Show Video
+                </button>
+              )}
             </div>
           </div>
         </div>
