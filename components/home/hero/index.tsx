@@ -65,18 +65,17 @@ export default function Hero({
   }, []);
 
   return (
-      //   <section className={`${isHome ? 'h-[calc(90vh-180px)] md:h-[calc(90vh-150px)]' : 'md:h-[250px]'}`}>
-      // <div className={`flex items-center overflow-hidden text-white h-[calc(100%-100px)]`} id="content"></div>
+    //   <section className={`${isHome ? 'h-[calc(90vh-180px)] md:h-[calc(90vh-150px)]' : 'md:h-[250px]'}`}>
+    // <div className={`flex items-center overflow-hidden text-white h-[calc(100%-100px)]`} id="content"></div>
     <section
       aria-label="Turan İnşaat Hero Section"
       className={` ${
         isHome
-          ? "h-[calc(90vh-180px)] md:h-[calc(90vh)]"
+          ? "h-[calc(90vh-180px)] md:h-[calc(100vh)]"
           : "md:h-[250px]"
       }`}
     >
       <div className=" flex items-center overflow-hidden text-white h-full">
-        
         {/* VIDEO */}
         {video && (
           <video
@@ -106,10 +105,8 @@ export default function Hero({
         {/* OVERLAY */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
 
-
         {/* CONTENT */}
         <div className="relative z-30 text-center container mx-auto px-4 sm:px-6 lg:px-8">
-          
           {/* BADGE */}
           <h3 className="uppercase text-[#2A69AC] mb-4 text-[13px] sm:text-[15px] font-extrabold tracking-[0.2em]">
             {content.badge}
@@ -121,7 +118,7 @@ export default function Hero({
           </h1>
 
           {/* DESCRIPTION */}
-          <p className="text-[15px]  md:text-[16px] max-w-3xl mx-auto text-gray-200 mb-10 leading-relaxed">
+          <p className={`text-[15px]  md:text-[16px] max-w-3xl mx-auto text-gray-200 ${isHome?'mb-20':'mb-10'} leading-relaxed`}>
             {isHome ? content.desc : subTitle}
           </p>
 

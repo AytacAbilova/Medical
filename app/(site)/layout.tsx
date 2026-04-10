@@ -82,7 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="az">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="headercontainer rounded-[40px] overflow-hidden">
+        <div className="headercontainer  overflow-hidden">
           <Header />
           <AOSProvider />
           <HeroWrapper />
