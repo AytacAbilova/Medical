@@ -20,13 +20,13 @@ export default function OurServices({ locale = 'az' }: Props) {
       <div className="max-w-[1300px] mx-auto px-6 md:px-10 text-center">
 
         {/* Header */}
-        <span className="uppercase tracking-[0.15em] text-sm font-extrabold text-[#2A69AC]">
+        <span className="uppercase tracking-[0.15em] text-sm font-extrabold text-[#2A69AC] md:text-[16px]">
           {locale === 'az' ? "Xidmətlərimiz" : "Our Services"}
         </span>
 
-        <h2 className="mt-6 text-[clamp(36px,4vw,56px)] font-extrabold leading-tight font-[var(--font-manrope)]">
+        <h2 className="mt-6 text-[56px] font-extrabold leading-tight font-[var(--font-manrope)]">
           {locale === 'az'
-            ? "Premium hovuz, hamam və spa layihələri"
+            ? "Premium hovuz və spa layihələri"
             : "Premium Pools & Spa Solutions"}
         </h2>
 

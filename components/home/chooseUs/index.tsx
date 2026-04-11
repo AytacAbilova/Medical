@@ -25,11 +25,11 @@ export default function WhyChooseUs() {
 
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto">
-          <h3 className="text-sm font-semibold text-[#C49B63] uppercase tracking-widest">
+          <h3 className="text-sm font-semibold text-[#C49B63] md:text-[16px] uppercase tracking-widest">
             Niyə bizi seçməlisiniz?
           </h3>
 
-          <h2 className="mt-4 text-3xl md:text-4xl font-extrabold text-gray-900">
+          <h2 className="mt-4 text-3xl md:text-[56px] font-extrabold text-gray-900">
             Keyfiyyət və Peşəkarlıq
           </h2>
 

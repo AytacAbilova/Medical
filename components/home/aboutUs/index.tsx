@@ -47,12 +47,12 @@ export default function AboutUs({ locale = "az" }: AboutProps) {
         {/* TEXT */}
         <div className="flex-1">
           {/* Badge */}
-          <span className="text-[#C49B63] uppercase font-extrabold text-sm tracking-[0.2em] mb-4 block">
+          <span className="text-[#C49B63] uppercase font-extrabold text-sm md:text-[16px] tracking-[0.2em] mb-4 block">
             {t.badge}
           </span>
 
           {/* Title (SEO) */}
-          <h2 className="text-[#0F172A] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
+          <h2 className="text-[#0F172A] font-extrabold text-3xl sm:text-4xl lg:text-[56px] leading-tight mb-6">
             {t.title}
           </h2>
 

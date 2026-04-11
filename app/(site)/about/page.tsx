@@ -78,7 +78,7 @@ export default function About({ locale = "az" }: Props) {
         
         {/* TEXT */}
         <div className="flex-1 flex flex-col gap-10">
-          <span className="text-[#C49B63] uppercase tracking-[0.2em] font-bold text-sm">
+          <span className="text-[#C49B63] uppercase tracking-[0.2em] font-bold text-sm md:text-[16px] ">
             {t.about.badge}
           </span>
 

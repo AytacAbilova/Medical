@@ -41,11 +41,11 @@ export const Products = () => {
 
         {/* Header */}
         <div className="mb-12">
-          <span className="text-[#C49B63] font-semibold uppercase tracking-wider">
+          <span className="text-[#C49B63] font-semibold md:text-[16px] uppercase tracking-wider">
             Məhsullarımız
           </span>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mt-3">
+          <h2 className="text-3xl md:text-4xl lg:text-[56px] font-extrabold mt-3">
             Hovuz və SPA üçün texnoloji həllər
           </h2>
 

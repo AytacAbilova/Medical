@@ -43,7 +43,7 @@ export default function Projects() {
       ],
     },
     {
-      title: "Badamdar  layihəsi",
+      title: "Daşma hovuz (Badamdar layihəsi)",
       slug: "badamdar",
       description: "Tikinti prosesi və hovuz tamamlanma mərhələləri.",
       images: [
@@ -53,7 +53,7 @@ export default function Projects() {
       ],
     },
     {
-      title: "Bilgeh  layihəsi",
+      title: "Daşma hovuz (Bilgəh Mircəlal küç.)",
       slug: "bilgeh",
       description: "Tikinti prosesi və hovuz tamamlanma mərhələləri.",
       images: [
@@ -61,8 +61,8 @@ export default function Projects() {
         "/assets/projects/bilgeh/hovuz1.jpeg",
         "/assets/projects/bilgeh/hovuz3.jpeg",
         "/assets/projects/bilgeh/hovuz4.jpeg",
-                "/assets/projects/bilgeh/hovuz5.jpeg",
-                                "/assets/projects/bilgeh/hovuz6.jpeg",
+        "/assets/projects/bilgeh/hovuz5.jpeg",
+        "/assets/projects/bilgeh/hovuz6.jpeg",
 
 
 
@@ -72,40 +72,119 @@ export default function Projects() {
       title: "My Class (Yasamal) – Hovuz",
       slug: "myclass-hovuz",
       description: "Fitness mərkəzi üçün müasir filtrasiya sistemi ilə qurulmuş hovuz layihəsi.",
-      image: "https://i.pinimg.com/736x/83/31/41/833141387254914189437991760c3432.jpg",
+      images: [
+        "/assets/projects/myclass/hovuz.jpg",
+        "/assets/projects/myclass/hovuz2.jpg",
+        "/assets/projects/myclass/hovuz3.jpg",
+        "/assets/projects/myclass/hovuz4.jpg",
+      ],
     },
     {
       title: "My Class (Yasamal) – Cakuzi",
       slug: "myclass-cakuzi",
       description: "Relaks və hidromasaj üçün premium jacuzzi sistemi.",
-      image: "https://i.pinimg.com/1200x/39/be/20/39be2079cb4742d9b2d16fa225b80464.jpg",
+      images: [
+        "/assets/projects/myclass/cakuzi.jpg",
+        "/assets/projects/myclass/cakuzi2.jpg",
+        "/assets/projects/myclass/cakuzi3.jpg",
+        "/assets/projects/myclass/cakuzi4.jpg",
+      ],
     },
     {
       title: "My Class (Yasamal) – Sauna",
       slug: "myclass-sauna",
       description: "Fin sauna texnologiyası ilə hazırlanmış zona.",
-      image: "https://i.pinimg.com/736x/22/31/ec/2231ec16f22e1b76f1b3be82a057f785.jpg",
+      images: [
+        "/assets/projects/myclass/sauna.jpg",
+        "/assets/projects/myclass/sauna2.jpg",
+        "/assets/projects/myclass/sauna3.jpg",
+        "/assets/projects/myclass/sauna4.jpg",
+      ],
     },
     {
       title: "My Class (Yasamal) – Türk Hamamı",
       slug: "myclass-hamam",
       description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
-      image: "https://i.pinimg.com/1200x/26/cc/5b/26cc5b9a58ef92af3266c7dfeaabceb0.jpg",
-    },
-
+      images: [
+        "/assets/projects/myclass/turkhamami.jpg",
+        "/assets/projects/myclass/turkhamami2.jpg",
+      ],
+    }
+    ,
     {
-      title: "Daşma hovuz (Bilgəh Mircəlal küç.)",
-      slug: "bilgeh",
-      description: "Daşma hovuz layihəsi.",
-      image: "https://i.pinimg.com/736x/83/31/41/833141387254914189437991760c3432.jpg",
+      title: "My Class (Yasamal) – buixar otagi ",
+      slug: "myclass-buxar",
+      description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
+      images: [
+        "/assets/projects/myclass/buxarotagi.jpg",
+      ],
     },
     {
-      title: "Daşma hovuz (Badamdar layihəsi)",
-      slug: "badamdar",
-      description: "Daşma hovuz layihəsi.",
-      image: "https://i.pinimg.com/736x/83/31/41/833141387254914189437991760c3432.jpg",
-    },
+      title: "My Class (Yasamal) – duzotagi",
+      slug: "myclass-duzotagi",
+      description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
+      images: [
+        "/assets/projects/myclass/duzotagi.jpg",
+        "/assets/projects/myclass/duzotagi2.jpg",
+        "/assets/projects/myclass/duzotagi3.jpg",
+        "/assets/projects/myclass/duzotagi4.jpg",
 
+      ],
+    },
+    {
+      title: "My Class (Yasamal) – masaj otagi",
+      slug: "myclass-duzotagi",
+      description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
+      images: [
+        "/assets/projects/myclass/masajotagi.jpg",
+        "/assets/projects/myclass/masajotagi 2.jpg",
+
+      ],
+    }
+    ,
+    {
+      title: "My Class (Yasamal) – kise otagi",
+      slug: "myclass-duzotagi",
+      description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
+      images: [
+
+        "/assets/projects/myclass/turkhamami3.jpg",
+
+      ],
+    },
+    {
+      title: "Buzovna - Hovuz",
+      slug: "buzovna-hovuz",
+      description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
+      images: [
+
+        "/assets/projects/buzovna/hovuz.jpeg",
+        "/assets/projects/buzovna/hovuz2.jpeg",
+        "/assets/projects/buzovna/hovuz3.jpeg",
+        "/assets/projects/buzovna/hovuz4.jpeg",
+        "/assets/projects/buzovna/hovuz5.jpeg",
+
+      ],
+    }
+,
+    {
+      title: "makfit - Hovuz",
+      slug: "makfit-hovuz",
+      description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
+      images: [
+
+        "/assets/projects/makfit/hovuz.jpeg",
+        "/assets/projects/makfit/hovuz2.jpeg",
+        "/assets/projects/makfit/hovuz3.jpeg",
+        "/assets/projects/makfit/hovuz4.jpeg",
+        "/assets/projects/makfit/hovuz5.jpeg",
+        "/assets/projects/makfit/hovuz6.jpeg",
+        "/assets/projects/makfit/hovuz7.jpeg",
+        "/assets/projects/makfit/hovuz8.jpeg",
+        "/assets/projects/makfit/hovuz9.jpeg",
+
+      ],
+    }
   ];
   const openModal = (index: number) => {
     setActiveIndex(index);

@@ -74,7 +74,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 150px;
+  height: 130px;
 }
 
 /* =========================
@@ -84,6 +84,7 @@
 .site-logo img {
   display: block;
   height: auto;
+  margin-top: 10px;
 }
 
 /* =========================

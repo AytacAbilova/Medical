@@ -71,7 +71,7 @@ export default function Hero({
       aria-label="Turan İnşaat Hero Section"
       className={` ${
         isHome
-          ? "h-[calc(90vh-180px)] md:h-[calc(100vh)]"
+          ? "h-[calc(90vh-180px)] md:h-[calc(90vh)]"
           : "md:h-[250px]"
       }`}
     >
@@ -113,12 +113,12 @@ export default function Hero({
           </h3>
 
           {/* TITLE */}
-          <h1 className="text-[28px] sm:text-[42px] md:text-[56px] lg:text-[60px] font-extrabold leading-[1.05] tracking-tight mb-6">
+          <h1 className="text-[28px] sm:text-[42px] md:text-[56px] lg:text-[70px] font-extrabold leading-[1.05] tracking-tight mb-6">
             {isHome ? content.title : text}
           </h1>
 
           {/* DESCRIPTION */}
-          <p className={`text-[15px]  md:text-[16px] max-w-3xl mx-auto text-gray-200 ${isHome?'mb-20':'mb-10'} leading-relaxed`}>
+          <p className={`text-[15px]  md:text-[20px] max-w-5xl mx-auto text-gray-200 ${isHome?'mb-20':'mb-10'} `}>
             {isHome ? content.desc : subTitle}
           </p>
 

@@ -50,11 +50,11 @@ export default function OurProjects() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h3 className="uppercase tracking-[0.15em] text-sm font-extrabold text-[#C49B63]">
+          <h3 className="uppercase tracking-[0.15em] text-sm md:text-[16px] font-extrabold text-[#C49B63]">
             Layihələrimiz
           </h3>
 
-          <h2 className="mt-4 text-[clamp(36px,4vw,56px)] font-extrabold leading-tight">
+          <h2 className="mt-4 text-[56px] font-extrabold leading-tight">
             Real hovuz və SPA layihələrimiz
           </h2>
 

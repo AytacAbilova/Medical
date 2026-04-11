@@ -30,10 +30,10 @@ export const ContactSection = () => {
 
         {/* Heading */}
         <div className="mb-10 text-left">
-          <span className="text-yellow-500 font-semibold uppercase tracking-widest text-sm">
+          <span className="text-yellow-500 font-semibold md:text-[16px] uppercase tracking-widest text-sm">
             Bizimlə Əlaqə
           </span>
-          <h2 className="text-4xl md:text-5xl font-extrabold mt-3 leading-tight">
+          <h2 className="text-4xl md:text-[56px] font-extrabold mt-3 leading-tight">
             Suallarınız və sorğularınız üçün buradayıq
           </h2>
           <p className="text-slate-300 mt-4 max-w-md">
