@@ -133,7 +133,7 @@ export default function Projects() {
     },
     {
       title: "My Class (Yasamal) – masaj otagi",
-      slug: "myclass-duzotagi",
+      slug: "myclass-masaj",
       description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
       images: [
         "/assets/projects/myclass/masajotagi.jpg",
@@ -144,7 +144,7 @@ export default function Projects() {
     ,
     {
       title: "My Class (Yasamal) – kise otagi",
-      slug: "myclass-duzotagi",
+      slug: "myclass-kise",
       description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
       images: [
 
@@ -166,12 +166,13 @@ export default function Projects() {
 
       ],
     }
-,
+    ,
     {
       title: "makfit - Hovuz",
       slug: "makfit-hovuz",
       description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
       images: [
+        "/assets/projects/makfit/hovuzfinal.Webp",
 
         "/assets/projects/makfit/hovuz.jpeg",
         "/assets/projects/makfit/hovuz2.jpeg",
@@ -183,6 +184,61 @@ export default function Projects() {
         "/assets/projects/makfit/hovuz8.jpeg",
         "/assets/projects/makfit/hovuz9.jpeg",
 
+      ],
+    }
+    ,
+    {
+      title: "crown - buxar",
+      slug: "crown-buxar",
+      description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
+      images: [
+        "/assets/projects/crown/buxar.webp",
+        "/assets/projects/crown/buxar2.jpeg"
+      ],
+    },
+    {
+      title: "crown - buz hovuzu",
+      slug: "crown-buz",
+      description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
+      images: [
+        "/assets/projects/crown/Buz-hovuzu.webp",
+      ]
+    },
+    {
+      title: "crown - kise",
+      slug: "crown-kise",
+      description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
+      images: [
+        "/assets/projects/crown/Kis.webp",
+        "/assets/projects/crown/kise2.jpeg",
+
+      ],
+    }, {
+      title: "crown - rus hamami",
+      slug: "crown-rus",
+      description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
+      images: [
+        "/assets/projects/crown/rushamam1.webp",
+      ],
+    }, {
+      title: "crown - sauna",
+      slug: "crown-saunaa",
+      description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
+      images: [
+        "/assets/projects/crown/Sauna.webp",
+        "/assets/projects/crown/Sauna.webp",
+      ],
+    }
+    , {
+      title: "crown - Turk hamami",
+      slug: "crown-turk",
+      description: "Mərmər interyer və buxar sistemi ilə klassik hamam.",
+      images: [
+        "/assets/projects/crown/Trkhamami1.webp",
+        "/assets/projects/crown/Trkhamami2.webp",
+        "/assets/projects/crown/Trkhamami3.webp",
+        "/assets/projects/crown/Trkhamami4.webp",
+        "/assets/projects/crown/turkhamami5.webp",
       ],
     }
   ];
@@ -273,8 +329,8 @@ export default function Projects() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Left - Video/Image */}
-            <div className="w-full md:w-2/3 bg-black flex items-center justify-center relative">
-              <div className="w-full md:w-2/3 bg-black flex items-center justify-center relative">
+            <div className="w-full  bg-black flex items-center justify-center relative">
+              <div className="w-full bg-black flex items-center justify-center relative">
                 {selectedMedia ? (
                   selectedMedia.endsWith(".mp4") ? (
                     <video
