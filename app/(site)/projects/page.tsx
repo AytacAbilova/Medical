@@ -194,7 +194,7 @@ export default function Projects() {
   };
 
   const project = projects[activeIndex];
-  const mediaList = project.images ?? (project.image ? [project.image] : []);
+  const mediaList = project.images || []
 
   const prevImage = () => {
     setCurrentImageIndex(
@@ -247,7 +247,7 @@ export default function Projects() {
                   />
                 ) : (
                   <img
-                    src={project.images?.[0] || project.image}
+                    src={project.images?.[0]}
                     alt={project.title}
                     className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
