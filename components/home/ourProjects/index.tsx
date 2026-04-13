@@ -1,48 +1,8 @@
 import Button from "@/components/common/Button";
+import { projects } from "./projes";
 
 export default function OurProjects() {
-  const projects = [
-    {
-      title: "My Class (Yasamal) – Hovuz",
-      description:
-        "My Class fitness mərkəzində müasir filtrasiya və dizayn ilə qurulmuş hovuz layihəsi.",
-      image:
-        "https://i.pinimg.com/736x/83/31/41/833141387254914189437991760c3432.jpg",
-      link: "/projects",
-    },
-    {
-      title: "My Class (Yasamal) – Cakuzi",
-      description:
-        "Relaks və hidromasaj üçün nəzərdə tutulmuş premium jacuzzi sistemi.",
-      image:
-        "https://i.pinimg.com/1200x/39/be/20/39be2079cb4742d9b2d16fa225b80464.jpg",
-      link: "/projects",
-    },
-    {
-      title: "My Class (Yasamal) – Sauna",
-      description:
-        "Fin sauna texnologiyası ilə hazırlanmış yüksək keyfiyyətli istirahət zonası.",
-      image:
-        "https://i.pinimg.com/736x/22/31/ec/2231ec16f22e1b76f1b3be82a057f785.jpg",
-      link: "/projects",
-    },
-    {
-      title: "My Class (Yasamal) – Türk Hamamı",
-      description:
-        "Mərmər interyer və buxar sistemi ilə klassik türk hamamı layihəsi.",
-      image:
-        "https://i.pinimg.com/1200x/26/cc/5b/26cc5b9a58ef92af3266c7dfeaabceb0.jpg",
-      link: "/projects",
-    },
-    {
-      title: "Hyatt Regency – Çöl Hovuz",
-      description:
-        "Otellər üçün nəzərdə tutulmuş estetik və geniş açıq hovuz layihəsi.",
-      image:
-        "https://demo.awaikenthemes.com/builtup/wp-content/uploads/2024/06/our-project-1-1.jpg",
-      link: "/projects",
-    },
-  ];
+
 
   return (
     <section className="py-32 bg-white text-gray-900">
@@ -65,13 +25,13 @@ export default function OurProjects() {
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {projects.slice(3,6).map((project) => (
             <article
               key={project.title}
               className="relative overflow-hidden rounded-[24px] cursor-pointer group"
             >
               <img
-                src={project.image}
+                src={project.images[0]}
                 alt={project.title}
                 className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -97,7 +57,7 @@ export default function OurProjects() {
 
         {/* Button */}
         <div className="mt-16 flex justify-center">
-          <Button text="Bütün Layihələr" link="/projects" type={4} />
+          <Button text="Bütün Layihələr" link="/projects" type={2} />
         </div>
 
       </div>
