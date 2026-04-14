@@ -9,7 +9,7 @@ import projectsImg from '@/public/assets/images/projects.jpg'
 import contactImg from '@/public/assets/images/contact.jpg'
 
 const heroContents: Record<string, any> = {
-    "/": { isHome: true, video: "/assets/videos/hero2.mp4" },
+    "/": { isHome: true, video: "/assets/videos/hero1.mp4" },
     "/about": {
         text: "Haqqımızda",
         img: aboutImg,

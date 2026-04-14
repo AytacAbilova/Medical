@@ -14,27 +14,28 @@ interface HeroProps {
 
 const heroContent = {
   az: {
-    badge: "TURAN İNŞAAT MMC",
+    badge: "Dr.Beyrək Abbaszadə",
     title: (
       <>
-        Suya həyat, <br /> rahatlığa dəyər qatırıq
+        Ürəyinizi  <br /> Peşəkarlara Etibar Edin
       </>
     ),
-    desc: "Turan İnşaat MMC lisenziyalı tikinti şirkəti olaraq hovuz, spa və sauna sistemlərinin layihələndirilməsi, tikintisi və quraşdırılması sahəsində peşəkar xidmət təqdim edir. Müasir texnologiyalar, keyfiyyətli materiallar və innovativ dizaynlarla komfortlu istirahət məkanları yaradırıq.",
-    cta1: "Öz hovuzunu yarat",
-    cta2: "Layihələrimizə bax",
+    desc: "Ürək-damar xəstəliklərinin beynəlxalq protokollarla cərrahi müalicəsi. Koronar bypass, aorta anevrizması, ürək qapaq cərrahiyyəsi və anadangəlmə qüsurların aradan qaldırılmasında etibarlı mütəxəssis yanaşması. Açıq ürək əməliyyatından minimal invaziv prosedurlaradək – hər bir müdaxilədə peşəkarlıq, dəqiqlik və şəfqəti birləşdiririk.",
+    cta1: "Randevu al",
+    cta2: "Xidmətlərə bax",
+    cta3:"Zəng et "
   },
-  en: {
-    badge: "TURAN CONSTRUCTION LLC",
-    title: (
-      <>
-        We bring life to water <br /> and value to comfort
-      </>
-    ),
-    desc: "Turan Construction LLC is a licensed company providing professional design, construction, and installation of pool, spa, and sauna systems. With modern technologies, high-quality materials, and innovative designs, we create premium relaxation spaces.",
-    cta1: "Create your pool",
-    cta2: "View projects",
-  },
+  // en: {
+  //   badge: "TURAN CONSTRUCTION LLC",
+  //   title: (
+  //     <>
+  //       We bring life to water <br /> and value to comfort
+  //     </>
+  //   ),
+  //   desc: "Turan Construction LLC is a licensed company providing professional design, construction, and installation of pool, spa, and sauna systems. With modern technologies, high-quality materials, and innovative designs, we create premium relaxation spaces.",
+  //   cta1: "Create your pool",
+  //   cta2: "View projects",
+  // },
 };
 
 export default function Hero({
@@ -65,8 +66,6 @@ export default function Hero({
   }, []);
 
   return (
-    //   <section className={`${isHome ? 'h-[calc(90vh-180px)] md:h-[calc(90vh-150px)]' : 'md:h-[250px]'}`}>
-    // <div className={`flex items-center overflow-hidden text-white h-[calc(100%-100px)]`} id="content"></div>
     <section
       aria-label="Turan İnşaat Hero Section"
       className={` ${
@@ -76,7 +75,6 @@ export default function Hero({
       }`}
     >
       <div className=" flex items-center overflow-hidden text-white h-full">
-        {/* VIDEO */}
         {video && (
           <video
             ref={videoRef}
@@ -127,6 +125,7 @@ export default function Hero({
             <div className="flex justify-center gap-4 flex-wrap">
               <Button text={content.cta1} link="/create" type={2} />
               <Button text={content.cta2} link="/projects" type={4} />
+              
             </div>
           )}
         </div>

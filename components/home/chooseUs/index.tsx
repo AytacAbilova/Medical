@@ -1,22 +1,11 @@
-import { FaLightbulb, FaUserTie, FaBuilding } from "react-icons/fa";
+import { FaHeartbeat, FaUserMd, FaHospital } from "react-icons/fa";
 
 export default function WhyChooseUs() {
-  const features = [
-    {
-      icon: <FaLightbulb />,
-      title: "Müasir Həllər",
-      desc: "Hovuz və SPA layihələrində ən son texnologiyalardan istifadə edirik.",
-    },
-    {
-      icon: <FaUserTie />,
-      title: "Peşəkar Komanda",
-      desc: "Təcrübəli mütəxəssislərlə keyfiyyətli və etibarlı icra.",
-    },
-    {
-      icon: <FaBuilding />,
-      title: "Fərdi Layihə",
-      desc: "Hər müştəri üçün xüsusi dizayn və planlama təqdim edirik.",
-    },
+  const stats = [
+    { value: "150+", label: "Uğurlu Əməliyyat" },
+    { value: "3",    label: "Tibb Müəssisəsi" },
+    { value: "İLK",  label: "Şirvanda Açıq Ürək" },
+    { value: "100%", label: "Peşəkar Komanda" },
   ];
 
   return (
@@ -25,48 +14,34 @@ export default function WhyChooseUs() {
 
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto">
-          <h3 data-aos="fade-down" className="text-sm font-semibold text-[#C49B63] md:text-[16px] uppercase tracking-widest">
+          <h3
+            data-aos="fade-down"
+            className="text-sm font-semibold text-[#C49B63] md:text-[16px] uppercase tracking-widest"
+          >
             Niyə bizi seçməlisiniz?
           </h3>
-
-          <h2 data-aos="fade-down" className="mt-4 text-3xl md:text-[56px] font-extrabold text-gray-900">
+          <h2
+            data-aos="fade-down"
+            className="mt-4 text-3xl md:text-[56px] font-extrabold text-gray-900"
+          >
             Keyfiyyət və Peşəkarlıq
           </h2>
-
           <p data-aos="fade-down" className="mt-4 text-gray-600">
-            Hovuz, sauna və SPA layihələrində müasir yanaşma və uzunmüddətli keyfiyyət təqdim edirik.
+            Ürək cərrahiyyəsi və kardioloji sahəsində müasir yanaşma və yüksək keyfiyyətli tibbi xidmət təqdim edirik.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="mt-16 grid md:grid-cols-3 gap-8">
-          {features.map((f, i) => (
+        {/* Stats Grid */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6" data-aos="fade-down">
+          {stats.map((s, i) => (
             <div
               key={i}
-              data-aos="fade-down"
-              className="p-6 rounded-2xl border border-gray-200 hover:shadow-lg transition"
+              className="flex flex-col items-center justify-center p-6 rounded-2xl bg-[#F5F7FA] border border-gray-100"
             >
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#F5F7FA] text-[#C49B63] text-xl">
-                {f.icon}
-              </div>
-
-              <h3 className="mt-4 text-lg font-bold text-gray-900">
-                {f.title}
-              </h3>
-
-              <p className="mt-2 text-sm text-gray-600">
-                {f.desc}
-              </p>
+              <div className="text-4xl font-extrabold text-[#C49B63]">{s.value}</div>
+              <p className="text-gray-500 text-sm mt-2 text-center">{s.label}</p>
             </div>
           ))}
-        </div>
-
-        {/* Mini stat */}
-        <div className="mt-16 text-center" data-aos="fade-down">
-          <div className="text-4xl font-extrabold text-[#C49B63]">120+</div>
-          <p className="text-gray-500 text-sm mt-2">
-            Uğurla tamamlanmış layihə
-          </p>
         </div>
 
       </div>

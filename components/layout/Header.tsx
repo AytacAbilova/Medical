@@ -14,7 +14,7 @@ export default function Header({ locale = "az" }: any) {
     const ball = document.getElementById("ball");
 
     if (!cursor || !ball) return;
-    // constants/services.ts
+  
 
 
     let mouseX = 0;
@@ -22,7 +22,7 @@ export default function Header({ locale = "az" }: any) {
     let ballX = 0;
     let ballY = 0;
 
-    const speed = 0.15; // ↓ bunu dəyişərək gecikməni tənzimləyə bilərsən
+    const speed = 0.15; 
 
     const moveCursor = (e: MouseEvent) => {
       mouseX = e.clientX;
@@ -48,20 +48,8 @@ export default function Header({ locale = "az" }: any) {
       window.removeEventListener("mousemove", moveCursor);
     };
   }, []);
-  //    const services = [
-  //   { title: "Hovuz Tikintisi", slug: "hovuz-tikintisi" },
-  //   { title: "Türk Hamamı", slug: "turk-hamami" },
-  //   { title: "Sauna", slug: "sauna" },
-  //   { title: "Buxar Otağı", slug: "buxar-otagi" },
-  //   { title: "Rus Hamamı (Banya)", slug: "rus-hamami" },
-  //   { title: "Spa və Relax Zonaları", slug: "spa-zonalari" },
-  //   { title: "Masaj Otaqları", slug: "masaj-otagi" },
-  //   { title: "Duz Otaqları", slug: "duz-otagi" },
-  // ];
-
   return (
     <>
-      {/* Preloader */}
       <div className="preloader" style={{ display: "none" }}>
         <div className="loading-container">
           <div className="loading"></div>
@@ -71,15 +59,12 @@ export default function Header({ locale = "az" }: any) {
         </div>
       </div>
 
-      {/* Magic Cursor */}
       <div id="magic-cursor" style={{ opacity: 0, visibility: "hidden" }}>
         <div id="ball" />
       </div>
 
-      {/* Header */}
       <header className="site-header">
         <div className="container header-inner">
-          {/* Logo */}
           <div className="site-logo">
             <Link href="/">
               <Image
@@ -92,17 +77,14 @@ export default function Header({ locale = "az" }: any) {
             </Link>
           </div>
 
-          {/* Navigation */}
           <nav className="main-nav" aria-label="Main Navigation">
             <ul className="menu">
               <li className="has-dropdown">
-                <Link href="/">Home</Link>
-
-
+                <Link href="/">Ana səhifə</Link>
               </li>
 
               <li>
-                <Link href="/about">About Us</Link>
+                <Link href="/about">Haqqında</Link>
               </li>
               <li className="has-dropdown">
                 <Link href="/services">Xidmətlər</Link>
@@ -119,34 +101,18 @@ export default function Header({ locale = "az" }: any) {
               </li>
 
               <li className="has-dropdown">
-                <Link href="/projects">Projects</Link>
-                <ul className="dropdown">
-                  {
-                    projects.map((proje) => (
-                      <li><Link href={`/projects?${proje.slug}`}>{proje.title}</Link></li>
-
-                    ))
-                  }
-
-                </ul>
+                <Link href="/projects">Sual-Cavab</Link>
               </li>
-
-
-              {/* <li className="has-dropdown">
-                <span>Pages</span>
-                <ul className="dropdown">
-                  <li><Link href="/team">Our Team</Link></li>
-                  <li><Link href="/faqs">FAQs</Link></li>
-                </ul>
-              </li> */}
-
+              <li className="has-dropdown">
+                <Link href="/blog">Tibbi Yazılar</Link>
+              </li>
               <li className="mobile-only">
                 <Link href="/contact">Bizimlə əlaqə</Link>
               </li>
             </ul>
           </nav>
 
-          {/* CTA Button */}
+  
           <Button link={"/contact"} text={'Bizimlə əlaqə'} type={1} />
         </div>
       </header>
