@@ -1,7 +1,7 @@
 'use client'
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Image from "next/image";
-import contactIllustration from "@/public/assets/images/contactus.jpg";
+import contactIllustration from "@/public/assets/images/contactus.png";
 
 const contactInfo = [
   {

@@ -1,19 +1,19 @@
 'use client'
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Image from "next/image";
-import contactIllustration from "@/public/assets/images/contactus.jpg";
+import contactIllustration from "@/public/assets/images/contactus.png";
 
 const contactInfo = [
   {
     title: "24/7 Dəstək Mərkəzi",
-    link: "tel:+994503127657",
-    display: "+994 50 312 76 57",
+    link: "tel:+994508003060",
+    display: "+994 50 800 30 60",
     icon: <FaPhoneAlt size={28} className="text-yellow-500" />,
   },
   {
     title: "Bizə Yazın",
-    link: "mailto:turaninshaat21@mail.ru",
-    display: "turaninshaat21@mail.ru",
+    link: "mailto:info@luxhospital.az",
+    display: "info@luxhospital.az",
     icon: <FaEnvelope size={28} className="text-yellow-500" />,
   },
 ];
@@ -45,7 +45,7 @@ export const ContactSection = () => {
         <div className="mt-6" data-aos="fade-right">
           <Image
             src={contactIllustration}
-            alt="Turan İnşaat"
+            alt="Lux hospital"
             width={600}
             height={600}
             className="rounded-3xl shadow-2xl object-cover"

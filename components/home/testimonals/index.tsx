@@ -1,112 +1,182 @@
 "use client";
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
+import { useState } from "react";
 
-type Product = {
-  title: string;
-  desc: string;
-  image: string;
+type FaqItem = {
+  tag: string;
+  question: string;
+  answer: string;
+  bullets?: string[];
 };
 
-const products: Product[] = [
+const faqs: FaqItem[] = [
   {
-    title: "Skimmer Hovuz Sistemləri",
-    desc: "Sadə və sərfəli filtrasiya sistemi ilə şəxsi hovuzlar üçün ideal həll.",
-    image: "https://i.pinimg.com/736x/83/31/41/833141387254914189437991760c3432.jpg",
+    tag: "Cərrahi üsullar",
+    question: "Açıq və qapalı (minimal invaziv) əməliyyatlar arasındakı fərq nədir?",
+    answer:
+      "Klassik açıq cərrahiyyədə döş sümüyü tam kəsilərək ayrılır — bu, cərraha ürəyin bütün boşluqlarına birbaşa giriş imkanı yaradır. Minimal invaziv yanaşmada isə döş sümüyü kəsilmir; qabırğalararası kiçik kəsiklər və endoskopik kameralar vasitəsilə əməliyyat icra olunur.",
+    bullets: [
+      "Qapalı metod: daha az ağrı, qısa xəstəxana qalma müddəti",
+      "Açıq metod: mürəkkəb vəziyyətlər üçün daha geniş giriş imkanı",
+      "Hansı metodun tətbiq ediləcəyinə xəstənin anatomiyası əsasında cərrah qərar verir",
+    ],
   },
   {
-    title: "Daşma (Infinity) Hovuzlar",
-    desc: "Estetik dizayn və yüksək su dövriyyəsi ilə premium hovuz sistemləri.",
-    image: "https://i.pinimg.com/1200x/39/be/20/39be2079cb4742d9b2d16fa225b80464.jpg",
+    tag: "Yüksək risk",
+    question: "EF (ürəyin atım fraksiyası) 30% isə əməliyyat mümkündürmü?",
+    answer:
+      "Bəli, mümkündür — lakin bu yüksək risk qrupu sayılır. Dr. Abbaszadə EF-30%, miokard infarktı keçirmiş, diabetik xəstəni uğurla tam arterial revaskulyarizasiya ilə müalicə etmişdir. Bu cür ağır hallarda əməliyyat riski daha yüksəkdir, lakin müdaxilə edilməzsə uzunmüddətli proqnoz daha pis olur.",
   },
   {
-    title: "UV Dezinfeksiya Sistemləri",
-    desc: "Kimyəvi maddələri minimuma endirən müasir su təmizləmə texnologiyası.",
-    image: "https://i.pinimg.com/736x/22/31/ec/2231ec16f22e1b76f1b3be82a057f785.jpg",
+    tag: "Sağalma",
+    question: "Ürək əməliyyatından sonra sağalma müddəti nə qədərdir?",
+    answer:
+      "Standart açıq ürək bypass əməliyyatından sonra xəstəxanada qalma müddəti 5–10 gündür, o cümlədən reanimasiyada 1–2 gün. Tam sağalma isə 6–12 həftə çəkir.",
+    bullets: [
+      "Minimal invaziv prosedurlardan sonra bu müddət əhəmiyyətli dərəcədə qısalır",
+      "Sağalma müddəti əməliyyatın növünə, yaşa və ümumi sağlamlıq vəziyyətinə görə fərqlənir",
+    ],
   },
   {
-    title: "Duz Elektroliz Sistemləri",
-    desc: "Duzdan xlor istehsal edərək suyu daha təbii və təmiz saxlayır.",
-    image: "https://i.pinimg.com/1200x/26/cc/5b/26cc5b9a58ef92af3266c7dfeaabceb0.jpg",
+    tag: "Azərbaycan imkanları",
+    question:
+      "Xaricə getmək lazımdırmı? Bu cür mürəkkəb əməliyyatlar Azərbaycanda mümkündürmü?",
+    answer:
+      "Dr. Abbaszadə dəfələrlə xaricdən imtina edilən xəstələri uğurla müalicə etmişdir. CABG x4 + nefrektomiya + trombektomiya kimi çox mürəkkəb birləşdirilmiş əməliyyatlar Azərbaycanda icra olunur. Şirvan kimi regionlarda da açıq ürək cərrahiyyəsi artıq mümkündür.",
   },
 ];
 
 export const Products = () => {
-  return (
-    <section className="py-25 px-4 bg-[#0E172A] text-white">
-      <div className="max-w-7xl mx-auto text-center">
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
+  const toggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <section className="py-24 px-4 bg-[#0E172A] text-white">
+      <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <span data-aos="fade-up"
-            className="text-[#C49B63] font-semibold md:text-[16px] uppercase tracking-wider">
-            Məhsullarımız
+          <span className="text-[#C49B63] font-semibold text-sm uppercase tracking-widest">
+            Tez-tez sorulan suallar
           </span>
-
-          <h2 data-aos="fade-up"
-            className="text-3xl md:text-[56px] font-extrabold mt-3">
-            Hovuz və SPA üçün texnoloji həllər
+          <h2 className="text-3xl md:text-[48px] font-extrabold mt-3 leading-tight">
+            Dr. Beyrək Abbaszadə <br />
+            <span className="text-[#C49B63]">cavab verir</span>
           </h2>
-
-          <p data-aos="fade-up"
-            className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm md:text-base">
-            Müasir hovuz sistemləri, filtrasiya və spa avadanlıqları ilə
-            keyfiyyətli və uzunömürlü həllər təqdim edirik.
+          <p className="text-gray-400 mt-4 text-sm md:text-base max-w-xl">
+            Ürək cərrahiyyəsi, sağalma müddəti və müalicə üsulları haqqında ən
+            çox sorulan suallar.
           </p>
         </div>
-        <div className="swipperwrapper">
-          <Swiper
-            modules={[Autoplay, Pagination]}
-            spaceBetween={30}
-            slidesPerView={3}
-            loop={true}
-            autoplay={{ delay: 3500, disableOnInteraction: false }}
-            pagination={{ clickable: true }}
-            breakpoints={{
-              320: { slidesPerView: 1, spaceBetween: 15 },
-              768: { slidesPerView: 2, spaceBetween: 20 },
-              1024: { slidesPerView: 3, spaceBetween: 30 },
-            }}
-          >
-            {products.map((p, i) => (
-              <SwiperSlide key={i}>
-                <div data-aos="fade-up"
-                  data-aos-delay={i+1 * 200} className="relative overflow-hidden rounded-[24px] group cursor-pointer">
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
 
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black rounded-[24px]" />
+        {/* Accordion */}
+        <div className="flex flex-col gap-3">
+          {faqs.map((item, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div
+                key={index}
+                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                  isOpen
+                    ? "border-[#C49B63]/60 bg-white/5"
+                    : "border-white/10 bg-white/[0.03]"
+                }`}
+              >
+                {/* Trigger */}
+                <button
+                  onClick={() => toggle(index)}
+                  aria-expanded={isOpen}
+                  className="w-full flex items-center gap-4 px-6 py-5 text-left cursor-pointer"
+                >
+                  {/* Number */}
+                  <span className="text-[#C49B63] text-xs font-semibold min-w-[24px]">
+                    0{index + 1}
+                  </span>
 
-                  {/* Content */}
-                  <div className="absolute bottom-0 left-4 right-4 p-5 z-20 
-        transform translate-y-[60%] group-hover:translate-y-0 
-        transition-all duration-500">
+                  {/* Question */}
+                  <span className="flex-1 text-sm md:text-base font-medium text-white leading-snug">
+                    {item.question}
+                  </span>
 
-                    <h3 className="text-lg font-bold text-white">
-                      {p.title}
-                    </h3>
+                  {/* Icon */}
+                  <span
+                    className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 border transition-all duration-300 ${
+                      isOpen
+                        ? "bg-[#C49B63] border-[#C49B63]"
+                        : "border-white/20"
+                    }`}
+                  >
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`transition-transform duration-300 ${
+                        isOpen ? "rotate-45" : "rotate-0"
+                      }`}
+                    >
+                      <line
+                        x1="6"
+                        y1="0"
+                        x2="6"
+                        y2="12"
+                        stroke="white"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
+                      <line
+                        x1="0"
+                        y1="6"
+                        x2="12"
+                        y2="6"
+                        stroke="white"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </span>
+                </button>
 
-                    <p className="text-sm mt-4 text-slate-200">
-                      {p.desc}
-                    </p>
+                {/* Body */}
+                <div
+                  className={`grid transition-all duration-500 ease-in-out ${
+                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-6 pb-6 pl-14">
+                      {/* Tag */}
+                      <span className="inline-block text-[11px] font-medium px-3 py-1 rounded-full bg-[#C49B63]/10 text-[#C49B63] border border-[#C49B63]/20 mb-4">
+                        {item.tag}
+                      </span>
 
-                    <span className="mt-3 inline-flex items-center gap-2 text-[#C49B63] font-semibold">
-                      Ətraflı →
-                    </span>
+                      {/* Answer */}
+                      <p className="text-sm text-gray-300 leading-relaxed mb-3">
+                        {item.answer}
+                      </p>
+
+                      {/* Bullets */}
+                      {item.bullets && (
+                        <ul className="flex flex-col gap-2 mt-3">
+                          {item.bullets.map((bullet, bi) => (
+                            <li
+                              key={bi}
+                              className="flex items-start gap-2 text-sm text-gray-400"
+                            >
+                              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#C49B63] flex-shrink-0" />
+                              {bullet}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
                   </div>
-
                 </div>
-              </SwiperSlide>
-
-            ))}
-          </Swiper>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
