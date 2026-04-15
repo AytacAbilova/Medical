@@ -1,4 +1,20 @@
-export const servicesContent: any = {
+export type Locale = "az";
+
+export type ServiceSection = {
+  title: string;
+  items: string[];
+};
+
+export type ServiceItem = {
+  title: string;
+  slug: string;
+  icon: string;
+  desc: string;
+  sections: ServiceSection[];
+  img?: string;
+};
+
+export const servicesContent: Record<Locale, ServiceItem[]> = {
   az: [
     {
       title: "Açıq Ürək Əməliyyatı",

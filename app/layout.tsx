@@ -21,49 +21,66 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yourcompany.az"),
+  metadataBase: new URL("https://drbeyrek.az"),
 
   title: {
-    default: "Ana səhifə | Ürək-Damar Cərrahi Dr. Beyrək Abbaszadə ",
-    template: "%s | YourCompany",
+    default: "Ürək-damar cərrahı Dr. Beyrək Abbaszadə",
+    template: "%s | Dr. Beyrək Abbaszadə",
   },
 
   description:
-    "Peşəkar tikinti şirkəti. Yaşayış və kommersiya obyektlərinin tikintisi, təmir və layihələndirmə xidmətləri.",
+    "Ürək-damar cərrahı Dr. Beyrək Abbaszadə: açıq ürək əməliyyatı, koronar bypass (CABG), minimal invaziv ürək cərrahiyyəsi, aorta cərrahiyyəsi, varikoz venaların müalicəsi və anadangəlmə ürək qüsurlarının cərrahi müalicəsi. Bakı, Azərbaycan.",
 
   keywords: [
-    "tikinti şirkəti",
-    "inşaat",
-    "ev tikintisi",
-    "təmir işləri",
-    "construction company azerbaijan",
+    "ürək əməliyyatı Bakı",
+    "koronar bypass Azərbaycan",
+    "açıq ürək əməliyyatı",
+    "aorta anevrizması cərrahiyyəsi",
+    "ürək damar cərrahı Bakı",
+    "varikoz venaların müalicəsi",
+    "ASD əməliyyatı Azərbaycan",
+    "minimal invaziv ürək cərrahiyyəsi",
+    "dr beyrək abbaszadə",
+    "dr beyrek bakı ürək cərrahı",
+    "Lux International Hospital bypass əməliyyatı",
+    "Şirvanda ürək əməliyyatı",
+    "anadangəlmə ürək qüsuru müalicəsi Bakı",
+    "koronar angioqrafiya qızıl standart",
+    "ürək çatışmazlığı cərrahi müalicə",
+    "xaricdə imtina edilmiş pasiyent Azərbaycan",
+    "LMCA stenozu bypass",
+    "karotid endarterektomiya Bakı",
+    "EF 30% bypass əməliyyatı",
+    "sinus venosus ASD korreksiyası",
   ],
 
-  authors: [{ name: "YourCompany" }],
-  creator: "YourCompany",
+  authors: [{ name: "Dr. Beyrək Abbaszadə" }],
+  creator: "Dr. Beyrək Abbaszadə",
 
   openGraph: {
-    title: "Tikinti Şirkəti | Keyfiyyətli İnşaat",
-    description: "Azerbaycanda peşəkar tikinti və təmir xidmətləri.",
-    url: "https://yourcompany.az",
-    siteName: "YourCompany",
+    title: "Ürək-damar cərrahı Dr. Beyrək Abbaszadə",
+    description:
+      "Açıq ürək əməliyyatı, koronar bypass (CABG), minimal invaziv ürək cərrahiyyəsi, aorta cərrahiyyəsi və varikoz venaların müalicəsi. Bakı, Azərbaycan.",
+    url: "https://drbeyrek.az",
+    siteName: "Dr. Beyrək Abbaszadə",
     locale: "az_AZ",
     type: "website",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/assets/images/logo.png",
         width: 1200,
         height: 630,
-        alt: "Tikinti Şirkəti",
+        alt: "Dr. Beyrək Abbaszadə",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Tikinti Şirkəti | YourCompany",
-    description: "Peşəkar tikinti və inşaat həlləri",
-    images: ["/images/og-image.jpg"],
+    title: "Ürək-damar cərrahı Dr. Beyrək Abbaszadə",
+    description:
+      "Açıq ürək əməliyyatı, koronar bypass (CABG), minimal invaziv ürək cərrahiyyəsi və aorta cərrahiyyəsi.",
+    images: ["/assets/images/logo.png"],
   },
 
   robots: {
@@ -78,7 +95,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://yourcompany.az",
+    canonical: "https://drbeyrek.az",
   },
 };
 

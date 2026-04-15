@@ -550,7 +550,7 @@ export default function About({ locale = "az" }: Props) {
                   ))}
                 </div>
                 <p className="text-gray-600 text-sm leading-relaxed flex-1 italic">
-                  "{item.text}"
+                  “{item.text}”
                 </p>
                 <div className="flex items-center gap-3 pt-2 border-t border-gray-50">
                   <div className="w-8 h-8 rounded-full bg-[#C49B63]/10 flex items-center justify-center">

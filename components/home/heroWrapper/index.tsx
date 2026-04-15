@@ -1,14 +1,23 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useMemo } from "react";
 import Hero from "../hero";
 import { usePathname } from "next/navigation";
+import type { StaticImageData } from "next/image";
 
 import aboutImg from '@/public/assets/images/homeImage.png'
 import servicesImg from '@/public/assets/images/homeImage.png'
 import projectsImg from '@/public/assets/images/homeImage.png'
 import contactImg from '@/public/assets/images/homeImage.png'
 
-const heroContents: Record<string, any> = {
+type HeroData = {
+    isHome?: boolean;
+    video?: string;
+    img?: StaticImageData;
+    text?: string;
+    subTitle?: string;
+};
+
+const heroContents: Record<string, HeroData> = {
     "/": { isHome: true, video: "/assets/videos/hero1.mp4" },
     "/about": {
         text: "Haqqında",
@@ -40,7 +49,7 @@ const heroContents: Record<string, any> = {
     },
 };
 
-const serviceHeroMap: Record<string, any> = {
+const serviceHeroMap: Record<string, HeroData> = {
     "open-heart-surgery": {
         text: "Açıq Ürək Əməliyyatı",
         img: servicesImg,
@@ -100,21 +109,16 @@ const serviceHeroMap: Record<string, any> = {
 
 export default function HeroWrapper() {
     const pathname = usePathname();
-    const [hero, setHero] = useState<any>(heroContents["/"]);
-
-    useEffect(() => {
-        if (heroContents[pathname]) {
-            setHero(heroContents[pathname]);
-            return;
-        }
+    const hero = useMemo<HeroData>(() => {
+        const staticHero = heroContents[pathname];
+        if (staticHero) return staticHero;
 
         if (pathname.startsWith("/services/")) {
             const slug = pathname.split("/")[2];
-            setHero(serviceHeroMap[slug] || heroContents["/services"]);
-            return;
+            return serviceHeroMap[slug] ?? heroContents["/services"];
         }
 
-        setHero(heroContents["/"]);
+        return heroContents["/"];
     }, [pathname]);
 
     return (

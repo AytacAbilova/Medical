@@ -5,9 +5,9 @@ import './header.css'
 import Button from "../common/Button";
 import logo from '../../public/assets/images/logo.png'
 import { useEffect } from "react";
-import { servicesContent } from "@/utils";
-import { projects } from "../home/ourProjects/projes";
-export default function Header({ locale = "az" }: any) {
+import { servicesContent, type Locale, type ServiceItem } from "@/utils";
+export default function Header({ locale = "az" }: { locale?: Locale }) {
+  const services: ServiceItem[] = servicesContent[locale];
 
   useEffect(() => {
     const cursor = document.getElementById("magic-cursor");
@@ -69,7 +69,7 @@ export default function Header({ locale = "az" }: any) {
             <Link href="/">
               <Image
                 src={logo}
-                alt="Tikinti Şirkəti Logo"
+                alt="Dr. Beyrək Abbaszadə Logo"
                 width={160}
                 height={40}
                 priority
@@ -90,7 +90,7 @@ export default function Header({ locale = "az" }: any) {
                 <Link href="/services">Xidmətlər</Link>
 
                 <ul className="dropdown">
-                  {servicesContent[locale].map((s: any) => (
+                  {services.map((s) => (
                     <li key={s.slug}>
                       <Link href={`/services/${s.slug}`}>
                         {s.title}

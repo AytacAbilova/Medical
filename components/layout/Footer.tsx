@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { memo } from "react";
-import { FaPhoneAlt, FaEnvelope, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import logo from "@/public/assets/images/logo.png";
 
 const Footer = () => {
@@ -28,9 +28,9 @@ const Footer = () => {
             <ul className="space-y-3 text-md text-gray-600">
               <li><Link href="/" className="hover:text-[#2A69AC]">Ana səhifə</Link></li>
               <li><Link href="/about" className="hover:text-[#2A69AC]">Haqqımızda</Link></li>
+              <li><Link href="/services" className="hover:text-[#2A69AC]">Xidmətlər</Link></li>
               <li><Link href="/question" className="hover:text-[#2A69AC]">Tibbi Yazılar</Link></li>
-              <li><Link href="/sual-cavab" className="hover:text-[#2A69AC]">Sual-Cavab</Link></li>
-              <li><Link href="/qalereya" className="hover:text-[#2A69AC]">Qalereya</Link></li>
+              <li><Link href="/projects" className="hover:text-[#2A69AC]">Sual-Cavab</Link></li>
               <li><Link href="/contact" className="hover:text-[#2A69AC]">Əlaqə</Link></li>
             </ul>
           </div>

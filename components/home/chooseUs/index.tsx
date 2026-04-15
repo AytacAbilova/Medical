@@ -1,5 +1,3 @@
-import { FaHeartbeat, FaUserMd, FaHospital } from "react-icons/fa";
-
 export default function WhyChooseUs() {
   const stats = [
     { value: "150+", label: "Uğurlu Əməliyyat" },

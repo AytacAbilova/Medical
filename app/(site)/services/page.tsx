@@ -1,10 +1,10 @@
 'use client';
 
-import { servicesContent } from '@/utils';
+import { servicesContent, type Locale, type ServiceItem } from '@/utils';
 import { useRouter } from 'next/navigation';
 
 interface Props {
-  locale?: "az" | "en";
+  locale?: Locale;
 }
 
 const images = [
@@ -27,7 +27,7 @@ export default function Services({ locale = "az" }: Props) {
       <section className="max-w-[1400px] mx-auto px-6 md:px-10 py-24">
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {services.map((s: any, i: number) => {
+          {services.map((s: ServiceItem, i: number) => {
             const imgSrc = s.img || images[i % images.length]; 
 
             return (

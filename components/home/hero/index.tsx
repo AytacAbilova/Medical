@@ -1,18 +1,26 @@
 "use client";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Button from "../../common/Button";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
+import type { Locale } from "@/utils";
 
 interface HeroProps {
   text?: string;
   video?: string;
   isHome?: boolean;
-  img?: string;
+  img?: string | StaticImageData;
   subTitle?: string;
-  locale?: "az" | "en";
+  locale?: Locale;
 }
 
-const heroContent = {
+const heroContent: Record<Locale, {
+  badge: string;
+  title: ReactNode;
+  desc: string;
+  cta1: string;
+  cta2: string;
+  cta3: string;
+}> = {
   az: {
     badge: "Dr.Beyrək Abbaszadə",
     title: (

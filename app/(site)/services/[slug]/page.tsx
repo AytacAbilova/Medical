@@ -1,18 +1,18 @@
 'use client';
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { servicesContent } from "@/utils";
+import { servicesContent, type Locale, type ServiceItem, type ServiceSection } from "@/utils";
 
 interface Props {
-  locale?: "az" | "en";
+  locale?: Locale;
 }
 
 export default function ServiceDetail({ locale = "az" }: Props) {
-  const params = useParams();
-  const slug = params.slug as string;
+  const params = useParams<{ slug: string }>();
+  const slug = params.slug;
 
 
-  const service = servicesContent[locale].find((s:any) => s.slug === slug);
+  const service = servicesContent[locale].find((s: ServiceItem) => s.slug === slug);
 
   if (!service) {
     return (
@@ -34,14 +34,14 @@ export default function ServiceDetail({ locale = "az" }: Props) {
       </h1>
 
       <div className="space-y-10">
-        {service.sections.map((section:any, i:any) => (
+        {service.sections.map((section: ServiceSection, i: number) => (
           <div key={i}>
             <h2 className="text-2xl font-bold mb-4 text-gray-800">
               {section.title}
             </h2>
 
             <ul className="space-y-2 text-gray-700">
-              {section.items.map((item:any, idx:any) => (
+              {section.items.map((item: string, idx: number) => (
                 <li key={idx} className="flex gap-2">
                   <span className="text-[#2A69AC]">•</span>
                   {item}
