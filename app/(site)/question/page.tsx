@@ -339,7 +339,6 @@ export default function Blog() {
             >
               <div className="absolute top-0 right-0 w-28 h-28 rounded-full opacity-10"
                 style={{ background: "radial-gradient(circle, white, transparent)", transform: "translate(30%,-30%)" }} />
-              <div className="text-3xl mb-4">💬</div>
               <h3 className="font-extrabold text-lg mb-2 leading-snug">Konsultasiya lazımdır?</h3>
               <p className="text-white/60 text-sm mb-5 leading-relaxed">
                 Dr. Abbaszadə ilə birbaşa əlaqə saxlayın.
