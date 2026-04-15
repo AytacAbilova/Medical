@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://yourcompany.az"),
 
   title: {
-    default: "Tikinti Şirkəti | Etibarlı və Keyfiyyətli İnşaat",
+    default: "Ana səhifə | Ürək-Damar Cərrahi Dr. Beyrək Abbaszadə ",
     template: "%s | YourCompany",
   },
 

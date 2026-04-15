@@ -56,7 +56,14 @@ span {
   font-family: var(--font-dm-sans);
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 .overflow-x-auto{
    scrollbar-width: none !important;
 }

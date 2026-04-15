@@ -25,17 +25,6 @@ const heroContent = {
     cta2: "Xidmətlərə bax",
     cta3:"Zəng et "
   },
-  // en: {
-  //   badge: "TURAN CONSTRUCTION LLC",
-  //   title: (
-  //     <>
-  //       We bring life to water <br /> and value to comfort
-  //     </>
-  //   ),
-  //   desc: "Turan Construction LLC is a licensed company providing professional design, construction, and installation of pool, spa, and sauna systems. With modern technologies, high-quality materials, and innovative designs, we create premium relaxation spaces.",
-  //   cta1: "Create your pool",
-  //   cta2: "View projects",
-  // },
 };
 
 export default function Hero({
@@ -71,7 +60,7 @@ export default function Hero({
       className={` ${
         isHome
           ? "h-[calc(90vh-180px)] md:h-[calc(90vh)]"
-          : "md:h-[250px]"
+          : "md:h-[400px]"
       }`}
     >
       <div className=" flex items-center overflow-hidden text-white h-full">
@@ -88,7 +77,6 @@ export default function Hero({
           </video>
         )}
 
-        {/* IMAGE */}
         {img && !video && (
           <Image
             src={img}
@@ -100,27 +88,21 @@ export default function Hero({
           />
         )}
 
-        {/* OVERLAY */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
 
-        {/* CONTENT */}
         <div data-aos="fade-up" className="relative z-30 text-center container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* BADGE */}
           <h3 data-aos="fade-up" className="uppercase text-[#2A69AC] mb-4 text-[13px] sm:text-[15px] font-extrabold tracking-[0.2em]">
             {content.badge}
           </h3>
 
-          {/* TITLE */}
           <h1 data-aos="fade-up" className="text-3xl md:text-[56px] lg:text-[70px] font-extrabold leading-[1.05] tracking-tight mb-6">
             {isHome ? content.title : text}
           </h1>
 
-          {/* DESCRIPTION */}
           <p className={`text-[15px]  md:text-[20px] max-w-5xl mx-auto text-gray-200 ${isHome?'mb-20':'mb-10'} `}>
             {isHome ? content.desc : subTitle}
           </p>
 
-          {/* CTA */}
           {isHome && (
             <div className="flex justify-center gap-4 flex-wrap">
               <Button text={content.cta1} link="/create" type={2} />

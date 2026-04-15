@@ -6,6 +6,9 @@ import WhyChooseUs from "@/components/home/chooseUs";
 import OurProjects from "@/components/home/ourProjects";
 import { Products } from "@/components/home/testimonals";
 import { ContactSection } from "@/components/home/contactUs";
+import { BlogSection } from "@/components/home/blog";
+import ImageStrip from "@/components/home/symptoms";
+// import { SymptomsSection } from "@/components/home/symptoms";
 
 export default function Home() {
 
@@ -14,10 +17,16 @@ export default function Home() {
       {/* <Hero /> */}
       <WhyChooseUs />
       <AboutUs />
+
       <OurServices />
+            <ImageStrip/>
+
       <OurProjects />
       <Products />
-      {/* <ContactSection /> */}
+      <BlogSection/>
+      {/* <SymptomsSection/> */}
+
+      <ContactSection />
     </>
   );
 }
