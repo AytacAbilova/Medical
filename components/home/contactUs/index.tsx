@@ -70,7 +70,7 @@ export const ContactSection = () => {
                 {info.icon}
               </div>
               <div>
-                <h3 className="text-sm font-bold text-yellow-500">
+                <h3 className="text-sm font-bold text-white">
                   {info.title}
                 </h3>
                 <span className="text-slate-200 text-sm">
@@ -110,7 +110,7 @@ export const ContactSection = () => {
           />
           <button
             type="submit"
-            className="bg-yellow-500 text-black font-bold py-4 md:col-span-2 rounded-xl hover:bg-yellow-600 transition"
+            className="bg-white text-black font-bold py-4 md:col-span-2 rounded-xl hover:bg-yellow-600 transition"
           >
             Göndər
           </button>
