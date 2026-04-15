@@ -8,6 +8,9 @@ const images = [
   "/assets/images/image2.png",
   "/assets/images/image3.png",
   "/assets/images/image4.png",
+  "/assets/images/image1.png",
+  "/assets/images/image3.png",
+  "/assets/images/image4.png",
   "/assets/images/image1.png"
 ];
 
@@ -40,7 +43,7 @@ export default function ImageStrip() {
   }, []);
 
   return (
-    <section className="w-full bg-gray-100 py-5 overflow-hidden">
+    <section className="w-full bg-gray-100 py-30 overflow-hidden">
       <div
         ref={ref}
         className="flex gap-4 overflow-x-auto pl-4 pr-0 no-scrollbar"

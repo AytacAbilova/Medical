@@ -84,7 +84,6 @@ export const services: Service[] = [
     highlight: "Tək seansda multispecialty",
   },
 ];
-// ─── Inline SVG icons (lucide-style, stroke-only) ────────────────────────────
 const icons: Record<string, React.FC<{ className?: string }>> = {
   heart: ({ className }) => (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
@@ -136,7 +135,6 @@ export default function OurServices() {
   return (
     <section className="py-28 bg-[#F8F6F2] text-gray-900 relative overflow-hidden">
 
-      {/* Subtle background grid ornament */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
@@ -148,13 +146,11 @@ export default function OurServices() {
 
       <div className="relative max-w-[1300px] mx-auto px-6 md:px-10">
 
-        {/* ── Section Header ─────────────────────────────────────── */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span
             data-aos="fade-up"
             className="inline-flex items-center gap-2 uppercase tracking-[0.18em] text-sm font-extrabold text-[#C49B63]"
           >
-            {/* tiny decorative line */}
             <span className="block h-px w-8 bg-[#C49B63]" />
             Xidmətlər
             <span className="block h-px w-8 bg-[#C49B63]" />
@@ -179,7 +175,6 @@ export default function OurServices() {
           </p>
         </div>
 
-        {/* ── Service Cards Grid ──────────────────────────────────── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, idx) => {
             const Icon = icons[service.icon];
@@ -191,35 +186,29 @@ export default function OurServices() {
                 data-aos-delay={idx * 60}
                 className="group relative flex flex-col bg-white rounded-[20px] p-7 border border-transparent hover:border-[#C49B63]/60 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_-10px_rgba(196,155,99,0.18)] cursor-pointer overflow-hidden"
               >
-                {/* Gold corner accent – appears on hover */}
                 <span
                   aria-hidden
                   className="absolute top-0 right-0 w-20 h-20 rounded-bl-[60px] bg-[#C49B63]/0 group-hover:bg-[#C49B63]/8 transition-all duration-500"
                 />
 
-                {/* Icon container */}
                 <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#FBF5EC] text-[#C49B63] group-hover:bg-[#C49B63] group-hover:text-white transition-all duration-400">
                   {Icon && <Icon className="h-6 w-6" />}
                 </div>
 
-                {/* Title */}
                 <h3 className="text-[17px] font-bold leading-snug text-gray-900 mb-3">
                   {service.title}
                 </h3>
 
-                {/* Short description (always visible) */}
                 <p className="text-sm text-gray-500 leading-relaxed flex-1">
                   {service.shortDesc}
                 </p>
 
-                {/* Highlight badge */}
                 {service.highlight && (
                   <span className="mt-5 inline-block self-start text-[11px] font-semibold uppercase tracking-wider text-[#C49B63] bg-[#FBF5EC] px-3 py-1 rounded-full group-hover:bg-[#C49B63] group-hover:text-white transition-colors duration-300">
                     {service.highlight}
                   </span>
                 )}
 
-                {/* "Ətraflı" link */}
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#C49B63] opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                   Ətraflı oxu
                   <svg viewBox="0 0 16 16" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
@@ -231,7 +220,6 @@ export default function OurServices() {
           })}
         </div>
 
-        {/* ── Bottom CTA strip ────────────────────────────────────── */}
         <div
           data-aos="fade-up"
           className="mt-20 rounded-[24px] bg-gray-900 px-8 py-10 md:py-12 flex flex-col md:flex-row items-center justify-between gap-6"

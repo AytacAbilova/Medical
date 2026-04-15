@@ -42,7 +42,6 @@ export default function Testimonials() {
           Uğurlu əməliyyatlar və məmnun pasiyentlər bizim əsas prioritetimizdir.
         </p>
 
-        {/* Slider */}
         <div className="mt-16">
           <Swiper
             spaceBetween={24}
@@ -64,7 +63,6 @@ export default function Testimonials() {
               >
                 <div className="bg-white rounded-[20px] p-6 shadow-sm border text-left flex flex-col justify-between flex-1 min-h-[320px]">
 
-                  {/* Stars */}
                   <div className="flex gap-1 text-[#F59E0B] text-lg">
                     ★★★★★
                   </div>

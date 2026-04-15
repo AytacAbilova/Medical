@@ -56,7 +56,7 @@ export default function Hero({
 
   return (
     <section
-      aria-label="Turan İnşaat Hero Section"
+      aria-label="Dr. Beyrek Hero Section"
       className={` ${
         isHome
           ? "h-[calc(90vh-180px)] md:h-[calc(90vh)]"
@@ -80,7 +80,7 @@ export default function Hero({
         {img && !video && (
           <Image
             src={img}
-            alt="Turan İnşaat hovuz və spa layihəsi"
+            alt="Ürək-Damar Cərrahiyyəsi Xidmətləri"
             fill
             priority
             quality={100}

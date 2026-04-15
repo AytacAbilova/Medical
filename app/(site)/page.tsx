@@ -8,7 +8,6 @@ import { Products } from "@/components/home/testimonals";
 import { ContactSection } from "@/components/home/contactUs";
 import { BlogSection } from "@/components/home/blog";
 import ImageStrip from "@/components/home/symptoms";
-// import { SymptomsSection } from "@/components/home/symptoms";
 
 export default function Home() {
 
@@ -19,12 +18,11 @@ export default function Home() {
       <AboutUs />
 
       <OurServices />
-            <ImageStrip/>
+      <ImageStrip />
 
       <OurProjects />
       <Products />
-      <BlogSection/>
-      {/* <SymptomsSection/> */}
+      <BlogSection />
 
       <ContactSection />
     </>

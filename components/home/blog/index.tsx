@@ -20,7 +20,7 @@ const featuredPosts: BlogPost[] = [
     category: "Cərrahi",
     date: "15 Aprel 2025",
     image:
-      "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80",
+      "/assets/images/contactus.png",
   },
   {
     slug: "aorta-anevrizması-sessiz-saatlı-bomba",
@@ -30,7 +30,7 @@ const featuredPosts: BlogPost[] = [
     category: "Aorta",
     date: "2 Mart 2025",
     image:
-      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80",
+      "/assets/images/image2.png",
   },
   {
     slug: "ef-30-emeliyyat-mumkundurmu",
@@ -40,7 +40,7 @@ const featuredPosts: BlogPost[] = [
     category: "Yüksək Risk",
     date: "18 Fevral 2025",
     image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+     "/assets/images/image3.png",
   },
   {
     slug: "38-yasinda-infarkt",
@@ -50,7 +50,7 @@ const featuredPosts: BlogPost[] = [
     category: "Profilaktika",
     date: "5 Yanvar 2025",
     image:
-      "https://images.unsplash.com/photo-1628595351029-c2bf17511435?w=800&q=80",
+      "/assets/images/image4.png",
   },
   {
     slug: "bypass-sonrasi-heyat",
@@ -60,7 +60,7 @@ const featuredPosts: BlogPost[] = [
     category: "Sağalma",
     date: "20 Dekabr 2024",
     image:
-      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80",
+      "/assets/images/aboutImg.png",
   },
   {
     slug: "xaricde-redd-edilmisdim",
@@ -70,7 +70,7 @@ const featuredPosts: BlogPost[] = [
     category: "Real Hekayə",
     date: "10 Noyabr 2024",
     image:
-      "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=800&q=80",
+       "/assets/images/contactus.png",
   },
 ];
 
@@ -99,15 +99,12 @@ const BigCard = ({ post, index }: { post: BlogPost; index: number }) => (
         fill
         className="object-cover transition-transform duration-700 group-hover:scale-105"
       />
-      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent rounded-2xl" />
 
-      {/* Category badge */}
       <span className="absolute top-4 left-4 text-xs font-semibold px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-sm text-white border border-white/20">
         {post.category}
       </span>
 
-      {/* Text */}
       <div className="absolute bottom-0 left-0 right-0 p-5">
         <h3 className="text-white font-bold text-lg leading-snug mb-2 group-hover:text-[#C49B63] transition-colors duration-300">
           {post.title}
