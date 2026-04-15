@@ -1,7 +1,24 @@
-"use client";
-import Image from "next/image";
-import Button from "@/components/common/Button";
-import certImg from "@/public/assets/images/aboutImg.png";
+import {
+  GraduationCap,
+  Building2,
+  Globe,
+  Trophy,
+  BookOpen,
+  Presentation,
+  Heart,
+  Activity,
+  Scissors,
+  Baby,
+  GitBranch,
+  Layers,
+  Quote,
+  Star,
+  Phone,
+  ShieldCheck,
+  Award,
+  Users,
+  Stethoscope,
+} from "lucide-react"
 
 interface Props {
   locale?: "az" | "en";
@@ -11,7 +28,7 @@ const content = {
   az: {
     about: {
       badge: "HAQQIMIZDA",
-      title: "Ürək-damar cərrahı Dr. Beyrək Abbaszadə haqqında",
+      title: "Ürək-damar cərrahı Dr. Beyrək Abbaszadə",
       desc: `Dr. Beyrək Abbaszadə Azərbaycanın aparıcı ürək-damar cərrahlarından biridir. Müasir cərrahi texnologiyaların tətbiqi, mürəkkəb klinik halların uğurla həlli və pasiyent məmnuniyyətini ən yüksək səviyyədə saxlamaqla tanınır.`,
       specializations: [
         { title: "Açıq ürək əməliyyatları", desc: "Koronar bypass, qapaq təmiri/dəyişdirilməsi" },
@@ -26,74 +43,65 @@ const content = {
       licenseBadge: "Rəsmi tibb fəaliyyəti",
       hospitals: "Lux International Hospital · Mərkəzi Klinika · Şirvan Diaqnostik Mərkəz",
     },
-
     education: {
       title: "Təhsil, Mentorluq & Beynəlxalq Fəaliyyət",
       mentor: {
-        icon: "👨‍🏫",
         title: "Mentor",
         desc: "Prof. Kamran Kazımoğlu Musayev – Azərbaycanda ürək-damar cərrahiyyəsinin ən böyük nüfuzlarından biri",
       },
       society: {
-        icon: "🏛️",
         title: "Elmi Cəmiyyət",
         desc: "Azərbaycan Ürək-Damar Cərrahiyyəsi Cəmiyyəti (AÜDCC) – tam üzv",
       },
       international: {
-        icon: "🌍",
         title: "Beynəlxalq Fəaliyyət",
         desc: "Azərbaycan-Özbəkistan tibbi əməkdaşlığı çərçivəsində Shox Med Hospital (Daşkənd) qonaq cərrahı",
       },
     },
-
     achievements: {
       title: "Əsas Nailiyyətlər",
       items: [
         {
-          icon: "🥇",
           title: "Tarixi Əməliyyat",
           desc: "21 fevral 2024-cü ildə TƏBİB nəzarəti altında Şirvan Diaqnostik Mərkəzdə bölgənin ilk açıq ürək əməliyyatı icra edildi. 55 yaşlı xəstə 3 saatlıq müdaxilədən sonra uğurla sağaldı.",
+          date: "21 Fevral 2024",
         },
         {
-          icon: "🏛️",
           title: "AÜDCC 20-illik Yubileyi",
           desc: "Azərbaycan Ürək-Damar Cərrahiyyəsi Cəmiyyətinin 20-illik yubileyi tədbirinin iştirakçısı.",
+          date: "2024",
         },
         {
-          icon: "🎓",
           title: "Bakı Ürək Günləri VIII",
           desc: "VIII Beynəlxalq Konqresin iştirakçısı – Prof. Kamran Kazımoğlu Musayevlə birlikdə.",
+          date: "BÜG VIII",
         },
         {
-          icon: "🎓",
           title: "Bakı Ürək Günləri IX",
           desc: "BÜG2025 – IX Beynəlxalq Konqresin iştirakçısı.",
+          date: "BÜG IX",
         },
         {
-          icon: "📊",
           title: "AÜDCC Seminari",
-          desc: "17 may 2024 – \"Aorta patologiyalarının müalicəsində multidissiplinar müasir yanaşma\" çərçivəsində mürəkkəb aorta qövsünün əvəzlənməsi mövzusunda mühazirə.",
+          desc: "\"Aorta patologiyalarının müalicəsində multidissiplinar müasir yanaşma\" çərçivəsində mürəkkəb aorta qövsünün əvəzlənməsi mövzusunda mühazirə.",
+          date: "17 May 2024",
         },
         {
-          icon: "🌍",
           title: "Beynəlxalq Dəvət",
-          desc: "5-6 sentyabr – Daşkənd Shox Med Hospital-da qonaq cərrah kimi fəaliyyət və pulsuz konsultasiyalar.",
+          desc: "Daşkənd Shox Med Hospital-da qonaq cərrah kimi fəaliyyət və pulsuz konsultasiyalar.",
+          date: "5–6 Sentyabr",
         },
         {
-          icon: "❤️",
           title: "Nadir Birləşdirilmiş Əməliyyat",
           desc: "63 yaşlı xəstədə eyni seansta CABG x4 + sağ böyrəyin nefrektomiyası + aşağı boş venanın trombektomiyası – üç fərqli sahəni əhatə edən nadir müdaxilə.",
+          date: "Rekord",
         },
       ],
     },
-
     story: {
       title: "Peşəkar Fəaliyyət",
-      desc: `Dr. Abbaszadə fəaliyyətində yüksək riskli və mürəkkəb ürək əməliyyatlarını uğurla icra etməsi ilə tanınır. Onun rəhbərliyi ilə icra edilən əməliyyatlar beynəlxalq standartlara uyğun şəkildə həyata keçirilir.
-
-O, həmçinin beynəlxalq tibbi əməkdaşlıqlarda iştirak etmiş, qonaq cərrah kimi xarici klinikalarda təcrübə mübadiləsi aparmışdır.`,
+      desc: `Dr. Abbaszadə fəaliyyətində yüksək riskli və mürəkkəb ürək əməliyyatlarını uğurla icra etməsi ilə tanınır. Onun rəhbərliyi ilə icra edilən əməliyyatlar beynəlxalq standartlara uyğun şəkildə həyata keçirilir.\n\nO, həmçinin beynəlxalq tibbi əməkdaşlıqlarda iştirak etmiş, qonaq cərrah kimi xarici klinikalarda təcrübə mübadiləsi aparmışdır.`,
     },
-
     philosophy: {
       title: "Klinik Fəlsəfə",
       quotes: [
@@ -108,7 +116,6 @@ O, həmçinin beynəlxalq tibbi əməkdaşlıqlarda iştirak etmiş, qonaq cərr
       ],
       desc: "Dr. Abbaszadənin yanaşması təkcə texniki cərrahiyyə deyil, insana dəyər verən tibbi fəlsəfəyə əsaslanır. Hər uğurun arxasında güclü mentorluq, komanda işi və məsuliyyət dayanır.",
     },
-
     testimonials: {
       title: "Pasiyent Rəyləri",
       items: [
@@ -127,11 +134,10 @@ O, həmçinin beynəlxalq tibbi əməkdaşlıqlarda iştirak etmiş, qonaq cərr
       ],
     },
   },
-
   en: {
     about: {
       badge: "ABOUT",
-      title: "About Cardiovascular Surgeon Dr. Beyrək Abbaszadə",
+      title: "Cardiovascular Surgeon Dr. Beyrək Abbaszadə",
       desc: `Dr. Beyrək Abbaszadə is one of Azerbaijan's leading cardiovascular surgeons, recognized for applying modern surgical technologies and successfully managing complex clinical cases.`,
       specializations: [
         { title: "Open-heart surgery", desc: "Coronary bypass, valve repair and replacement" },
@@ -146,74 +152,65 @@ O, həmçinin beynəlxalq tibbi əməkdaşlıqlarda iştirak etmiş, qonaq cərr
       licenseBadge: "Licensed medical practice",
       hospitals: "Lux International Hospital · Mərkəzi Klinika · Shirvan Diagnostic Center",
     },
-
     education: {
       title: "Education, Mentorship & International Work",
       mentor: {
-        icon: "👨‍🏫",
         title: "Mentor",
         desc: "Prof. Kamran Kazımoğlu Musayev – one of the most distinguished cardiovascular surgeons in Azerbaijan",
       },
       society: {
-        icon: "🏛️",
         title: "Scientific Society",
         desc: "Azerbaijan Cardiovascular Surgery Society (ACSS) – full member",
       },
       international: {
-        icon: "🌍",
         title: "International Activity",
         desc: "Visiting surgeon at Shox Med Hospital (Tashkent) within the framework of Azerbaijan-Uzbekistan medical cooperation",
       },
     },
-
     achievements: {
       title: "Key Achievements",
       items: [
         {
-          icon: "🥇",
           title: "Historic Surgery",
           desc: "On February 21, 2024, the first open-heart surgery under TABIB supervision was performed at Shirvan Diagnostic Center. A 55-year-old patient recovered successfully after a 3-hour procedure.",
+          date: "Feb 21, 2024",
         },
         {
-          icon: "🏛️",
           title: "ACSS 20th Anniversary",
           desc: "Participant in the 20th anniversary event of the Azerbaijan Cardiovascular Surgery Society.",
+          date: "2024",
         },
         {
-          icon: "🎓",
           title: "Baku Heart Days VIII",
           desc: "Participant in the 8th International Congress alongside Prof. Kamran Kazımoğlu Musayev.",
+          date: "BHD VIII",
         },
         {
-          icon: "🎓",
           title: "Baku Heart Days IX",
           desc: "BHD2025 – Participant in the 9th International Congress.",
+          date: "BHD IX",
         },
         {
-          icon: "📊",
           title: "ACSS Seminar",
-          desc: "May 17, 2024 – Delivered a lecture on complex aortic arch replacement under the theme of multidisciplinary modern approaches in aortic pathology treatment.",
+          desc: "Delivered a lecture on complex aortic arch replacement under the theme of multidisciplinary modern approaches in aortic pathology treatment.",
+          date: "May 17, 2024",
         },
         {
-          icon: "🌍",
           title: "International Invitation",
-          desc: "Sept 5-6 – Activity as a visiting surgeon at Shox Med Hospital in Tashkent, providing free consultations.",
+          desc: "Activity as a visiting surgeon at Shox Med Hospital in Tashkent, providing free consultations.",
+          date: "Sept 5–6",
         },
         {
-          icon: "❤️",
           title: "Rare Combined Procedure",
           desc: "In a 63-year-old patient: CABG x4 + right nephrectomy + inferior vena cava thrombectomy performed in a single session – a rare intervention spanning three distinct surgical domains.",
+          date: "Record",
         },
       ],
     },
-
     story: {
       title: "Professional Practice",
-      desc: `Dr. Abbaszadə is recognized for successfully performing high-risk and complex cardiac surgeries aligned with international standards.
-
-He has participated in international medical collaborations and shared expertise as a visiting surgeon at foreign clinics.`,
+      desc: `Dr. Abbaszadə is recognized for successfully performing high-risk and complex cardiac surgeries aligned with international standards.\n\nHe has participated in international medical collaborations and shared expertise as a visiting surgeon at foreign clinics.`,
     },
-
     philosophy: {
       title: "Clinical Philosophy",
       quotes: [
@@ -228,7 +225,6 @@ He has participated in international medical collaborations and shared expertise
       ],
       desc: "Dr. Abbaszadə's approach is not merely technical surgery – it is grounded in a medical philosophy that values every human life. Behind every success stands strong mentorship, teamwork, and responsibility.",
     },
-
     testimonials: {
       title: "Patient Reviews",
       items: [
@@ -249,250 +245,319 @@ He has participated in international medical collaborations and shared expertise
   },
 };
 
+const specializationIcons = [Heart, Scissors, Activity, Baby, GitBranch, Layers];
+
+const educationIcons = [GraduationCap, Building2, Globe];
+
+const achievementIcons = [Trophy, Award, BookOpen, BookOpen, Presentation, Globe, Heart];
+
 export default function About({ locale = "az" }: Props) {
   const t = content[locale];
 
   return (
-    <main className="bg-[#0A0F1E] text-white overflow-hidden">
+    <main className="bg-white text-gray-900 antialiased">
 
-      {/* ─────────── HERO / ABOUT ─────────── */}
-      <section className="relative max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-16 py-24 sm:py-32 flex flex-col lg:flex-row items-start gap-16 lg:gap-24">
+      {/* ─── HERO ─── */}
+      <section className="relative max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-16 py-24 sm:py-32 flex flex-col lg:flex-row items-start gap-16 lg:gap-20">
+        <div className="pointer-events-none absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-[#C49B63]/8 blur-[120px]" />
 
-        {/* Decorative background glow */}
-        <div className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[#C49B63]/10 blur-[120px]" />
-        <div className="pointer-events-none absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-[#C49B63]/5 blur-[100px]" />
-
-        {/* TEXT SIDE */}
-        <div className="flex-1 flex flex-col gap-10 z-10">
-          {/* Badge */}
+        {/* LEFT */}
+        <div className="flex-1 flex flex-col gap-8 z-10 max-w-2xl">
           <div className="flex items-center gap-3">
-            <span className="w-10 h-px bg-[#C49B63]" />
-            <span className="text-[#C49B63] uppercase tracking-[0.3em] font-semibold text-xs">
+            <span className="w-8 h-px bg-[#C49B63]" />
+            <span className="text-[#C49B63] uppercase tracking-[0.28em] font-semibold text-xs">
               {t.about.badge}
             </span>
           </div>
 
-          <h1 className="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] text-white">
+          <h1 className="font-serif font-bold text-3xl sm:text-4xl lg:text-[2.75rem] xl:text-5xl leading-[1.1] text-gray-900">
             {t.about.title}
           </h1>
 
-          <p className="text-slate-300 text-base md:text-lg leading-relaxed max-w-xl">
+          <p className="text-gray-500 text-base md:text-[1.05rem] leading-[1.8]">
             {t.about.desc}
           </p>
 
-          {/* Hospitals strip */}
-          <p className="text-[#C49B63]/80 text-sm tracking-wide font-medium border-l-2 border-[#C49B63] pl-4">
-            {t.about.hospitals}
-          </p>
-
-          {/* Specializations grid */}
-          <div className="grid sm:grid-cols-2 gap-4">
-            {t.about.specializations.map((f, i) => (
-              <div
-                key={i}
-                className="group relative bg-white/[0.03] border border-white/10 hover:border-[#C49B63]/60 p-6 rounded-2xl transition-all duration-300 hover:bg-white/[0.06]"
-              >
-                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#C49B63]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-t-2xl" />
-                <h3 className="text-[#C49B63] font-semibold mb-2 text-sm uppercase tracking-wide">
-                  {f.title}
-                </h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{f.desc}</p>
-              </div>
-            ))}
+          <div className="flex items-start gap-3 bg-[#faf8f4] border border-[#C49B63]/20 rounded-xl px-5 py-3">
+            <Stethoscope size={15} className="text-[#C49B63] mt-0.5 shrink-0" />
+            <p className="text-[#9a7a4a] text-sm leading-relaxed">{t.about.hospitals}</p>
           </div>
 
+          {/* Specializations */}
+
           {/* CTA */}
-          <div className="flex flex-col sm:flex-row gap-8 items-start sm:items-center mt-4">
-            <Button text={t.about.cta} link="/contact" type={2} />
-            <div>
-              <span className="text-xs text-slate-500 uppercase tracking-wider">
-                {t.about.contact}
-              </span>
-              <div className="font-bold text-[#C49B63] text-xl mt-1">
-                +994 50 312 76 57
+          <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center pt-2">
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-[#C49B63] hover:bg-[#b38a52] text-white font-semibold text-sm px-7 py-3.5 rounded-xl transition-colors duration-200"
+            >
+              {t.about.cta}
+            </a>
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full bg-[#C49B63]/10 flex items-center justify-center">
+                <Phone size={14} className="text-[#C49B63]" />
+              </div>
+              <div>
+                <p className="text-xs text-gray-400 uppercase tracking-wider">{t.about.contact}</p>
+                <p className="font-bold text-gray-900 text-base mt-0.5">+994 50 312 76 57</p>
               </div>
             </div>
+          </div>
+
+          {/* Specializations */}
+          <div className="grid gap-3">
+            {t.about.specializations.slice(0, 3).map((f, i) => {
+              const Icon = specializationIcons[i];
+              return (
+                <div
+                  key={i}
+                  className="group flex items-start gap-4 bg-white border border-gray-100 hover:border-[#C49B63]/40 p-5 rounded-2xl transition-all duration-300 hover:shadow-sm"
+                >
+                  <div className="shrink-0 w-9 h-9 rounded-xl bg-[#C49B63]/8 flex items-center justify-center group-hover:bg-[#C49B63]/15 transition-colors">
+                    <Icon size={16} className="text-[#C49B63]" />
+                  </div>
+                  <div>
+                    <h3 className="text-gray-900 font-semibold text-sm mb-1">{f.title}</h3>
+                    <p className="text-gray-500 text-xs leading-relaxed">{f.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        {/* IMAGE SIDE */}
-        <div className="flex-1 flex justify-center lg:justify-end relative w-full z-10">
-          <div className="relative w-full max-w-[520px]">
-            {/* Glow behind image */}
-            <div className="absolute inset-0 rounded-3xl bg-[#C49B63]/20 blur-3xl scale-95" />
-
-            {/* Frame border */}
-            <div className="relative rounded-3xl overflow-hidden border border-[#C49B63]/30 shadow-[0_0_80px_rgba(196,155,99,0.15)]">
-              <Image
-                src={certImg}
+        {/* IMAGE */}
+        <div className="flex-shrink-0 flex flex-col gap-8 justify-center lg:justify-end w-full lg:w-auto z-10">
+          <div className="relative w-full max-w-[440px]">
+            <div className="absolute inset-0 rounded-3xl bg-[#C49B63]/15 blur-3xl scale-90" />
+            <div className="relative rounded-3xl overflow-hidden border border-[#C49B63]/25 shadow-[0_20px_80px_rgba(196,155,99,0.18)]">
+              <img
+                src={"/assets/images/aboutUss.png"}
                 alt="Dr. Beyrək Abbaszadə"
-                width={520}
-                height={680}
-                className="object-cover w-full h-auto hover:scale-[1.03] transition-transform duration-700"
-                priority
+                className="object-cover w-full h-auto"
               />
-              {/* Overlay gradient at bottom */}
-              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0A0F1E] to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-white/90 to-transparent" />
             </div>
 
-            {/* License badge */}
-            <div className="absolute top-5 right-5 bg-[#C49B63] text-[#0A0F1E] px-4 py-2 rounded-xl font-bold text-xs tracking-wide shadow-lg">
-              {t.about.licenseBadge}
+            <div className="absolute top-4 right-4 flex items-center gap-2 bg-[#C49B63] text-white px-3.5 py-2 rounded-xl shadow-lg">
+              <ShieldCheck size={13} />
+              <span className="font-semibold text-xs tracking-wide">{t.about.licenseBadge}</span>
             </div>
 
-            {/* AÜDCC badge */}
-            <div className="absolute bottom-8 left-0 right-0 mx-auto flex justify-center">
-              <span className="bg-white/10 backdrop-blur border border-white/20 text-white text-xs px-5 py-2 rounded-full font-medium">
+            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap">
+              <span className="bg-white/90 backdrop-blur border border-[#C49B63]/25 text-gray-700 text-xs px-5 py-2 rounded-full font-medium shadow-sm">
                 AÜDCC – Tam Üzv
               </span>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* ─────────── EDUCATION & MENTORSHIP ─────────── */}
-      <section className="bg-[#06091A] border-y border-white/5">
-        <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-16 py-20 sm:py-28">
-          <div className="text-center mb-16">
-            <span className="text-[#C49B63] uppercase tracking-[0.3em] text-xs font-semibold">
-              ── {t.education.title} ──
-            </span>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[t.education.mentor, t.education.society, t.education.international].map((item, i) => (
-              <div
-                key={i}
-                className="relative bg-gradient-to-b from-white/[0.05] to-white/[0.02] border border-white/10 p-10 rounded-3xl hover:border-[#C49B63]/40 transition-all duration-300 group text-center"
-              >
-                <div className="text-5xl mb-6">{item.icon}</div>
-                <h3 className="text-[#C49B63] font-bold text-lg mb-4 uppercase tracking-wide">
-                  {item.title}
-                </h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
-                {/* Bottom glow on hover */}
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-px bg-[#C49B63] scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-              </div>
-            ))}
+          {/* Specializations */}
+          <div className="grid gap-3">
+            {t.about.specializations.slice(3, 6).map((f, i) => {
+              const Icon = specializationIcons[i + 3];
+              return (
+                <div
+                  key={i + 3}
+                  className="group flex items-start gap-4 bg-white border border-gray-100 hover:border-[#C49B63]/40 p-5 rounded-2xl transition-all duration-300 hover:shadow-sm"
+                >
+                  <div className="shrink-0 w-9 h-9 rounded-xl bg-[#C49B63]/8 flex items-center justify-center group-hover:bg-[#C49B63]/15 transition-colors">
+                    <Icon size={16} className="text-[#C49B63]" />
+                  </div>
+                  <div>
+                    <h3 className="text-gray-900 font-semibold text-sm mb-1">{f.title}</h3>
+                    <p className="text-gray-500 text-xs leading-relaxed">{f.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* ─────────── ACHIEVEMENTS ─────────── */}
+      {/* ─── EDUCATION & MENTORSHIP ─── */}
+      <section className="bg-[#fafaf8] border-y border-gray-100">
+        <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-16 py-20 sm:py-24">
+          <div className="text-center mb-14">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <span className="w-6 h-px bg-[#C49B63]" />
+              <span className="text-[#C49B63] uppercase tracking-[0.28em] text-xs font-semibold">
+                {t.education.title}
+              </span>
+              <span className="w-6 h-px bg-[#C49B63]" />
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-gray-900">
+              {t.education.title}
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[t.education.mentor, t.education.society, t.education.international].map((item, i) => {
+              const Icon = educationIcons[i];
+              return (
+                <div
+                  key={i}
+                  className="relative bg-white border border-gray-100 hover:border-[#C49B63]/30 p-8 rounded-2xl transition-all duration-300 group"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-[#C49B63]/8 flex items-center justify-center mb-6 group-hover:bg-[#C49B63]/15 transition-colors">
+                    <Icon size={22} className="text-[#C49B63]" />
+                  </div>
+                  <h3 className="text-gray-900 font-bold text-base mb-3">{item.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                  <div className="absolute bottom-0 left-8 right-8 h-px bg-[#C49B63] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-full" />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── ACHIEVEMENTS ─── */}
       <section className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-16 py-20 sm:py-28">
-        <div className="text-center mb-16">
-          <span className="text-[#C49B63] uppercase tracking-[0.3em] text-xs font-semibold block mb-4">
-            ── {t.achievements.title} ──
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+        <div className="text-center mb-14">
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <span className="w-6 h-px bg-[#C49B63]" />
+            <span className="text-[#C49B63] uppercase tracking-[0.28em] text-xs font-semibold">
+              {t.achievements.title}
+            </span>
+            <span className="w-6 h-px bg-[#C49B63]" />
+          </div>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900">
             {t.achievements.title}
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {t.achievements.items.map((item, i) => (
-            <div
-              key={i}
-              className={`relative bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 hover:border-[#C49B63]/50 p-8 rounded-3xl transition-all duration-300 hover:shadow-[0_0_40px_rgba(196,155,99,0.1)] group ${
-                i === 0
-                  ? "sm:col-span-2 lg:col-span-1 border-[#C49B63]/30 bg-gradient-to-br from-[#C49B63]/10 to-transparent"
-                  : ""
-              }`}
-            >
-              {i === 0 && (
-                <div className="absolute inset-0 rounded-3xl bg-[#C49B63]/5 blur-xl pointer-events-none" />
-              )}
-              <div className="text-3xl mb-5">{item.icon}</div>
-              <h3
-                className={`font-bold mb-3 text-base ${
-                  i === 0 ? "text-[#C49B63] text-lg" : "text-[#C49B63]/80"
-                }`}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {t.achievements.items.map((item, i) => {
+            const Icon = achievementIcons[i];
+            const isFeatured = i === 0;
+            return (
+              <div
+                key={i}
+                className={`relative flex flex-col gap-4 p-7 rounded-2xl border transition-all duration-300 group hover:shadow-md ${isFeatured
+                    ? "bg-gradient-to-br from-[#C49B63]/10 to-[#C49B63]/3 border-[#C49B63]/35 sm:col-span-2 lg:col-span-1"
+                    : "bg-white border-gray-100 hover:border-[#C49B63]/25"
+                  }`}
               >
-                {item.title}
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                <div className="flex items-start justify-between gap-3">
+                  <div
+                    className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${isFeatured ? "bg-[#C49B63] text-white" : "bg-[#C49B63]/8 group-hover:bg-[#C49B63]/15 transition-colors"
+                      }`}
+                  >
+                    <Icon size={18} className={isFeatured ? "text-white" : "text-[#C49B63]"} />
+                  </div>
+                  <span className="text-xs font-semibold text-[#C49B63] bg-[#C49B63]/8 px-3 py-1 rounded-full">
+                    {item.date}
+                  </span>
+                </div>
+                <h3 className={`font-bold text-sm ${isFeatured ? "text-gray-900 text-base" : "text-gray-800"}`}>
+                  {item.title}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ─── PROFESSIONAL STORY ─── */}
+      <section className="bg-[#fafaf8] border-y border-gray-100">
+        <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-16 py-20 sm:py-24">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <span className="w-6 h-px bg-[#C49B63]" />
+              <span className="text-[#C49B63] uppercase tracking-[0.28em] text-xs font-semibold">
+                {t.story.title}
+              </span>
+              <span className="w-6 h-px bg-[#C49B63]" />
             </div>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900 mt-2 mb-8">
+              {t.story.title}
+            </h2>
+            <p className="text-gray-500 text-base md:text-[1.05rem] leading-[1.85] whitespace-pre-line">
+              {t.story.desc}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CLINICAL PHILOSOPHY ─── */}
+      <section className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-16 py-20 sm:py-28">
+        <div className="text-center mb-14">
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <span className="w-6 h-px bg-[#C49B63]" />
+            <span className="text-[#C49B63] uppercase tracking-[0.28em] text-xs font-semibold">
+              {t.philosophy.title}
+            </span>
+            <span className="w-6 h-px bg-[#C49B63]" />
+          </div>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900 mt-2">
+            {t.philosophy.title}
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 mb-14">
+          {t.philosophy.quotes.map((q, i) => (
+            <blockquote
+              key={i}
+              className="relative bg-white border border-gray-100 hover:border-[#C49B63]/30 p-8 sm:p-10 rounded-2xl transition-all duration-300 group"
+            >
+              <Quote
+                size={36}
+                className="text-[#C49B63]/15 mb-4 group-hover:text-[#C49B63]/25 transition-colors"
+                strokeWidth={1.5}
+              />
+              <p className="font-serif text-lg sm:text-xl text-gray-800 leading-relaxed mb-6">
+                {q.text}
+              </p>
+              <footer className="flex items-center gap-2">
+                <span className="w-6 h-px bg-[#C49B63]" />
+                <span className="text-[#C49B63] font-semibold text-sm">{q.author}</span>
+              </footer>
+            </blockquote>
           ))}
         </div>
+
+        <p className="text-gray-500 text-base md:text-[1.05rem] leading-[1.85] max-w-3xl mx-auto text-center">
+          {t.philosophy.desc}
+        </p>
       </section>
 
-      {/* ─────────── PROFESSIONAL STORY ─────────── */}
-      <section className="bg-[#06091A] border-y border-white/5">
-        <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-16 py-20 sm:py-24 text-center">
-          <span className="text-[#C49B63] uppercase tracking-[0.3em] text-xs font-semibold block mb-6">
-            ── {t.story.title} ──
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white mb-8">
-            {t.story.title}
-          </h2>
-          <p className="text-slate-300 text-base md:text-lg leading-relaxed max-w-[800px] mx-auto whitespace-pre-line">
-            {t.story.desc}
-          </p>
-        </div>
-      </section>
-
-      {/* ─────────── CLINICAL PHILOSOPHY ─────────── */}
-      <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#C49B63]/5 via-transparent to-[#C49B63]/5" />
-        <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-16 py-20 sm:py-28 z-10 relative">
-          <div className="text-center mb-14">
-            <span className="text-[#C49B63] uppercase tracking-[0.3em] text-xs font-semibold block mb-4">
-              ── {t.philosophy.title} ──
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-              {t.philosophy.title}
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {t.philosophy.quotes.map((q, i) => (
-              <blockquote
-                key={i}
-                className="relative bg-gradient-to-br from-white/[0.06] to-transparent border border-[#C49B63]/20 p-10 rounded-3xl"
-              >
-                <div className="absolute top-6 left-8 text-[#C49B63]/20 font-serif text-8xl leading-none select-none">
-                  "
-                </div>
-                <p className="font-serif text-xl sm:text-2xl text-white leading-relaxed mb-6 relative z-10">
-                  {q.text}
-                </p>
-                <footer className="text-[#C49B63] font-semibold text-sm tracking-wide">
-                  — {q.author}
-                </footer>
-              </blockquote>
-            ))}
-          </div>
-
-          <p className="text-slate-300 text-base md:text-lg leading-relaxed max-w-[800px] mx-auto text-center">
-            {t.philosophy.desc}
-          </p>
-        </div>
-      </section>
-
-      {/* ─────────── TESTIMONIALS ─────────── */}
-      <section className="bg-[#06091A] border-t border-white/5">
+      {/* ─── TESTIMONIALS ─── */}
+      <section className="bg-[#fafaf8] border-t border-gray-100">
         <div className="max-w-[1300px] mx-auto px-6 sm:px-8 lg:px-16 py-20 sm:py-28">
           <div className="text-center mb-14">
-            <span className="text-[#C49B63] uppercase tracking-[0.3em] text-xs font-semibold block mb-4">
-              ── {t.testimonials.title} ──
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <span className="w-6 h-px bg-[#C49B63]" />
+              <span className="text-[#C49B63] uppercase tracking-[0.28em] text-xs font-semibold">
+                {t.testimonials.title}
+              </span>
+              <span className="w-6 h-px bg-[#C49B63]" />
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900 mt-2">
               {t.testimonials.title}
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {t.testimonials.items.map((item, i) => (
               <div
                 key={i}
-                className="group relative bg-white/[0.03] border border-white/10 hover:border-[#C49B63]/40 p-8 rounded-3xl transition-all duration-300 hover:bg-white/[0.06]"
+                className="relative bg-white border border-gray-100 hover:border-[#C49B63]/30 p-7 rounded-2xl transition-all duration-300 group flex flex-col gap-5"
               >
-                {/* Top gold line */}
-                <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#C49B63]/60 to-transparent" />
-                <p className="text-slate-300 text-base leading-relaxed mb-6 italic">
+                <div className="flex gap-1">
+                  {Array.from({ length: 5 }).map((_, s) => (
+                    <Star key={s} size={13} className="fill-[#C49B63] text-[#C49B63]" />
+                  ))}
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed flex-1 italic">
                   "{item.text}"
                 </p>
-                <strong className="text-[#C49B63] text-sm tracking-wide">{item.name}</strong>
+                <div className="flex items-center gap-3 pt-2 border-t border-gray-50">
+                  <div className="w-8 h-8 rounded-full bg-[#C49B63]/10 flex items-center justify-center">
+                    <Users size={14} className="text-[#C49B63]" />
+                  </div>
+                  <strong className="text-gray-800 text-sm">{item.name}</strong>
+                </div>
               </div>
             ))}
           </div>

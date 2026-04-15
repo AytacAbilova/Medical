@@ -167,7 +167,7 @@ export default function FAQ() {
 
   return (
     <section className="bg-[#F0F4F8] min-h-screen">
-      <div
+      {/* <div
         className="relative overflow-hidden"
         style={{ background: "linear-gradient(135deg, #1A3A5C 0%, #1565C0 60%, #1A3A5C 100%)" }}
       >
@@ -196,7 +196,6 @@ export default function FAQ() {
             Ürək əməliyyatları haqqında ən çox sorulan suallar – bypass, qapaq əməliyyatı, sağalma müddəti, sığorta və hazırlıq.
           </p>
 
-          {/* Stats strip */}
           <div className="flex flex-wrap gap-8 mt-12 pt-10 border-t border-white/10">
             {[
               { n: "16", label: "Sual & Cavab" },
@@ -210,12 +209,10 @@ export default function FAQ() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
-      {/* ── BODY ── */}
       <div className="max-w-[1300px] mx-auto px-6 md:px-12 py-16">
 
-        {/* Category filter pills */}
         <div className="flex flex-wrap gap-3 mb-12">
           {categories.map((cat) => {
             const active = activeCategory === cat.id;
@@ -248,10 +245,8 @@ export default function FAQ() {
           })}
         </div>
 
-        {/* Two-column layout on large screens */}
         <div className="grid lg:grid-cols-[1fr_360px] gap-10 items-start">
 
-          {/* FAQ Accordion */}
           <div className="space-y-3">
             {filtered.map((faq) => {
               const isOpen = openId === faq.id;
@@ -281,7 +276,6 @@ export default function FAQ() {
                       {faq.tag}
                     </span>
 
-                    {/* Question */}
                     <span
                       className="flex-1 font-semibold text-[#1A3A5C] text-base leading-snug"
                       style={{ color: isOpen ? faq.tagColor : "#1A3A5C" }}
@@ -289,13 +283,11 @@ export default function FAQ() {
                       {faq.q}
                     </span>
 
-                    {/* Chevron */}
                     <span style={{ color: faq.tagColor }}>
                       <ChevronIcon open={isOpen} />
                     </span>
                   </button>
 
-                  {/* Answer */}
                   <div
                     className="overflow-hidden transition-all duration-300"
                     style={{ maxHeight: isOpen ? "400px" : "0" }}
@@ -311,10 +303,8 @@ export default function FAQ() {
             })}
           </div>
 
-          {/* Sidebar */}
           <aside className="space-y-6 sticky top-8">
 
-            {/* CTA Card */}
             <div
               className="rounded-2xl p-8 text-white relative overflow-hidden"
               style={{ background: "linear-gradient(135deg, #1A3A5C, #1565C0)" }}

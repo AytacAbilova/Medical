@@ -27,10 +27,16 @@ const heroContents: Record<string, any> = {
         subTitle: "Açıq ürək əməliyyatları, koronar bypass, aorta və damar cərrahiyyəsi daxil olmaqla bütün müasir kardiovaskulyar müdaxilələr."
     },
     "/projects": {
-        text: "Klinik Nəticələr və Layihələr",
+        text: "Tez-tez verilən suallar",
         img: projectsImg,
         subTitle:
-            "Dr. Beyrək Abbaszadə tərəfindən icra olunan ürək-damar əməliyyatları və müalicə nəticələrinin real klinik təqdimatı."
+            "Ürək-damar cərrahiyyəsi, əməliyyatlar və müalicə prosesi ilə bağlı ən çox verilən suallar və ətraflı cavablar."
+    },
+    "/question": {
+        text: "Tibbi Bloq",
+        img: projectsImg,
+        subTitle:
+            "Ürək-damar cərrahiyyəsi, risk amillər, pasiyent hekayələri və müasir müalicə üsulları haqqında."
     },
 };
 

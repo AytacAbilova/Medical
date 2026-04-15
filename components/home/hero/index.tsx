@@ -105,9 +105,8 @@ export default function Hero({
 
           {isHome && (
             <div className="flex justify-center gap-4 flex-wrap">
-              <Button text={content.cta1} link="/create" type={2} />
-              <Button text={content.cta2} link="/projects" type={4} />
-              
+              <Button text={content.cta1} link="/contact" type={2} />
+              <Button text={content.cta2} link="/services" type={4} />
             </div>
           )}
         </div>

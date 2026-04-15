@@ -104,7 +104,7 @@ export default function Header({ locale = "az" }: any) {
                 <Link href="/projects">Sual-Cavab</Link>
               </li>
               <li className="has-dropdown">
-                <Link href="/blog">Tibbi Yazılar</Link>
+                <Link href="/question">Tibbi Yazılar</Link>
               </li>
               <li className="mobile-only">
                 <Link href="/contact">Bizimlə əlaqə</Link>

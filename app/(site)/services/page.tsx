@@ -28,7 +28,7 @@ export default function Services({ locale = "az" }: Props) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((s: any, i: number) => {
-            const imgSrc = s.img || images[i % images.length]; // 🔥 FIX HERE
+            const imgSrc = s.img || images[i % images.length]; 
 
             return (
               <article
