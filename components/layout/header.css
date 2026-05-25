@@ -10,7 +10,7 @@
 
 .site-header a {
   text-decoration: none;
-  color: inherit;
+  color: #fff;
 }
 
 .container {
@@ -67,14 +67,16 @@
   width: 100%;
   /* background: #ffffff; */
   z-index: 1000;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 130px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+
 }
 
 /* =========================
@@ -83,7 +85,9 @@
 
 .site-logo img {
   display: block;
-  height: auto;
+  height: 30px;
+  width: 30px;
+  margin-bottom: 10px;
   margin-top: 10px;
 }
 
@@ -101,21 +105,21 @@
   gap: 32px;
 }
 
-.menu > li {
+.menu>li {
   position: relative;
 }
 
-.menu > li > a,
-.menu > li > span {
-    font-weight: 500;
-    font-size: 18px;
-    padding: 10px 0;
-    cursor: pointer; 
-    color: #fff
+.menu>li>a,
+.menu>li>span {
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 0;
+  cursor: pointer;
+  color: #001a56;
 }
 
-.menu > li:hover > a {
-  color: #2A69AC;
+.menu>li:hover>a {
+  color: #2388ff;
 
 }
 
@@ -123,7 +127,7 @@
    DROPDOWN
 ========================= */
 
-.has-dropdown > .dropdown {
+.has-dropdown>.dropdown {
   position: absolute;
   top: 100%;
   left: 0;
@@ -137,7 +141,7 @@
   z-index: 99;
 }
 
-.has-dropdown:hover > .dropdown {
+.has-dropdown:hover>.dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -164,7 +168,19 @@
 
 .mobile-only {
   display: none;
+  align-items: center;
+  justify-content: center;
 }
+
+@media (max-width: 768px) {
+  .main-nav { display: none; }
+  .desktop-only { display: none; }
+  .mobile-only { display: flex; }
+  .header-inner {
+    padding-top: 8px;
+    padding-bottom: 8px;
+   }  
+  }
 
 .desktop-only {
   display: block;
@@ -176,16 +192,3 @@
   }
 }
 
-@media (max-width: 768px) {
-  .main-nav {
-    display: none; /* hamburger əlavə edəndə dəyişəcəyik */
-  }
-
-  .mobile-only {
-    display: block;
-  }
-
-  .desktop-only {
-    display: none;
-  }
-}

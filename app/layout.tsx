@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Manrope, DM_Sans} from "next/font/google";
 import "./globals.css";
-import 'aos/dist/aos.css'
+// import 'aos/dist/aos.css'
 
 // Google Fonts
 const geistSans = Geist({

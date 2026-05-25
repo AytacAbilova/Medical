@@ -1,11 +1,11 @@
  .btn {
    position: relative;
-   padding: 20px 30px;
-   border-radius: 30px;
+   padding: 10px 30px;
    font-weight: 600;
-   color: #fff;
+   color: #001a56;
    overflow: hidden;
    transition: all 0.4s ease-in-out;
+   background-color: #fff;
    z-index: 1;
    border-radius: 12px;
    font-size: 18px;
@@ -14,6 +14,7 @@
    gap: 8px;
    align-items: center;
    justify-content: center;
+   border-radius: 99px;
  }
 
  .btn::before {
@@ -21,8 +22,6 @@
    position: absolute;
    top: 0;
    left: 0;
-   width: 100%;
-   height: 100%;
    z-index: -1;
    border-radius: 12px;
 
@@ -42,12 +41,11 @@
  }
 
  .maviag::before {
-   background: #2A69AC;
+   background: #2388ff;
  }
 
  .maviag::after {
-   background: #fff;
-
+   background:#2388ff;
  }
 
  .ag::before {
@@ -61,17 +59,17 @@
  }
 
  .ag::after {
-   background: #2A69AC;
+   background: #2388ff;
  }
 
 
  .goy::before {
-   background: #2A69AC;
+   background: #2388ff;
 
  }
 
  .goy::after {
-   background: #102948;
+   background: #2388ff;
    ;
 
  }

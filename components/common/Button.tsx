@@ -16,7 +16,7 @@ const Button = ({ text, type, link }: ButtonProps) => {
       <Link href={link} >
         {text}
       </Link>
-      {type!==1 && <RightIco/>}
+      {type!==1 }
     </div>
   );
 };
