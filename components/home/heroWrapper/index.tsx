@@ -18,35 +18,30 @@ type HeroData = {
 };
 
 const heroContents: Record<string, HeroData> = {
-    "/": { isHome: true, video: "/assets/videos/hero1.mp4" },
-    "/about": {
-        text: "Haqqında",
-        img: aboutImg,
-        subTitle:
-            "Ürək-damar cərrahiyyəsi sahəsində geniş təcrübəyə malik Dr. Beyrək Abbaszadə müasir açıq ürək, minimal invaziv və damar cərrahiyyəsi metodları ilə pasiyentlərə yüksək səviyyəli tibbi xidmət təqdim edir."
-    },
-    "/contact": {
-        text: "Bizimlə əlaqə",
-        img: contactImg,
-        subTitle: "Suallarınız və əməkdaşlıq üçün bizimlə əlaqə saxlayın."
-    },
-    "/services": {
-        text: "Ürək-Damar Cərrahiyyəsi Xidmətləri",
-        img: servicesImg,
-        subTitle: "Açıq ürək əməliyyatları, koronar bypass, aorta və damar cərrahiyyəsi daxil olmaqla bütün müasir kardiovaskulyar müdaxilələr."
-    },
-    "/projects": {
-        text: "Tez-tez verilən suallar",
-        img: projectsImg,
-        subTitle:
-            "Ürək-damar cərrahiyyəsi, əməliyyatlar və müalicə prosesi ilə bağlı ən çox verilən suallar və ətraflı cavablar."
-    },
-    "/question": {
-        text: "Tibbi Bloq",
-        img: projectsImg,
-        subTitle:
-            "Ürək-damar cərrahiyyəsi, risk amillər, pasiyent hekayələri və müasir müalicə üsulları haqqında."
-    },
+  "/": {
+    isHome: true,
+  },
+
+  "/about": {
+    isHome: true,
+  },
+
+  "/contact": {
+    isHome: true,
+  },
+
+  "/services": {
+    isHome: true,
+  },
+
+  "/projects": {
+    isHome: true,
+  },
+
+  "/blog": {
+    isHome: true,
+  },
+    
 };
 
 const serviceHeroMap: Record<string, HeroData> = {
@@ -108,18 +103,26 @@ const serviceHeroMap: Record<string, HeroData> = {
 };
 
 export default function HeroWrapper() {
-    const pathname = usePathname();
+   const pathname = usePathname();
+
+    const normalizedPath = useMemo(() => {
+        const path = pathname.replace(/^\/(az|en|ru)/, "") || "/";
+
+        return path !== "/" ? path.replace(/\/$/, "") : path;
+    }, [pathname]);
+
     const hero = useMemo<HeroData>(() => {
-        const staticHero = heroContents[pathname];
+        const staticHero = heroContents[normalizedPath];
+
         if (staticHero) return staticHero;
 
-        if (pathname.startsWith("/services/")) {
-            const slug = pathname.split("/")[2];
+        if (normalizedPath.startsWith("/services/")) {
+            const slug = normalizedPath.split("/")[2];
             return serviceHeroMap[slug] ?? heroContents["/services"];
         }
 
         return heroContents["/"];
-    }, [pathname]);
+    }, [normalizedPath]);
 
     return (
         <Hero

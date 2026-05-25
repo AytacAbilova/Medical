@@ -85,16 +85,15 @@ export default function Header({ locale = "az" }: { locale?: Locale }) {
                   </ul>
                 </li>
                 <li><Link href="/faq">Sual-Cavab</Link></li>
-                <li><Link href="/blog">Tibbi Yazılar</Link></li>
+                <li><Link href="/question">Blog</Link></li>
               </ul>
             </nav>
-            <div className="desktop-only">
+            {/* <div className="desktop-only">
               <Button link="/contact" text="Randevu al" type={1} />
-            </div>
+            </div> */}
           </div>
 
           {/* Hamburger düyməsi — yalnız mobil */}
-          {/* Hamburger — CSS mobile-only class ilə desktop-da gizlənir */}
           <button
             className="mobile-only"
             onClick={() => setMenuOpen(true)}
@@ -169,7 +168,7 @@ export default function Header({ locale = "az" }: { locale?: Locale }) {
               { label: "Haqqında", href: "/about" },
               { label: "Xidmətlər", href: "/services" },
               { label: "Sual-Cavab", href: "/faq" },
-              { label: "Tibbi Yazılar", href: "/blog" },
+              { label: "Blog", href: "/question" },
               { label: "Əlaqə", href: "/contact" },
             ].map((link) => (
               <li key={link.href} style={{ borderBottom: "1px solid #f5f5f5" }}>

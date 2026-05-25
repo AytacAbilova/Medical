@@ -9,7 +9,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <>
       <div className="headercontainer overflow-hidden">
         <Header />
-        {/* <AOSProvider /> */}
         <HeroWrapper />
       </div>
       {children}

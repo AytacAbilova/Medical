@@ -28,7 +28,7 @@ const content = {
       { label: "Ana səhifə", href: "/" },
       { label: "Haqqımızda", href: "/about" },
       { label: "Xidmətlər", href: "/services" },
-      { label: "Tibbi Yazılar", href: "/blog" },
+      { label: "Blog", href: "/blog" },
       { label: "Sual-Cavab", href: "/faq" },
       { label: "Əlaqə", href: "/contact" },
     ],

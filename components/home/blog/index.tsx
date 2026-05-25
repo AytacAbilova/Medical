@@ -1,217 +1,172 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
-type BlogPost = {
-  slug: string;
-  title: string;
-  excerpt: string;
-  category: string;
-  date: string;
-  image: string;
+// ─── DATA ────────────────────────────────────────────────────
+const content = {
+  az: {
+    title:       "Tibbi Yazılar",
+    desc:        "Ürək-damar sağlamlığı haqqında faydalı məqalələr və tövsiyələr.",
+    newsletter:  "Tibbi yeniliklər üçün abunə olun",
+    placeholder: "E-poçt ünvanınız",
+    subscribeBtn:"Abunə ol",
+    posts: [
+      {
+        id:       "1",
+        title:    "Ürək bypass əməliyyatından sonra sağalma prosesi",
+        category: "Məsləhət",
+        date:     "21 Yanvar, 2024",
+        img:      "/assets/images/blog1.jpg",
+        href:     "/blog/bypass-sagalma",
+        featured: true,
+      },
+      {
+        id:       "2",
+        title:    "Koronar xəstəliyin erkən əlamətlərini necə tanımaq olar?",
+        category: "Məlumat",
+        date:     "7 Mart, 2024",
+        href:     "/blog/koronar-elamet",
+        featured: false,
+      },
+      {
+        id:       "3",
+        title:    "Minimal invaziv cərrahiyyə — az kəsik, sürətli sağalma",
+        category: "Xidmətlər",
+        date:     "15 Aprel, 2024",
+        href:     "/blog/minimal-invaziv",
+        featured: false,
+      },
+    ],
+  },
 };
 
-const featuredPosts: BlogPost[] = [
-  {
-    slug: "aciq-urek-emeliyyati-nece-icra-edilir",
-    title: "Açıq Ürək Əməliyyatı Necə İcra Edilir?",
-    excerpt:
-      "Bypass əməliyyatı zamanı kardiopulmoner maşın necə işləyir, cərrah hansı addımları atır — tam bələdçi.",
-    category: "Cərrahi",
-    date: "15 Aprel 2025",
-    image:
-      "/assets/images/contactus.png",
-  },
-  {
-    slug: "aorta-anevrizması-sessiz-saatlı-bomba",
-    title: "Aorta Anevrizması – Səssiz Saatlı Bomba",
-    excerpt:
-      "55 mm-dən böyük anevrizma həyatı təhdid edir. Erkən diaqnoz həlledicidir.",
-    category: "Aorta",
-    date: "2 Mart 2025",
-    image:
-      "/assets/images/image2.png",
-  },
-  {
-    slug: "ef-30-emeliyyat-mumkundurmu",
-    title: "EF 30% — Əməliyyat Mümkündürmü?",
-    excerpt:
-      "Ürəyin atım fraksiyası kritik həddə düşdükdə bypass mümkündür. Real nümunə ilə izah.",
-    category: "Yüksək Risk",
-    date: "18 Fevral 2025",
-    image:
-     "/assets/images/image3.png",
-  },
-  {
-    slug: "38-yasinda-infarkt",
-    title: "38 Yaşında İnfarkt: Ürək Xəstəliyi Cavanlaşır",
-    excerpt:
-      "Gənc yaşda infarkt niyə artır? Risk faktorları, profilaktika və vaxtında müdaxilənin əhəmiyyəti.",
-    category: "Profilaktika",
-    date: "5 Yanvar 2025",
-    image:
-      "/assets/images/image4.png",
-  },
-  {
-    slug: "bypass-sonrasi-heyat",
-    title: "Açıq Ürək Əməliyyatından Sonra Həyat",
-    excerpt:
-      "Reabilitasiya, qidalanma, fiziki fəaliyyət — bypass sonrası tam sağalma bələdçisi.",
-    category: "Sağalma",
-    date: "20 Dekabr 2024",
-    image:
-      "/assets/images/aboutImg.png",
-  },
-  {
-    slug: "xaricde-redd-edilmisdim",
-    title: "Xaricdə Rədd Edilmişdim – Azərbaycanda Xilas Oldum",
-    excerpt:
-      "Türkiyə və Almaniyadan imtina alan xəstə Azərbaycanda uğurla əməliyyat olundu.",
-    category: "Real Hekayə",
-    date: "10 Noyabr 2024",
-    image:
-       "/assets/images/contactus.png",
-  },
-];
+export default function BlogSection({ locale = "az" }: { locale?: "az" }) {
+  const t = content[locale];
+  const featured  = t.posts.find((p) => p.featured)!;
+  const secondary = t.posts.filter((p) => !p.featured);
 
-const sidebarFeatured: BlogPost[] = [
-  featuredPosts[0],
-  featuredPosts[2],
-  featuredPosts[4],
-];
-
-const sidebarLatest: BlogPost[] = [
-  featuredPosts[3],
-  featuredPosts[5],
-  featuredPosts[1],
-];
-
-const BigCard = ({ post, index }: { post: BlogPost; index: number }) => (
-  <Link
-    href={`/blog/${post.slug}`}
-    className="group relative overflow-hidden rounded-2xl block"
-    style={{ animationDelay: `${index * 100}ms` }}
-  >
-    <div className="relative h-72 md:h-80 w-full overflow-hidden rounded-2xl">
-      <Image
-        src={post.image}
-        alt={post.title}
-        fill
-        className="object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent rounded-2xl" />
-
-      <span className="absolute top-4 left-4 text-xs font-semibold px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-sm text-white border border-white/20">
-        {post.category}
-      </span>
-
-      <div className="absolute bottom-0 left-0 right-0 p-5">
-        <h3 className="text-white font-bold text-lg leading-snug mb-2 group-hover:text-[#C49B63] transition-colors duration-300">
-          {post.title}
-        </h3>
-        <p className="text-gray-300 text-sm leading-relaxed line-clamp-2">
-          {post.excerpt}
-        </p>
-        <span className="mt-3 inline-block text-xs text-gray-400">
-          {post.date}
-        </span>
-      </div>
-    </div>
-  </Link>
-);
-
-const SidebarItem = ({ post }: { post: BlogPost }) => (
-  <Link
-    href={`/blog/${post.slug}`}
-    className="group flex gap-3 items-start py-3 border-b border-white/10 last:border-0"
-  >
-    <div className="relative w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
-      <Image
-        src={post.image}
-        alt={post.title}
-        fill
-        className="object-cover group-hover:scale-105 transition-transform duration-300"
-      />
-    </div>
-    <div className="flex-1 min-w-0">
-      <span className="text-[11px] text-[#C49B63] font-medium">{post.date}</span>
-      <p className="text-sm text-black font-medium leading-snug mt-0.5 group-hover:text-[#C49B63] transition-colors line-clamp-2">
-        {post.title}
-      </p>
-    </div>
-  </Link>
-);
-
-export const BlogSection = () => {
   return (
-    <section className="py-24 px-4  text-black">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-white py-24">
+      <div className="max-w-[1300px] mx-auto px-6 lg:px-10">
+
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
-          <div>
-            <span className="text-[#C49B63] font-semibold text-sm uppercase tracking-widest">
-              Bloq
-            </span>
-            <h2 className="text-3xl md:text-[48px] font-extrabold mt-2 leading-tight">
-              Tibbi məqalələr.
-            </h2>
-          </div>
-          <Link
-            href="/blog"
-            className="text-sm text-[#C49B63] border border-[#C49B63]/40 px-5 py-2.5 rounded-full hover:bg-[#C49B63]/10 transition-colors self-start md:self-auto"
+        <div className="text-center mb-14">
+          <h2
+            data-aos="fade-up"
+            className="text-3xl md:text-[48px] font-extrabold text-[#001a56] leading-tight mb-4"
           >
-            Bütün məqalələr →
+            {t.title}
+          </h2>
+          <p
+            data-aos="fade-up"
+            className="text-[#465271] text-[15px] max-w-xl mx-auto"
+          >
+            {t.desc}
+          </p>
+        </div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+
+          {/* SOL — Böyük featured kart */}
+          <Link
+            href={featured.href}
+            data-aos="fade-right"
+            className="group bg-[#EEF3FA] rounded-3xl overflow-hidden flex flex-col
+                       hover:shadow-lg transition-all duration-300"
+          >
+            {/* Şəkil */}
+            <div className="relative w-full h-[280px] sm:h-[360px] overflow-hidden">
+              <Image
+                src={featured.img!}
+                alt={featured.title}
+                fill
+                quality={90}
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Alt mətn */}
+            <div className="p-7 flex items-end justify-between gap-4">
+              <div>
+                <h3 className="text-[#001a56] font-extrabold text-[20px] leading-snug mb-3">
+                  {featured.title}
+                </h3>
+                <div className="flex items-center gap-3">
+                  <span className="text-[11px] font-bold text-[#2388ff] bg-white px-3 py-1 rounded-full">
+                    {featured.category}
+                  </span>
+                  <span className="text-[#465271] text-[13px]">{featured.date}</span>
+                </div>
+              </div>
+              <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shrink-0
+                              group-hover:bg-[#2388ff] transition-colors duration-300">
+                <ArrowUpRight size={16} className="text-gray-400 group-hover:text-white transition-colors duration-300" />
+              </div>
+            </div>
           </Link>
-        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-            {featuredPosts.map((post, i) => (
-              <BigCard key={post.slug} post={post} index={i} />
-            ))}
-          </div>
+          {/* SAĞ — 2 kiçik post + newsletter */}
+          <div className="flex flex-col gap-5">
 
-          <aside className="flex flex-col gap-8">
-            <div>
-              <h3 className="text-base font-bold text-black mb-1 pb-3 border-b border-white/10">
-                Seçilmiş
-              </h3>
-              <div>
-                {sidebarFeatured.map((post) => (
-                  <SidebarItem key={post.slug} post={post} />
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-base font-bold text-black mb-1 pb-3 border-b border-white/10">
-                Son məqalələr
-              </h3>
-              <div>
-                {sidebarLatest.map((post) => (
-                  <SidebarItem key={post.slug} post={post} />
-                ))}
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-[#C49B63]/30 bg-[#C49B63]/5 p-5">
-              <p className="text-sm font-semibold text-black mb-1">
-                Konsultasiya lazımdır?
-              </p>
-              <p className="text-xs text-gray-400 mb-4 leading-relaxed">
-                Dr. Abbaszadə ilə əlaqə saxlayın. Sorğunuzu göndərin, qısa
-                müddətdə cavab alın.
-              </p>
+            {/* Kiçik postlar */}
+            {secondary.map((post) => (
               <Link
-                href="/contact"
-                className="inline-block text-sm font-semibold bg-[#C49B63] text-[#0E172A] px-5 py-2.5 rounded-full hover:bg-[#d4aa74] transition-colors"
+                key={post.id}
+                href={post.href}
+                data-aos="fade-left"
+                className="group bg-white rounded-3xl border border-gray-100 p-6
+                           flex items-center justify-between gap-4
+                           hover:shadow-md hover:border-gray-200 transition-all duration-300"
               >
-                Əlaqə →
+                <div>
+                  <h3 className="text-[#001a56] font-extrabold text-[17px] leading-snug mb-3">
+                    {post.title}
+                  </h3>
+                  <div className="flex items-center gap-3">
+                    <span className="text-[11px] font-bold text-[#2388ff] bg-[#EEF3FA] px-3 py-1 rounded-full">
+                      {post.category}
+                    </span>
+                    <span className="text-[#465271] text-[13px]">{post.date}</span>
+                  </div>
+                </div>
+                <div className="w-9 h-9 rounded-full bg-[#EEF3FA] flex items-center justify-center shrink-0
+                                group-hover:bg-[#2388ff] transition-colors duration-300">
+                  <ArrowUpRight size={16} className="text-gray-400 group-hover:text-white transition-colors duration-300" />
+                </div>
               </Link>
+            ))}
+
+            {/* Newsletter kartı */}
+            <div
+              data-aos="fade-up"
+              className="rounded-3xl p-8 flex flex-col gap-5"
+              style={{
+                background: "linear-gradient(135deg, #001a56 0%, #0a2d7a 60%, #1a4a9a 100%)",
+              }}
+            >
+              <h3 className="text-white font-extrabold text-[22px] sm:text-[26px] leading-snug">
+                {t.newsletter}
+              </h3>
+              <div
+                className="flex rounded-2xl overflow-hidden"
+                style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.15)" }}
+              >
+                <input
+                  type="email"
+                  placeholder={t.placeholder}
+                  className="flex-1 min-w-0 bg-transparent text-white text-sm px-5 py-3.5 outline-none placeholder:text-slate-400"
+                />
+                <button className="shrink-0 bg-white text-[#001a56] font-bold text-sm px-6 py-3.5 m-1 rounded-xl hover:bg-slate-100 transition-colors duration-200">
+                  {t.subscribeBtn}
+                </button>
+              </div>
             </div>
-          </aside>
+
+          </div>
         </div>
+
       </div>
     </section>
   );
-};
+}

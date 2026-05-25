@@ -1,427 +1,371 @@
 "use client";
-import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight, Search } from "lucide-react";
+import { useState } from "react";
+
+const content = {
+  az: {
+    title: "Tibbi Yazılar",
+    desc: "Ürək-damar sağlamlığı haqqında faydalı məqalələr və tövsiyələr.",
+    newsletter: "Tibbi yeniliklər üçün abunə olun",
+    placeholder: "E-poçt ünvanınız",
+    subscribeBtn: "Abunə ol",
+    posts: [
+      {
+        id: "1",
+        title: "Ürək bypass əməliyyatından sonra sağalma prosesi",
+        category: "Məsləhət",
+        date: "21 Yanvar, 2024",
+        img: "/assets/images/blog1.jpg",
+        href: "/blog/bypass-sagalma",
+      },
+      {
+        id: "2",
+        title: "10 gündəlik vəzifə — az kəsiklə böyük nəticə",
+        category: "Məlumat",
+        date: "7 Mart, 2024",
+        href: "/blog/gundelik",
+      },
+      {
+        id: "3",
+        title: "Koronar xəstəliyin erkən əlamətlərini necə tanımaq olar?",
+        category: "Xidmətlər",
+        date: "15 Aprel, 2024",
+        href: "/blog/koronar-elamet",
+      },
+      {
+        id: "4",
+        title: "Minimal invaziv cərrahiyyə — sürətli sağalma",
+        category: "Məsləhət",
+        date: "2 May, 2024",
+        href: "/blog/minimal",
+      },
+    ],
+  },
+};
+const categories = ["Hamısı", "Məsləhət", "Məlumat", "Xidmətlər", "Profilaktika"];
 
 const posts = [
   {
-    slug: "aciq-urek-emeliyyati-nece-icra-edilir",
-    category: "Cərrahiyyə",
-    categoryColor: "#1565C0",
-    title: "Açıq Ürək Əməliyyatı Necə İcra Edilir?",
-    excerpt: "Kardiopulmoner bypass, döş sümüyünün açılması və cərrahın ürəyə birbaşa müdaxiləsi – addım-addım izah.",
-    date: "2024-02-21",
-    readTime: "6 dəq",
-    featured: true,
-    hot: true,
+    id: "1",
+    title: "Ürək bypass əməliyyatından sonra sağalma prosesi",
+    desc: "Bypass sonrası ilk həftələrdə nələrə diqqət etmək lazımdır? Həkimin tövsiyələri ilə sağalma prosesi.",
+    category: "Məsləhət",
+    date: "21 Yanvar, 2024",
+    img: "/assets/images/blog1.jpg",
+    href: "/blog/bypass-sagalma",
   },
   {
-    slug: "koronar-bypass-damarlar-haradan-alinir",
-    category: "Bypass",
-    categoryColor: "#1565C0",
-    title: "Koronar Bypass: Damarlar Haradan Alınır?",
-    excerpt: "LIMA, radial artery və safen vena – tam arterial revaskulyarizasiyanın üstünlükləri.",
-    date: "2024-03-10",
-    readTime: "5 dəq",
-    featured: true,
+    id: "2",
+    title: "Koronar xəstəliyin erkən əlamətlərini necə tanımaq olar?",
+    desc: "Ürək xəstəliklərinin erkən diaqnozu həyatı xilas edə bilər. Bu əlamətlərə diqqət edin.",
+    category: "Məlumat",
+    date: "7 Mart, 2024",
+    img: "/assets/images/blog2.jpg",
+    href: "/blog/koronar-elamet",
   },
   {
-    slug: "aorta-anevrizması-sessiz-saatli-bomba",
-    category: "Aorta",
-    categoryColor: "#C62828",
-    title: "Aorta Anevrizması – Səssiz Saatlı Bomba",
-    excerpt: "55 mm hədd, yırtılma riski, simptomlar – vaxtında aşkarlama həyatı xilas edir.",
-    date: "2024-03-28",
-    readTime: "7 dəq",
-    featured: true,
-    urgent: true,
+    id: "3",
+    title: "Minimal invaziv cərrahiyyə — az kəsik, sürətli sağalma",
+    desc: "Müasir tibb minimal invaziv metodlarla böyük əməliyyatları kiçik kəsiklərlə icra etməyə imkan verir.",
+    category: "Xidmətlər",
+    date: "15 Aprel, 2024",
+    img: "/assets/images/blog3.jpg",
+    href: "/blog/minimal-invaziv",
   },
   {
-    slug: "38-yasinda-infarkt-urek-xesteliyinin-cavanlasması",
-    category: "Risk",
-    categoryColor: "#C62828",
-    title: "38 Yaşında İnfarkt: Ürək Xəstəliyi Cavanlaşır",
-    excerpt: "Stres, piylənmə, siqaret – gənc yaşda ürək infarktının arxasında duran amillər.",
-    date: "2024-04-05",
-    readTime: "5 dəq",
-    urgent: true,
+    id: "4",
+    title: "Ürək sağlamlığı üçün gündəlik 5 vərdiş",
+    desc: "Sadə həyat tərzi dəyişiklikləri ilə ürək-damar xəstəliklərinin riskini əhəmiyyətli dərəcədə azaltmaq mümkündür.",
+    category: "Profilaktika",
+    date: "2 May, 2024",
+    img: "/assets/images/blog4.jpg",
+    href: "/blog/gundelik-verdis",
   },
   {
-    slug: "ef-30-emeliyyat-mumkundurmu",
-    category: "Xüsusi Hallar",
-    categoryColor: "#00796B",
-    title: "EF (Atım Fraksiyası) 30% – Əməliyyat Mümkündürmü?",
-    excerpt: "Yüksək risk, zəif ürək funksiyası – Dr. Abbaszadənin uğurlu təcrübəsindən.",
-    date: "2024-04-18",
-    readTime: "6 dəq",
-  },
-  {
-    slug: "asd-emeliyyati-anadangelme-qusurun-cerrahi-mualicesi",
-    category: "Anadangəlmə",
-    categoryColor: "#1565C0",
-    title: "ASD Əməliyyatı: Anadangəlmə Qüsurun Cərrahi Müalicəsi",
-    excerpt: "Qulaqcıqlar arası çəpər defekti – sinus venosus növü də daxil olmaqla müalicə variantları.",
-    date: "2024-05-02",
-    readTime: "6 dəq",
-  },
-  {
-    slug: "varikoz-venaların-lazer-mualicesi-vs-cerrahiyye",
-    category: "Periferik Damar",
-    categoryColor: "#00796B",
-    title: "Varikoz Venaların Lazer Müalicəsi vs Cərrahiyyə",
-    excerpt: "EVLA, skleroterapiya, fleboektomiya – hansı üsul sizə uyğundur?",
-    date: "2024-05-17",
-    readTime: "5 dəq",
-  },
-  {
-    slug: "karotid-endarterektomiya-insultu-nece-onleyer",
-    category: "İnsult Profilaktikası",
-    categoryColor: "#C62828",
-    title: "Karotid Endarterektomiya – İnsultu Necə Önləyər?",
-    excerpt: "70%+ karotid stenozu, yağ plakı çıxarılması – insult riskini kəskin azaltmağın yolu.",
-    date: "2024-06-03",
-    readTime: "5 dəq",
-  },
-  {
-    slug: "urek-qapagi-emeliyyati-temir-mi-evzetme-mi",
-    category: "Qapaq Cərrahiyyəsi",
-    categoryColor: "#1565C0",
-    title: "Ürək Qapağı Əməliyyatı: Təmir mi, Əvəzetmə mi?",
-    excerpt: "Mitral, aorta, triküspid – qapaq patologiyalarında cərrahi qərarın meyarları.",
-    date: "2024-06-20",
-    readTime: "7 dəq",
-  },
-  {
-    slug: "hipertoniya-sessiz-qatil",
-    category: "Kardiovaskulyar Risk",
-    categoryColor: "#C62828",
-    title: "Hipertoniya: Səssiz Qatil",
-    excerpt: "120/80 norması, yüksək qan təzyiqinin simptomları, dərman vs. həyat tərzi.",
-    date: "2024-07-08",
-    readTime: "4 dəq",
-    urgent: true,
-  },
-  {
-    slug: "aciq-urek-emeliyyatından-sonra-heyat",
-    category: "Reabilitasiya",
-    categoryColor: "#00796B",
-    title: "Açıq Ürək Əməliyyatından Sonra Həyat",
-    excerpt: "Sağalma müddəti, reabilitasiya, idman, diet – bypass sonrası tam bərpa üçün rəhbər.",
-    date: "2024-07-25",
-    readTime: "8 dəq",
-  },
-  {
-    slug: "lmca-stenozu-ana-koronar-arteriya-daralması",
-    category: "Bypass",
-    categoryColor: "#1565C0",
-    title: "LMCA Stenozu: Ana Koronar Arteriya Daralması",
-    excerpt: "Sol ana koronar arteriyada 80–85% stenoz – ən yüksək risk qrupu üçün bypass taktikası.",
-    date: "2024-08-12",
-    readTime: "6 dəq",
-  },
-  {
-    slug: "şirvanda-aciq-urek-cerrahiyyesi-tarixi-hadise",
-    category: "Hadisə & PR",
-    categoryColor: "#1A3A5C",
-    title: "Şirvanda Açıq Ürək Cərrahiyyəsi – Tarixi Hadisə",
-    excerpt: "21 fevral 2024 – TƏBİB nəzarəti altında Şirvan Diaqnostik Mərkəzdə bölgənin ilk açıq ürək əməliyyatı.",
-    date: "2024-02-21",
-    readTime: "4 dəq",
-    featured: true,
-  },
-  {
-    slug: "eyni-seandsda-3-emeliyyat-mumkundurmu",
-    category: "Xüsusi Hallar",
-    categoryColor: "#00796B",
-    title: "Eyni Seansda 3 Əməliyyat: Mümkündürmü?",
-    excerpt: "CABG x4 + nefrektomiya + vena cava trombektomiya – çox sahəli nadir müdaxilənin arxasındakı həqiqət.",
-    date: "2024-09-01",
-    readTime: "5 dəq",
-  },
-  {
-    slug: "periferik-damar-xesteliyinden-qorunma",
-    category: "Periferik Damar",
-    categoryColor: "#00796B",
-    title: "Qan Dövranı Pozğunluğu: Alt Ətrafların Damarlarını Necə Qoruyaq?",
-    excerpt: "Periferik arteriya xəstəliyi, klodikasiya, aorta-bifemoral bypass – erkən diaqnostika önəmi.",
-    date: "2024-09-18",
-    readTime: "5 dəq",
-  },
-  {
-    slug: "xaricde-redd-edilmisdim-azerbaycanda-xilas-oldum",
-    category: "Pasiyent Hekayəsi",
-    categoryColor: "#1A3A5C",
-    title: "Xaricdə Rədd Edilmişdim – Azərbaycanda Xilas Oldum",
-    excerpt: "\"Artıq heç bir şey etmək olmaz\" dedilər. Dr. Abbaszadə isə əks fikirdi.",
-    date: "2024-10-05",
-    readTime: "4 dəq",
-    hot: true,
+    id: "5",
+    title: "Aorta anevrizması: əlamətlər və müalicə yolları",
+    desc: "Aorta anevrizması ciddi bir vəziyyətdir. Erkən müdaxilə ilə uğurlu müalicə mümkündür.",
+    category: "Məlumat",
+    date: "18 İyun, 2024",
+    img: "/assets/images/blog5.jpg",
+    href: "/blog/aorta-anevrizm",
   },
 ];
-const images = [
-  "/assets/images/contactus.png",
-  "/assets/images/image2.png",
-  "/assets/images/image3.png",
-  "/assets/images/image4.png",
-  "/assets/images/image1.png",
-  "/assets/images/image3.png",
-  "/assets/images/image4.png",
-  "/assets/images/image1.png"
-];
-const categoryColors: Record<string, string> = {
-  "Cərrahiyyə": "#1565C0",
-  "Bypass": "#1565C0",
-  "Aorta": "#C62828",
-  "Risk": "#C62828",
-  "Xüsusi Hallar": "#00796B",
-  "Anadangəlmə": "#1565C0",
-  "Periferik Damar": "#00796B",
-  "İnsult Profilaktikası": "#C62828",
-  "Qapaq Cərrahiyyəsi": "#1565C0",
-  "Kardiovaskulyar Risk": "#C62828",
-  "Reabilitasiya": "#00796B",
-  "Hadisə & PR": "#1A3A5C",
-  "Pasiyent Hekayəsi": "#1A3A5C",
-};
+const ArrowBtn = () => (
+  <div className="w-9 h-9 rounded-full bg-[#EEF3FA] flex items-center justify-center shrink-0
+                  group-hover:bg-[#2388ff] transition-colors duration-300">
+    <ArrowUpRight size={15} className="text-gray-400 group-hover:text-white transition-colors duration-300" />
+  </div>
+);
 
-const allCategories = ["Hamısı", ...Array.from(new Set(posts.map((p) => p.category)))];
+export default function BlogSection({ locale = "az" }: { locale?: "az" }) {
+  const t = content[locale];
+  const [search, setSearch] = useState("");
+  const [activecat, setActivecat] = useState("Hamısı");
 
-function formatDate(d: string) {
-  const date = new Date(d);
-  return date.toLocaleDateString("az-AZ", { day: "numeric", month: "long", year: "numeric" });
-}
-
-function CategoryPill({ cat, color }: { cat: string; color: string }) {
+  const filtered = posts.filter((p) => {
+    const matchCat = activecat === "Hamısı" || p.category === activecat;
+    const matchSearch = p.title.toLowerCase().includes(search.toLowerCase());
+    return matchCat && matchSearch;
+  });
   return (
-    <span
-      className="text-xs font-bold px-3 py-1 rounded-full"
-      style={{ background: `${color}15`, color }}
-    >
-      {cat}
-    </span>
-  );
-}
+    <section className="bg-white md:py-24 pt-12">
+      <div className="max-w-[1300px] mx-auto px-6 lg:px-10">
 
-function PostCover({ post, index }: { post: (typeof posts)[0]; index: number }) {
-  const gradients: Record<string, string> = {
-    "#1565C0": "linear-gradient(135deg, #1565C0 0%, #1A3A5C 100%)",
-    "#C62828": "linear-gradient(135deg, #C62828 0%, #7B1818 100%)",
-    "#00796B": "linear-gradient(135deg, #00796B 0%, #004D40 100%)",
-    "#1A3A5C": "linear-gradient(135deg, #1A3A5C 0%, #0D2137 100%)",
-  };
+        {/* Header */}
+        <div className="text-center md:mb-14 mb-7">
+          <h2 className="text-[30px] md:text-[60px] font-extrabold text-[#001a56] leading-tight md:mb-4 mb-2">
+            {t.title}
+          </h2>
+          <p className="text-[#465271] text-[16px] max-w-xl mx-auto">
+            {t.desc}
+          </p>
+        </div>
 
-  const gradient = gradients[post.categoryColor] || gradients["#1A3A5C"];
-  const imageSrc = images[index % images.length];
+        {/* Ana grid — 2 sütun, eyni hündürlük */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-stretch">
 
-  return (
-    <div className="w-full h-full relative overflow-hidden">
-      {/* şəkil */}
-      <img
-        src={imageSrc}
-        alt={post.title}
-        className="w-full h-full object-cover"
-      />
+          {/* ── SOL SÜTUN ── */}
+          <div className="flex flex-col gap-5 h-full">
 
-      {/* overlay */}
-      <div
-        className="absolute inset-0"
-        style={{ background: gradient, opacity: 0.25 }}
-      />
-    </div>
-  );
-}
+            {/* Böyük şəkil kartı — flex-1 ilə böyüyür */}
+            <Link
+              href={t.posts[0].href}
+              className="group bg-[#EEF3FA] rounded-3xl overflow-hidden flex-1 flex flex-col
+                         hover:shadow-lg transition-all duration-300 min-h-[360px] md:p-[40px] p-[20px]"
+            >
+              <div className="relative w-full flex-1">
+                <Image
+                  src={t.posts[0].img!}
+                  alt={t.posts[0].title}
+                  fill
+                  quality={90}
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </Link>
 
-export default function Blog() {
-  const [activeCategory, setActiveCategory] = useState("Hamısı");
+            {/* Sol aşağı post kartı */}
+            <Link
+              href={t.posts[1].href}
+              className="group bg-white rounded-3xl border border-gray-100 md:p-[40px] p-[20px]
+                         flex items-center justify-between gap-4
+                         hover:shadow-md transition-all duration-300"
+            >
+              <div>
+                <h3 className="text-[#001a56] font-extrabold text-[20px] md:text-[22px] leading-snug mb-3">
+                  {t.posts[1].title}
+                </h3>
+                <div className="flex items-center gap-3">
+                  <span className="text-[14px] font-bold text-[#2388ff] bg-[#EEF3FA]  md:p-[12px] p-[8px] rounded-full">
+                    {t.posts[1].category}
+                  </span>
+                  <span className="text-[#465271] text-[13px]">{t.posts[1].date}</span>
+                </div>
+              </div>
+              <ArrowBtn />
+            </Link>
+          </div>
 
-  const filtered =
-    activeCategory === "Hamısı"
-      ? posts
-      : posts.filter((p) => p.category === activeCategory);
+          {/* ── SAĞ SÜTUN ── */}
+          <div className="flex flex-col gap-5 h-full">
 
-  const featuredPosts = posts.filter((p) => p.featured).slice(0, 3);
-  const latestPosts = [...posts].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
+            {/* Sağ post 1 */}
+            <Link
+              href={t.posts[2].href}
+              className="group bg-white rounded-3xl border border-gray-100 md:p-[40px] p-[20px]
+                         flex items-center justify-between gap-4
+                         hover:shadow-md transition-all duration-300"
+            >
+              <div>
+                <h3 className="text-[#001a56] font-extrabold text-[20px] md:text-[22px] leading-snug mb-3">
+                  {t.posts[2].title}
+                </h3>
+                <div className="flex items-center gap-3">
+                  <span className="text-[14px] font-bold text-[#2388ff] bg-[#EEF3FA]  md:p-[12px] p-[8px] rounded-full">
+                    {t.posts[2].category}
+                  </span>
+                  <span className="text-[#465271] text-[13px]">{t.posts[2].date}</span>
+                </div>
+              </div>
+              <ArrowBtn />
+            </Link>
 
-  return (
-    <section className="bg-[#F0F4F8] min-h-screen">
-      <div className="max-w-[1300px] mx-auto px-6 md:px-12 py-14">
-        <div className="grid lg:grid-cols-[1fr_320px] gap-12 items-start">
+            {/* Sağ post 2 */}
+            <Link
+              href={t.posts[3].href}
+              className="group bg-white rounded-3xl border border-gray-100 md:p-[40px] p-[20px]
+                         flex items-center justify-between gap-4
+                         hover:shadow-md transition-all duration-300"
+            >
+              <div>
+                <h3 className="text-[#001a56] font-extrabold text-[20px] md:text-[22px] leading-snug mb-3">
+                  {t.posts[3].title}
+                </h3>
+                <div className="flex items-center gap-3">
+                  <span className="text-[14px] font-bold text-[#2388ff] bg-[#EEF3FA]  md:p-[12px] p-[8px] rounded-full">
+                    {t.posts[3].category}
+                  </span>
+                  <span className="text-[#465271] text-[13px]">{t.posts[3].date}</span>
+                </div>
+              </div>
+              <ArrowBtn />
+            </Link>
 
-          {/* ── LEFT: MAIN CONTENT ── */}
-          <div>
-
-            {/* Category filter */}
-            <div className="flex flex-wrap gap-2 mb-10 overflow-x-auto pb-1">
-              {allCategories.map((cat) => {
-                const active = activeCategory === cat;
-                const color = cat === "Hamısı" ? "#1A3A5C" : (categoryColors[cat] || "#1A3A5C");
-                return (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
-                    className="flex-shrink-0 text-xs font-semibold px-4 py-2 rounded-full border transition-all duration-200"
-                    style={{
-                      background: active ? color : "#fff",
-                      color: active ? "#fff" : color,
-                      borderColor: active ? color : "#e2e8f0",
-                      boxShadow: active ? `0 4px 14px ${color}30` : "none",
-                    }}
-                  >
-                    {cat}
-                  </button>
-                );
-              })}
+            {/* Newsletter kartı — flex-1 ilə qalan boşluğu doldurur */}
+            <div
+              className="flex-1 rounded-4xl md:p-[80px] p-8 flex flex-col justify-center gap-5"
+              style={{
+                background: "linear-gradient(135deg, #001a56 0%, #0a2d7a 60%, #1a4a9a 100%)",
+              }}
+            >
+              <h3 className="text-white font-extrabold text-[24px] sm:text-[38px] leading-snug">
+                {t.newsletter}
+              </h3>
+              <div
+                className="flex rounded-2xl overflow-hidden"
+                style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)" }}
+              >
+                <input
+                  type="email"
+                  placeholder={t.placeholder}
+                  className="flex-1 min-w-0 bg-transparent text-white text-sm px-5 py-3.5 outline-none placeholder:text-slate-400"
+                />
+                <button className="shrink-0 bg-white text-[#001a56] font-bold text-sm px-6 py-3.5 m-1 rounded-xl hover:bg-slate-100 transition-colors duration-200">
+                  {t.subscribeBtn}
+                </button>
+              </div>
             </div>
 
-            {/* Section label */}
-            <div className="flex items-center gap-3 mb-8">
-              <h2 className="text-2xl font-extrabold text-[#1A3A5C]">
-                {activeCategory === "Hamısı" ? "Bütün məqalələr" : activeCategory}
-              </h2>
-              <span className="text-xs bg-[#1A3A5C]/10 text-[#1A3A5C] font-bold px-3 py-1 rounded-full">
-                {filtered.length} yazı
-              </span>
+          </div>
+        </div>
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start md:py-[120px] py-[60px]">
+
+          {/* ── SOL — Sticky sidebar ── */}
+          <aside className="w-full lg:w-[280px] shrink-0 lg:sticky lg:top-28">
+
+            <h2 className="text-[28px] md:text-[48px] font-extrabold text-[#001a56] leading-tight mb-5">
+              Son məqalələr
+            </h2>
+
+            {/* Axtarış */}
+            <div className="relative mb-5">
+              <input
+                type="text"
+                placeholder="Məqalə axtar..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full border border-gray-200 rounded-full p-4 pr-14
+                 text-sm outline-none text-[#001a56] placeholder:text-gray-400
+                 focus:border-[#2388ff] transition-colors duration-200"
+              />
+              <button className="absolute right-1.5 top-1/2 -translate-y-1/2
+                       w-10 h-10 rounded-full bg-[#001a56] flex items-center justify-center
+                       hover:bg-[#2388ff] transition-colors duration-200">
+                <Search size={16} color="#fff" />
+              </button>
             </div>
 
-            {/* Grid */}
-            <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
-              {filtered.map((post, index)  => (
-                <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className="group bg-white rounded-2xl overflow-hidden border border-transparent hover:border-slate-200 transition-all duration-300 hover:shadow-xl flex flex-col"
+            {/* Kateqoriya — mobil: üfüqi scroll, desktop: şaquli list */}
+            {/* Desktop */}
+            <div className="hidden lg:block bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+              {categories.map((cat, i) => (
+                <button
+                  key={cat}
+                  onClick={() => setActivecat(cat)}
+                  className={`w-full flex items-center gap-3 px-5 py-3.5 text-left text-[18px] font-semibold
+                    transition-colors duration-200
+                    ${i !== categories.length - 1 ? "border-b border-gray-50" : ""}
+                    ${activecat === cat
+                      ? "bg-[#EEF3FA] text-[#2388ff]"
+                      : "text-[#001a56] hover:bg-gray-50"
+                    }`}
                 >
-                  {/* Cover */}
-                  <div className="relative h-48 overflow-hidden">
-                    <PostCover post={post} index={index}  />
-                    {/* Badges */}
-                    <div className="absolute top-3 left-3 flex gap-2">
-                      {post.hot && (
-                        <span className="text-[10px] font-bold bg-[#C62828] text-white px-2.5 py-1 rounded-full">
-                           Populyar
-                        </span>
-                      )}
-                      {post.urgent && !post.hot && (
-                        <span className="text-[10px] font-bold bg-[#C62828] text-white px-2.5 py-1 rounded-full">
-                             Vacib
-                        </span>
-                      )}
-                    </div>
-                    <div className="absolute bottom-3 left-3">
-                      <CategoryPill cat={post.category} color={post.categoryColor} />
+                  <span className={`w-2 h-2 rounded-full shrink-0 ${activecat === cat ? "bg-[#2388ff]" : "bg-gray-200"}`} />
+                  {cat}
+                </button>
+              ))}
+            </div>
+
+            {/* Mobil — üfüqi scroll pills */}
+            <div className="flex lg:hidden gap-2 overflow-x-auto pb-1 scrollbar-hide">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActivecat(cat)}
+                  className={`shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold
+                    transition-colors duration-200 border
+                    ${activecat === cat
+                      ? "bg-[#EEF3FA] text-[#2388ff] border-[#2388ff]/30"
+                      : "bg-white text-[#001a56] border-gray-200"
+                    }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </aside>
+
+          {/* ── SAĞ — Post siyahısı ── */}
+          <div className="flex-1">
+            {filtered.length === 0 ? (
+              <p className="text-[#465271] text-sm py-10 text-center">Heç bir məqalə tapılmadı.</p>
+            ) : (
+              filtered.map((post, i) => (
+                <Link
+                  key={post.id}
+                  href={post.href}
+                  className={`group flex gap-4 lg:gap-6 py-6 lg:py-8 items-start
+                    ${i !== filtered.length - 1 ? "border-b border-gray-100" : ""}
+                    hover:opacity-80 transition-opacity duration-200`}
+                >
+                  {/* Şəkil — mobil kiçik, desktop böyük */}
+                  <div className="relative w-[120px] h-[120px] lg:w-[240px] lg:h-[240px]
+                        shrink-0 rounded-2xl overflow-hidden bg-[#EEF3FA]">
+                    <Image
+                      src={post.img}
+                      alt={post.title}
+                      fill
+                      quality={85}
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-2 right-2 w-7 h-7 lg:w-8 lg:h-8 rounded-full bg-white
+                          flex items-center justify-center shadow-sm
+                          group-hover:bg-[#2388ff] transition-colors duration-300">
+                      <ArrowUpRight size={12} className="text-gray-400 group-hover:text-white transition-colors duration-300" />
                     </div>
                   </div>
 
-                  {/* Body */}
-                  <div className="p-5 flex flex-col flex-1">
-                    <h3 className="font-extrabold text-[#1A3A5C] text-base leading-snug mb-3 group-hover:text-[#1565C0] transition-colors line-clamp-2">
-                      {post.title}
-                    </h3>
-                    <p className="text-slate-500 text-sm leading-relaxed flex-1 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between mt-4 pt-4 border-t border-slate-100">
-                      <span className="text-xs text-slate-400">{formatDate(post.date)}</span>
-                      <span className="text-xs text-slate-400">🕐 {post.readTime}</span>
+                  {/* Məzmun */}
+                  <div className="flex flex-col justify-between flex-1
+                        h-[120px] lg:h-[240px]">
+                    <div>
+                      <h3 className="text-[#001a56] font-extrabold text-[18px] lg:text-[24px]
+                           leading-snug mb-1 lg:mb-3 line-clamp-2 lg:line-clamp-3">
+                        {post.title}
+                      </h3>
+                      <p className="text-[#465271] text-[13px] lg:text-[18px] leading-relaxed
+                          line-clamp-2 hidden sm:block">
+                        {post.desc}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="text-[14px] lg:text-[13px] font-bold text-[#2388ff]
+                             bg-[#EEF3FA] px-3 py-1 rounded-full">
+                        {post.category}
+                      </span>
+                      <span className="text-[#465271] text-[12px] lg:text-[13px]">
+                        {post.date}
+                      </span>
                     </div>
                   </div>
                 </Link>
-              ))}
-            </div>
+              ))
+            )}
           </div>
 
-          {/* ── RIGHT SIDEBAR ── */}
-          <aside className="space-y-8 sticky top-8">
-
-            {/* CTA */}
-            <div
-              className="rounded-2xl p-7 text-white relative overflow-hidden"
-              style={{ background: "linear-gradient(135deg, #1A3A5C, #1565C0)" }}
-            >
-              <div className="absolute top-0 right-0 w-28 h-28 rounded-full opacity-10"
-                style={{ background: "radial-gradient(circle, white, transparent)", transform: "translate(30%,-30%)" }} />
-              <h3 className="font-extrabold text-lg mb-2 leading-snug">Konsultasiya lazımdır?</h3>
-              <p className="text-white/60 text-sm mb-5 leading-relaxed">
-                Dr. Abbaszadə ilə birbaşa əlaqə saxlayın.
-              </p>
-              <a href="/contact"
-                className="block text-center bg-white text-[#1565C0] font-bold py-2.5 rounded-xl text-sm hover:bg-blue-50 transition mb-2">
-                Müraciət et
-              </a>
-              <a href="tel:+994503127657"
-                className="block text-center text-white/70 font-semibold py-2.5 rounded-xl text-sm border border-white/20 hover:bg-white/10 transition">
-                +994 50 312 76 57
-              </a>
-            </div>
-
-            {/* Featured */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm">
-              <div className="flex items-center gap-2 mb-5">
-                <span className="w-1 h-5 rounded-full bg-[#1565C0]" />
-                <h4 className="font-extrabold text-[#1A3A5C] text-base">Seçilmiş</h4>
-              </div>
-              <div className="space-y-5">
-                {featuredPosts.map((post,index) => (
-                  <Link key={post.slug} href={`/blog/${post.slug}`}
-                    className="flex gap-3 group items-start">
-                    <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
-                      <PostCover post={post} index={index} />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="text-xs text-slate-400 mb-1">{formatDate(post.date)}</div>
-                      <div className="font-bold text-[#1A3A5C] text-sm leading-snug group-hover:text-[#1565C0] transition-colors line-clamp-2">
-                        {post.title}
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Latest */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm">
-              <div className="flex items-center gap-2 mb-5">
-                <span className="w-1 h-5 rounded-full bg-[#00796B]" />
-                <h4 className="font-extrabold text-[#1A3A5C] text-base">Son məqalələr</h4>
-              </div>
-              <div className="space-y-4">
-                {latestPosts.map((post,index) => (
-                  <Link key={post.slug} href={`/blog/${post.slug}`}
-                    className="flex gap-3 group items-start">
-                    <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0">
-                      <PostCover post={post} index={index}/>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="text-xs text-slate-400 mb-1">{formatDate(post.date)}</div>
-                      <div className="font-bold text-[#1A3A5C] text-sm leading-snug group-hover:text-[#1565C0] transition-colors line-clamp-2">
-                        {post.title}
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Topics */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm">
-              <div className="flex items-center gap-2 mb-5">
-                <span className="w-1 h-5 rounded-full bg-[#C62828]" />
-                <h4 className="font-extrabold text-[#1A3A5C] text-base">Mövzular</h4>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {Object.entries(categoryColors).map(([cat, color]) => (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
-                    className="text-xs font-semibold px-3 py-1.5 rounded-full transition-all"
-                    style={{ background: `${color}12`, color }}
-                  >
-                    {cat}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-          </aside>
         </div>
       </div>
     </section>
