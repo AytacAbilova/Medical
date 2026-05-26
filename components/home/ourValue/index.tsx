@@ -67,7 +67,7 @@ export default function OurValues({
   const t = content[locale];
 
   return (
-    <section className="bg-white md:py-24 py-14">
+    <section className="bg-white md:py-24 ">
       <div className="max-w-[950px] mx-auto px-6">
 
         {/* Header */}

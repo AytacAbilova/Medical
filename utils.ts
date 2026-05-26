@@ -1,4 +1,4 @@
-// export type Locale = "az";
+export type Locale = "az";
 
 // export type ServiceSection = {
 //   title: string;

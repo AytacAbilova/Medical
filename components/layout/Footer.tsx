@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { memo } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
-import logo from "@/public/assets/images/logo.png";
+// import logo from "@/public/assets/images/logo.png";
 import { BsInstagram, BsYoutube } from "react-icons/bs";
 import { FaFacebook, FaXTwitter } from "react-icons/fa6";
 
@@ -88,7 +88,7 @@ const Footer = () => {
               className="w-16 h-16 rounded-2xl flex items-center justify-center overflow-hidden"
               style={{ background: "rgba(255,255,255,0.12)" }}
             >
-              <Image src={logo} alt="Logo" width={44} height={44} className="object-contain" />
+              {/* <Image src={logo} alt="Logo" width={44} height={44} className="object-contain" /> */}
             </div>
 
             <div>
@@ -152,6 +152,8 @@ const Footer = () => {
             style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.15)" }}
           >
             <input
+            suppressHydrationWarning
+              autoComplete="off"
               type="email"
               placeholder={t.placeholder}
               className="flex-1 min-w-0 bg-transparent text-white text-sm px-6 py-4 outline-none placeholder:text-slate-400"

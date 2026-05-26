@@ -9,7 +9,7 @@ import {
   Dna, Activity, Waves,
 } from "lucide-react";
 import { Metadata } from "next";
-
+import aboutImg from "@/public/assets/images/aboutImg.jpeg";
 const specializationIcons = [
   HeartPulse, Activity, Zap, Dna, Microscope, Waves,
 ];
@@ -92,14 +92,7 @@ export default function AboutPage() {
       <section className="py-14 lg:py-20">
         <div className="max-w-[1300px] mx-auto px-6 lg:px-10">
 
-          {/*
-            LAYOUT STRATEGİYASI:
-            • Mobil  → flex-col: [Şəkil] → [Metin bloku] → [Bütün 6 kart]
-            • Desktop → flex-row: [Sol: Metin + ilk 3 kart] | [Sağ: Şəkil + son 3 kart]
-          */}
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
-
-            {/* ── SAĞ KOLON (ŞƏKIL) — mobilda YUXARI gəlir (order-first) ── */}
             <div className="w-full lg:w-auto lg:flex-shrink-0
                             order-first lg:order-last
                             flex flex-col gap-6">
@@ -108,7 +101,7 @@ export default function AboutPage() {
               <div className="relative w-full max-w-[420px] mx-auto lg:mx-0">
                 <div className="relative rounded-3xl overflow-hidden border border-[#2388ff]/20">
                   <Image
-                    src=""
+                    src={aboutImg}
                     alt={`${t.name} — ${t.titleShort}`}
                     width={420}
                     height={470}

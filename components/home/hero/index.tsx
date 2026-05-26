@@ -18,6 +18,8 @@ interface HeroProps {
   isHome?: boolean;
   img?: string | StaticImageData;
   subTitle?: string;
+  ctaText?: string;
+  ctaHref?: string;
   locale?: Locale;
 }
 
@@ -25,31 +27,24 @@ const heroSlides: Record<Locale, SlideData[]> = {
   az: [
     {
       img: "https://i.pinimg.com/736x/48/ed/57/48ed57121a319db8653f72373726ea57.jpg",
-      title: (
-        <>
-          About our AI company
-        </>
-      ),
-      desc: "Lorem ipsum dolor sit amet consectetur id tortor nunc nulla amet mollis arcu ultricies sit neque vitae sed nunc viverra ipsum velit proin.",
-     cta1: "Join our team",
+      title: <>İnfeksion xəstəliklərin dəqiq diaqnostikası</>,
+      desc:
+        "Parazitar, bakterial və viral infeksiyaların laborator analizlər, USM və klinik müayinələrlə erkən aşkarlanması və düzgün müalicə planının qurulması.",
+      cta1: "Randevu al",
     },
     {
       img: "https://i.pinimg.com/1200x/3b/cc/3b/3bcc3b42d3c0448113ca9b7b38210fce.jpg",
-      title: (
-        <>
-          About our AI company
-        </>
-      ),
-      desc: "Lorem ipsum dolor sit amet consectetur id tortor nunc nulla amet mollis arcu ultricies sit neque vitae sed nunc viverra ipsum velit proin.",      cta1: "Join our team",
+      title: <>Parazit və qurd infeksiyalarının müalicəsi</>,
+      desc:
+        "Uşaqlarda və böyüklərdə helmint və protozoa infeksiyalarının müasir diaqnostikası və effektiv müalicə protokolları.",
+      cta1: "Müayinəyə yazıl",
     },
     {
       img: "https://i.pinimg.com/1200x/3b/cc/3b/3bcc3b42d3c0448113ca9b7b38210fce.jpg",
-      title: (
-        <>
-          About our AI company
-        </>
-      ),
-      desc: "Lorem ipsum dolor sit amet consectetur id tortor nunc nulla amet mollis arcu ultricies sit neque vitae sed nunc viverra ipsum velit proin.",       cta1: "Join our team",
+      title: <>Hepatit A, B və C nəzarəti</>,
+      desc:
+        "Viral hepatitlərin PCR testlər, qaraciyər analizləri və antiviral terapiya ilə izlənməsi və müalicəsi.",
+      cta1: "Məsləhət al",
     },
   ],
 };
@@ -62,6 +57,8 @@ export default function Hero({
   isHome,
   img,
   subTitle,
+  ctaText,
+  ctaHref,
   locale = "az",
 }: HeroProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -233,12 +230,22 @@ export default function Hero({
               </video>
             )}
             {img && !video && (
-              <Image
-                src={img}
-                alt="Ürək-Damar Cərrahiyyəsi Xidmətləri"
-                fill priority quality={100}
-                className="object-cover scale-105 brightness-75"
-              />
+              typeof img === "string" ? (
+                <img
+                  src={img}
+                  alt="Hero"
+                  className="absolute inset-0 w-full h-full object-cover scale-105 brightness-75"
+                />
+              ) : (
+                <Image
+                  src={img}
+                  alt="Hero"
+                  fill
+                  priority
+                  quality={100}
+                  className="object-cover scale-105 brightness-75"
+                />
+              )
             )}
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
             <div className="relative z-30 text-center container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center h-full">
@@ -248,6 +255,11 @@ export default function Hero({
               <p className="text-[15px] md:text-[20px] max-w-5xl mx-auto text-gray-200 mb-10">
                 {subTitle}
               </p>
+              {ctaText && ctaHref && (
+                <div className="flex justify-center gap-4 flex-wrap">
+                  <Button text={ctaText} link={ctaHref} type={2} />
+                </div>
+              )}
             </div>
           </>
         )}

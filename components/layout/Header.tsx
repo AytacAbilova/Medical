@@ -6,6 +6,7 @@ import Button from "../common/Button";
 import logo from '../../public/assets/images/image.png'
 import { useEffect, useState } from "react";
 import { X, Menu } from "lucide-react";
+import type { Locale } from "@/utils";
 
 export default function Header({ locale = "az" }: { locale?: Locale }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,7 +62,7 @@ export default function Header({ locale = "az" }: { locale?: Locale }) {
               <Image src={logo} alt="Logo" width={50} height={50} priority />
 
               <span className="text-[20px] sm:text-[24px] font-bold text-[#001a56] whitespace-nowrap">
-                SmartAsisstant
+                Dr. Xatirə Aslanova
               </span>
             </Link>
           </div>

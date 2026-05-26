@@ -38,7 +38,6 @@ export default function OurTeam({ locale = "az" }: { locale?: "az" }) {
                         <h2 className="text-[26px] lg:text-[48px] font-extrabold text-[#001a56] leading-tight mb-3">
                             {t.title}
                         </h2>
-
                         <p className="text-[#465271] text-[14px] lg:text-[15px] lg:max-w-xl lg:mx-auto">
                             {t.desc}
                         </p>
