@@ -1,97 +1,190 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import imgSrc from "@/public/assets/images/aboutUss.png";
+
 import {
-  Info,
-  Images,
+  UserRound,
+  GraduationCap,
+  ImageIcon,
   Video,
-  MessageCircle,
+  MessageCircleMore,
   CalendarDays,
-  MapPin,
 } from "lucide-react";
 
-// ─── DATA (hər həkim üçün yalnız bunu dəyiş) ───────────────────────
+// ─── DATA ────────────────────────────────────────────────────
 const content = {
   az: {
-    name: "Dr. [Ad Soyad]",
-    desc: `Dr. [Ad Soyad] 2004–2010-cu illərdə Azərbaycan Tibb Universitetini bitirmişdir. [Universitet adı] xəstəxanasında [ixtisas] üzrə ixtisaslaşma təhsilini 2014–2020-ci illər arasında tamamlamışdır. Hazırda müstəqil mütəxəssis həkim kimi fəaliyyət göstərir.`,
+    name: "Dr. Xatirə Aslanova",
+
+    title: "Həkim İnfeksionist-Parazitoloq",
+
+    desc: `
+Dr. Xatirə Aslanova infeksion xəstəliklər və tibbi parazitologiya sahəsində
+25 illik fasiləsiz klinik təcrübəyə malik mütəxəssisdir. Hazırda Parasitus
+Medical Center klinikasının baş həkimi olaraq fəaliyyət göstərir.
+
+Helmintozlar, virus hepatitləri, parazitar və yoluxucu xəstəliklərin
+diaqnostikası və müalicəsi üzrə geniş təcrübəyə sahibdir. Müasir və
+sübuta əsaslanan tibbi yanaşmanı əsas prinsip kimi tətbiq edir.
+    `,
+
     cards: [
-      { icon: Info,           label: "Haqqımda",        href: "/about" },
-      { icon: Images,         label: "Fotolarım",       href: "/gallery" },
-      { icon: Video,          label: "Videolarım",      href: "/videos" },
-      { icon: MessageCircle,  label: "Pasiyent rəyləri",href: "/reviews" },
-      { icon: CalendarDays,   label: "Randevu al",      href: "/contact" },
-      { icon: MapPin,         label: "Əlaqə",           href: "/contact" },
+      {
+        icon: UserRound,
+        label: "Haqqımda",
+        href: "/about",
+      },
+      {
+        icon: GraduationCap,
+        label: "Təhsil və təcrübə",
+        href: "/about",
+      },
+      {
+        icon: ImageIcon,
+        label: "Klinika fotoları",
+        href: "/gallery",
+      },
+      {
+        icon: Video,
+        label: "Maarifləndirici videolar",
+        href: "/videos",
+      },
+      {
+        icon: MessageCircleMore,
+        label: "Pasiyent rəyləri",
+        href: "/reviews",
+      },
+      {
+        icon: CalendarDays,
+        label: "Randevu al",
+        href: "/contact",
+      },
     ],
   },
 };
 
-// ─── KOMPONENT (toxunma) ────────────────────────────────────────────
-export default function AboutUs({ locale = "az" }: { locale?: "az" }) {
+// ─── COMPONENT ───────────────────────────────────────────────
+export default function AboutUs({
+  locale = "az",
+}: {
+  locale?: "az";
+}) {
   const t = content[locale];
 
   return (
-    <section className="bg-[#f5f5f3] py-20">
-      <div className="max-w-[1200px] mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
+    <section className="bg-[#f7f8fb] py-[70px] md:py-[120px]">
+      <div
+        className="max-w-[1250px] mx-auto px-6
+        flex flex-col lg:flex-row items-center gap-14 lg:gap-20"
+      >
 
-        {/* SOL — Dairəvi şəkil */}
+        {/* LEFT IMAGE */}
         <div className="flex-shrink-0 flex items-center justify-center">
           <div
             data-aos="fade-right"
-            className="relative w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] lg:w-[440px] lg:h-[440px] rounded-full overflow-hidden
-                       ring-[6px] ring-gray-300"
+            className="relative
+            w-[300px] h-[300px]
+            sm:w-[380px] sm:h-[380px]
+            lg:w-[470px] lg:h-[470px]
+            rounded-full overflow-hidden
+            ring-[8px] ring-white shadow-xl"
           >
             <Image
               src={imgSrc}
-              alt="Həkim şəkli"
+              alt="Dr. Xatirə Aslanova"
               fill
-              quality={95}
+              quality={100}
               className="object-cover object-top"
             />
           </div>
         </div>
 
-        {/* SAĞ — Mətn + kartlar */}
+        {/* RIGHT CONTENT */}
         <div className="flex-1 w-full">
 
-          {/* Ad */}
+          {/* Badge */}
+          <div
+            data-aos="fade-left"
+            className="inline-flex items-center
+            bg-[#EAF3FF] text-[#2A69AC]
+            px-4 py-2 rounded-full
+            text-sm font-semibold mb-5"
+          >
+            Parasitus Medical Center
+          </div>
+
+          {/* Name */}
           <h2
             data-aos="fade-left"
-            className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-4"
+            className="text-[32px] md:text-[52px]
+            font-extrabold text-[#001a56]
+            leading-[1.05] mb-3"
           >
             {t.name}
           </h2>
 
-          {/* Təsvir */}
+          {/* Title */}
           <p
             data-aos="fade-left"
-            className="text-gray-600 text-[15px] md:text-base leading-relaxed mb-10 max-w-xl"
+            className="text-[#2388ff]
+            font-bold text-[18px]
+            md:text-[22px] mb-6"
+          >
+            {t.title}
+          </p>
+
+          {/* Description */}
+          <p
+            data-aos="fade-left"
+            className="text-[#5B6475]
+            text-[15px] md:text-[17px]
+            leading-relaxed mb-10
+            max-w-2xl whitespace-pre-line"
           >
             {t.desc}
           </p>
 
-          {/* 3x2 Kart Grid */}
+          {/* CARDS */}
           <div
             data-aos="fade-up"
-            className="grid grid-cols-3 gap-3"
+            className="grid grid-cols-2 md:grid-cols-3 gap-4"
           >
             {t.cards.map((card, i) => {
               const Icon = card.icon;
+
               return (
                 <Link
                   key={i}
                   href={card.href}
-                  className="flex flex-col items-center justify-center gap-3 bg-white border border-gray-200
-                             rounded-2xl py-6 px-3 hover:shadow-md hover:border-gray-300
-                             transition-all duration-200 group"
+                  className="group bg-white border border-[#E8EDF5]
+                  rounded-[24px] p-5 md:p-6
+                  hover:border-[#bfd8f6]
+                  hover:shadow-lg
+                  transition-all duration-300"
                 >
-                  <Icon
-                    size={28}
-                    strokeWidth={1.4}
-                    className="text-gray-700 group-hover:text-[#2A69AC] transition-colors duration-200"
-                  />
-                  <span className="text-gray-700 text-sm font-medium text-center leading-tight group-hover:text-[#2A69AC] transition-colors duration-200">
+                  <div
+                    className="w-12 h-12 rounded-2xl
+                    bg-[#EEF4FB]
+                    flex items-center justify-center mb-4
+                    group-hover:bg-[#2388ff]
+                    transition-colors duration-300"
+                  >
+                    <Icon
+                      size={22}
+                      strokeWidth={1.8}
+                      className="text-[#001a56]
+                      group-hover:text-white
+                      transition-colors duration-300"
+                    />
+                  </div>
+
+                  <span
+                    className="text-[#001a56]
+                    text-[15px] md:text-[17px]
+                    font-bold leading-snug"
+                  >
                     {card.label}
                   </span>
                 </Link>

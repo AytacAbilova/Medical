@@ -1,0 +1,48 @@
+{
+  "badge": "Sual-Cavab",
+  "title": "Suallarınız, cavablarımız",
+  "desc": "Pasiyentlərimizin ən çox verdiyi sualları burada cavablandırdıq. Sualınız burada yoxdursa, bizimlə əlaqə saxlayın.",
+
+  "questions": [
+    {
+      "icon": "Bug",
+      "question": "Övladımda iştahsızlıq, qarın ağrıları, gecələr diş qıcama və dəri səpgiləri müşahidə edirəm. Bu qurd xəstəliyi əlamətləridirmi və ilk növbədə nə etməliyəm?",
+      "answer": "Sadalanan əlamətlər həqiqətən də uşaqlarda parazitar infeksiyaların ən çox rast gəlinən təzahürləridir. Bunlara əlavə olaraq ürəkbulanma, ishal və ya qəbizlik, ağızdan gecələr su gəlməsi, allergik səpgilər, çəki azlığı da qurd infeksiyasına işarə edə bilər. Lakin bu simptomlar başqa mədə-bağırsaq xəstəliklərinin də əlamətləri ola bilər. İlk addım kimi heç bir özbaşına dərman və ya “təmizləyici” qəbul etməyin. Mütləq həkim infeksionist-parazitoloqa müraciət edin. Klinikada düzgün toplanılmış anamnez, ümumi qan analizi, nəcis analizi, perianal yapışqan lent metodu, lazım gəldikdə USM müayinəsi və qanda İgE səviyyəsinin təyini ilə dəqiq diaqnoz qoyulur. Düzgün diaqnoz qoyulduğu halda effektiv müalicə, pəhriz və gigiyena qaydalarına riayət etməklə uşaq parazitdən tam azad olur. Müalicə zamanı ailənin bütün üzvlərinin də müayinədən keçməsi vacibdir. Klinik təcrübəmizdə bir çox ana qurd xəstəliyi şübhəsi ilə uşağını gətirir, lakin müayinə nəticəsində Helicobacter pylori fonunda mədə xorası, bulbit və ya duodenit aşkarlanır. Buna görə də şəxsi şübhələrinizə deyil, peşəkar diaqnostikaya etibar etməlisiniz."
+    },
+    {
+      "icon": "Pill",
+      "question": "Qurd və parazit müalicəsi zamanı vitamin preparatları qəbul etmək lazımdırmı?",
+      "answer": "Xeyr, xəstəliyin səbəbi tapılmadan və ya müalicənin gedişində vitamin preparatlarının verilməsinin əhəmiyyətli effekti yoxdur. Düzgün qoyulmuş diaqnoz və aparılmış etioloji müalicə nəticəsində orqanizm parazitdən təmizləndikdə həzm və sorulma prosesləri normallaşır, pozulmuş maddələr mübadiləsi öz-özünə bərpa olunur. Yaşa uyğun çəki alma və vitaminlərin təbii sorulması vitamin əlavələri olmadan da baş verir. Parazitlər həzm və sorulma proseslərini pozaraq A, B6, B12 vitaminlərinin, dəmir, maqnezium, kalsium kimi mineralların çatışmazlığını yaradır. Səbəb aradan qaldırıldıqda orqanizm bu çatışmazlığı özü bərpa edir. Vitamin əlavələri yalnız spesifik göstəriş əsasında və həkim nəzarəti altında verilməlidir."
+    },
+    {
+      "icon": "Beef",
+      "question": "Çiy süd, az bişmiş ət və balıq yemək hansı xəstəliklərə yoluxma riski yaradır?",
+      "answer": "Çiy süd və az bişmiş heyvan mənşəli qidalar geniş bir infeksiya spektri üçün yoluxma yoludur. Çiy süddən bruselyoz, qarayara, botulizm, kampilobakterioz, listerioz, yersinioz, müxtəlif viral və parazitar xəstəliklər yoluxa bilər. Az bişmiş ətdən isə Taenia saginata (öküz soliteri), Taenia solium (donuz soliteri), Echinococcus granulosus, Trichinella spiralis kimi parazitlər orqanizmə daxil olur. Çiy balıq və suşi opistorxoz və digər parazitar xəstəliklərə səbəb olur. Tövsiyəm: yalnız qaynadılmış və pasterizə olunmuş süd istifadə edin, əti yüksək temperaturda kifayət qədər bişirin, ət üçün istifadə edilən bıçaqları digər qidaları doğramaq üçün istifadə etməyin və hər istifadədən sonra yaxşı yuyun. Əgər çiy balıq və suşi yeyirsinizsə, mütəmadi olaraq parazitoloji müayinələrdən keçməyinizi tövsiyə edirəm. Ət və balıqda olan parazitlərin müxtəlif formaları adətən yaxşı bişirildikdə və ya bir neçə gündən artıq dondurulduqda ölür, ətin sadəcə qurudulması parazitləri öldürmür."
+    },
+    {
+      "icon": "FlaskConical",
+      "question": "Hepatit C tam sağalır, yoxsa ömürlük xəstəlikdir?",
+      "answer": "Hepatit C üçün hələlik peyvənd mövcud olmasa da, müasir antiviral preparatların kombinasiyası ilə tam sağalma əldə etmək mümkündür. Klinik praktikamda 3 aylıq müalicə kursundan sonra xəstələrdə viral RNT-nin təyin olunmadığı və qaraciyər fermentlərinin tam normaya endiyi çoxsaylı uğurlu nəticələr var. Müalicədən sonra xəstələr uzun illər sağlam yaşayır və virus təkrarlanmır. Lakin yadda saxlamaq lazımdır ki, hepatit C müalicə olunmadığı halda qaraciyər zədələnməsinə, sirroza və ya qaraciyər xərçənginə səbəb ola bilər. Anti-HCV testi pozitiv (0,9 İU/ml-dən yuxarı) olduqda təxirə salmadan həkim infeksionistə müraciət etmək vacibdir. Müalicə spesifik antiviral preparatlarla aparılır və həkim nəzarəti tələb edir."
+    },
+    {
+      "icon": "Syringe",
+      "question": "Hepatit B peyvəndini kim mütləq vurdurmalıdır və onun qoruyucu effekti nə qədər güclüdür?",
+      "answer": "Hepatit B peyvəndi 90-95% qoruyuculuq təmin edir. Bu peyvənd həm hepatit B, həm də hepatit D virusunun ağır nəticələrindən qorunmağa imkan verir. Aşağıdakı qruplara mütləq tövsiyə olunur: yeni doğulmuş körpələr (dövlət tərəfindən pulsuz təmin edilir), dializ xəstələri, bütün səhiyyə işçiləri, hepatit B daşıyıcısı olan xəstələrlə təmasda olan ailə üzvləri və yaxınları, mütəmadi qan köçürülməsi olunan şəxslər, çox sayda cinsi partnyoru olanlar. Peyvənd 3 dozadan ibarət sxem üzrə vurulur və qoruyucu anticisim səviyyəsi qanda yoxlanıla bilər. Peyvənd vurulmasa belə, daşıyıcılığın aşkar edildiyi halda “heç bir risk yoxdur” düşüncəsi yanlışdır, çünki nadir hallarda xəstəlik aktivləşərək qaraciyər sirrozuna və ya xərçəngə çevrilə bilər."
+    },
+    {
+      "icon": "AlertCircle",
+      "question": "Antibiotik təyin olunduqda dozanı azaltmaq və ya özümü yaxşı hiss etdikdə dərmanı erkən kəsmək təhlükəlidirmi?",
+      "answer": "Bəli, bu ciddi səhvdir və yolverilməzdir. Antibiotiklərin yarıda kəsilməsi və ya dozasının özbaşına azaldılması bakteriyaların tam məhv olmamasına gətirib çıxarır. Sağ qalan bakteriyalar mutasiyaya uğrayaraq həmin antibiotikə qarşı rezistentlik formalaşdırır. Bu, gələcəkdə həm sizdə, həm də cəmiyyət səviyyəsində ciddi sağlamlıq problemi yaradır, çünki növbəti dəfə həmin antibiotik effektsiz olur. Antibiotik təyin olunarkən xəstənin yaşı, çəkisi, yanaşı xəstəlikləri, allergik statusu, ümumi qan dəyərləri, qaraciyər və böyrəyin funksional testləri nəzərə alınır. Dərmanı təyin olunmuş tam dozada və tam müddətdə qəbul edin, hətta özünüzü yaxşı hiss etsəniz belə. Hər hansı yan təsir hiss etdikdə müalicəni dayandırmaq əvəzinə dərhal həkiminizlə əlaqə saxlayın. Ramazan ayında oruc tutursunuzsa, qəbul saatlarını iftar və sahur vaxtlarına salmaq olar, lakin uzun müddətli aclıqdan birbaşa sonra antibiotik qəbulu mədə-bağırsaq şikayətlərinə səbəb ola bilər, bu səbəbdən rejimi həkim ilə razılaşdırın."
+    },
+    {
+      "icon": "Eye",
+      "question": "Linza istifadə edirəm və bu yaxınlarda gözümdə qızarıqlıq, ağrı və bulanıq görmə hiss etməyə başlamışam. Bu nə ola bilər?",
+      "answer": "Linza istifadəçiləri üçün ciddi xəbərdarlıq edirəm: Acanthamoeba keratiti adlanan parazitar göz infeksiyası nadir görünsə də, çox ağır gedişata malikdir və bu xəstəliyə yoluxanların 85%-i linza istifadəçiləridir. Səbəb əsasən uyğun olmayan linza istifadəsi və gigiyena qaydalarına riayət etməməkdir. Əlamətləriniz Acanthamoeba keratiti ilə üst-üstə düşür: göz ağrısı, qızarıqlıq, bulanıq görmə, işığa həssaslıq, gözdə yad cisim hissiyyatı. Vaxtında aşkar edilməsə və müalicə aparılmasa, korluğa səbəb ola bilir. Təxirə salmadan həkim infeksionistə və oftalmoloqa müraciət edin. Linzanı dərhal istifadə etməyi dayandırın, ona toxunmuş olduğunuz əşyaları və konteyneri saxlayın (lazım gələrsə laboratoriya müayinəsi üçün). Linzaları istifadə edərkən mütləq əllərinizi yumaq, yalnız xüsusi məhlullarda saxlamaq, vaxtında dəyişmək vacibdir."
+    },
+    {
+      "icon": "Microscope",
+      "question": "Bədənimdə qurd və ya parazit olduğunu necə müəyyən edə bilərəm? Hansı analizlər lazımdır?",
+      "answer": "Parazit infeksiyalarının diaqnozu çoxşaxəli yanaşma tələb edir, çünki simptomları çox müxtəlif olub digər xəstəliklərin əlamətləri ilə oxşar ola bilər. Klinikamızda diaqnoz prosesi belə qurulur: birinci mərhələdə ətraflı anamnez toplayırıq (qidalanma vərdişləri, səyahət tarixi, heyvanlarla təması, yaşadığınız region, ailədə oxşar şikayətlər). İkinci mərhələdə obyektiv müayinə aparılır. Üçüncü mərhələdə laborator müayinələr təyin edilir: ümumi qan analizi (xüsusilə eozinofiliya və EÇS göstəriciləri), nəcisin ümumi və 3 dəfəlik təkrar mikroskopik müayinəsi, perianal yapışqan lent testi (enterobioz üçün, 3 dəfə), İgE səviyyəsinin təyini, spesifik anticisim testləri (toksoplazmoz, exinokokkoz, lyamblioz üçün), nəcisdə antigen analizləri. Dördüncü mərhələdə instrumental müayinələr: USM (qaraciyər, ağciyər, dalaq, böyrəklərdə kistlərin aşkarlanması üçün), lazım gəldikdə KT və ya MRT. Klinikamızda mövcud olan Parazitoloji Check-up paketi bu müayinələrin əksəriyyətini əhatə edir. Halsızlıq, yorğunluq, iş qabiliyyətinin zəifləməsi, mədə-bağırsaq pozğunluqları, allergik reaksiyalar şikayətləriniz varsa, müraciət edə bilərsiniz. Düzgün diaqnoz əsasında aparılan ilk müalicə kursunun sonunda simptomların çox hissəsi geri çəkilir. Ultrasəs müayinəsində adətən qurdlar görülmür, lakin onların yaratdığı zədələnmələr (qaraciyərdə kistlər, exinokokk kistaları və s.) aşkarlanır. Buna görə də ümumi parazitoloji check-up daha informativ yanaşmadır."
+    }
+  ]
+}

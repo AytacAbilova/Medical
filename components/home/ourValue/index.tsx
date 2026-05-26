@@ -1,80 +1,125 @@
 import {
-    FaLightbulb,
-    FaDesktop,
-    FaUserGroup,
-    FaChartBar,
-    FaLock,
-    FaBolt,
-    FaClock,
-    FaMessage,
-    FaBook,
+  FaShieldVirus,
+  FaVirus,
+  FaChild,
+  FaBug,
+  FaHeartPulse,
+  FaLungs,
+  FaStethoscope,
+  FaNotesMedical,
+  FaUserDoctor,
 } from "react-icons/fa6";
 
 // ─── DATA ────────────────────────────────────────────────────
 const content = {
-    az: {
-        title: "Guided by what matters",
-        desc: "Lorem ipsum dolor sit amet consectetu vel cursus et at aliquam commodo purus adipiscing massa amet vitae velit eget diam ut facilisis dictumst id.",
-        values: [
-            { icon: FaLightbulb, label: "Innovation" },
-            { icon: FaDesktop, label: "Transparency" },
-            { icon: FaUserGroup, label: "Collaboration" },
-            { icon: FaChartBar, label: "Scalability" },
-            { icon: FaLock, label: "Trust" },
-            { icon: FaBolt, label: "Speed" },
-            { icon: FaClock, label: "Efficiency" },
-            { icon: FaMessage, label: "Communication" },
-            { icon: FaBook, label: "Learning" },
-        ]
-    },
+  az: {
+    title: "Müalicə və diaqnostika istiqamətləri",
+
+    desc:
+      "Dr. Xatirə Aslanova infeksion xəstəliklər, parazitologiya və profilaktik tibbi nəzarət sahəsində uşaqlar və böyüklər üçün müasir diaqnostika və müalicə xidməti göstərir.",
+
+    values: [
+      {
+        icon: FaBug,
+        label: "Parazitar xəstəliklər",
+      },
+      {
+        icon: FaShieldVirus,
+        label: "Hepatit B və C",
+      },
+      {
+        icon: FaVirus,
+        label: "Virus infeksiyaları",
+      },
+      {
+        icon: FaChild,
+        label: "Uşaq infeksiyaları",
+      },
+      {
+        icon: FaHeartPulse,
+        label: "TORCH müayinələri",
+      },
+      {
+        icon: FaLungs,
+        label: "Tənəffüs infeksiyaları",
+      },
+      {
+        icon: FaStethoscope,
+        label: "Mədə-bağırsaq problemləri",
+      },
+      {
+        icon: FaNotesMedical,
+        label: "Profilaktik yoxlanışlar",
+      },
+      {
+        icon: FaUserDoctor,
+        label: "Fərdi müalicə planı",
+      },
+    ],
+  },
 };
 
-export default function OurValues({ locale = "az" }: { locale?: "az" }) {
-    const t = content[locale];
+export default function OurValues({
+  locale = "az",
+}: {
+  locale?: "az";
+}) {
+  const t = content[locale];
 
-    return (
-        <section className="bg-white md:py-24 py-12">
-            <div className="max-w-[900px] mx-auto px-6">
+  return (
+    <section className="bg-white md:py-24 py-14">
+      <div className="max-w-[950px] mx-auto px-6">
 
-                {/* Header — mobil sol, desktop mərkəz */}
-                <h2
-                    data-aos="fade-up"
-                    className="text-[26px] md:text-[48px] font-extrabold text-[#001a56] leading-tight mb-2
-                 text-left md:text-center"
-                >
-                    {t.title}
-                </h2>
-                <p
-                    data-aos="fade-up"
-                    className="text-[#465271] text-[14px] leading-relaxed mb-8
-                 text-left md:text-center md:max-w-lg md:mx-auto"
-                >
-                    {t.desc}
-                </p>
+        {/* Header */}
+        <h2
+          data-aos="fade-up"
+          className="text-[30px] md:text-[50px] font-extrabold text-[#001a56]
+          leading-tight mb-3 text-left md:text-center"
+        >
+          {t.title}
+        </h2>
 
-                {/* Grid — mobil 2 sütun, desktop 3 sütun */}
-                <div
-                    data-aos="fade-up"
-                    className="grid grid-cols-2 sm:grid-cols-3 mt-6"
-                >
-                    {t.values.map((v, i) => {
-                        const Icon = v.icon;
-                        return (
-                            <div
-                                key={i}
-                                className="flex items-center gap-2 py-3
-                       w-auto mx-0 md:w-[220px] md:mx-auto"
-                            >
-                                <Icon size={18} color="#2388ff" />
-                                <span className="text-[#001a56] font-bold text-[16px] md:text-[22px]">
-                                    {v.label}
-                                </span>
-                            </div>
-                        );
-                    })}
+        <p
+          data-aos="fade-up"
+          className="text-[#5B6475] text-[15px] md:text-[17px]
+          leading-relaxed mb-10 text-left md:text-center
+          md:max-w-2xl md:mx-auto"
+        >
+          {t.desc}
+        </p>
+
+        {/* Grid */}
+        <div
+          data-aos="fade-up"
+          className="grid grid-cols-2 sm:grid-cols-3 gap-y-4 gap-x-2 mt-8"
+        >
+          {t.values.map((v, i) => {
+            const Icon = v.icon;
+
+            return (
+              <div
+                key={i}
+                className="flex items-center gap-3 py-3
+                w-full md:w-[240px] md:mx-auto"
+              >
+                <div className="w-10 h-10 rounded-xl bg-[#EEF4FB]
+                flex items-center justify-center shrink-0">
+                  <Icon size={18} color="#2388ff" />
                 </div>
 
-            </div>
-        </section>
-    );
+                <span
+                  className="text-[#001a56]
+                  font-bold text-[15px] md:text-[19px]
+                  leading-snug"
+                >
+                  {v.label}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+
+      </div>
+    </section>
+  );
 }

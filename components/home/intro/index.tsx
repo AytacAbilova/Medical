@@ -1,18 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
-import bannerImg from '@/public/assets/images/introimg.png';
+import bannerImg from "@/public/assets/images/introimg.png";
 
 const content = {
   az: {
-    title:   "We started as two founders in New York",
-    btn:     "Join our team",
+    title: "25 illik təcrübə ilə sağlamlığınız üçün etibarlı yanaşma",
+
+    btn: "Ətraflı məlumat",
     btnHref: "/about",
-    para1:   "Volutpat lacus orci urna porttitor et nec sit id odio pharetra nibh pellentesque elementum in pharetra accumsan aliquet malesuada. A tincidunt aliquet quam neque nibh a euismod ornare eu pretium elit ac magna dignissim.",
-    para2:   "Congue sagittis venenatis augue erat lacus et donec enim sit odio semper dis molestie suscipit purus et sed semper pellentesque nunc vestibulum rhoncus scelerisque fermentum eget in morbi integer dolor aliquam in mi diam et gravida donec tempus ut lobortis at eget tortor cursus orci gravida dictum.",
+
+    para1:
+      "Dr. Xatirə Aslanova infeksion xəstəliklər və tibbi parazitologiya sahəsində 25 illik fasiləsiz klinik təcrübəyə malik mütəxəssisdir. O, uşaqlardan böyüklərə qədər bütün yaş qruplarında infeksion və parazitar xəstəliklərin diaqnostikası və müalicəsi ilə məşğuldur.",
+
+    para2:
+      "Peşəkar fəaliyyətində əsas prinsip xəstəliyin yalnız simptomlarını deyil, əsas səbəbini müəyyən edib müalicə etməkdir. Müasir diaqnostika, sübuta əsaslanan tibb və fərdi yanaşma ilə hər bir pasiyent üçün uyğun müalicə planı hazırlanır.",
   },
 };
 
-const CTAButton = ({ href, label }: { href: string; label: string }) => (
+const CTAButton = ({
+  href,
+  label,
+}: {
+  href: string;
+  label: string;
+}) => (
   <Link
     href={href}
     className="inline-flex items-center justify-center bg-[#001a56] hover:bg-[#2A69AC]
@@ -23,56 +34,65 @@ const CTAButton = ({ href, label }: { href: string; label: string }) => (
   </Link>
 );
 
-export default function AboutIntro({ locale = "az" }: { locale?: "az" }) {
+export default function AboutIntro({
+  locale = "az",
+}: {
+  locale?: "az";
+}) {
   const t = content[locale];
 
   return (
-    <section className="bg-white">
+    <section className="bg-white py-[60px] md:py-[120px]">
       <div className="max-w-[1300px] mx-auto px-5 lg:px-10">
 
-        {/* ── Grid: desktop 2 sütun / mobil 1 sütun ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2  lg:gap-20 mb-8 lg:mb-14 items-start">
+        {/* Top Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-10 lg:mb-16 items-start">
 
-          {/* SOL — Başlıq + düymə (yalnız desktop-da düymə burada) */}
+          {/* Left */}
           <div>
-            <h2 className="text-[28px] md:text-[48px] font-extrabold text-[#001a56] leading-tight mb-6 lg:mb-8">
+            <span className="inline-block text-sm font-semibold text-[#2A69AC] bg-[#EEF4FB] px-4 py-2 rounded-full mb-5">
+              Parasitus Medical Center
+            </span>
+
+            <h2 className="text-[30px] md:text-[52px] font-extrabold text-[#001a56] leading-[1.1] mb-6">
               {t.title}
             </h2>
-            {/* Düymə — yalnız desktop */}
+
             <div className="hidden lg:block">
               <CTAButton href={t.btnHref} label={t.btn} />
             </div>
           </div>
 
-          {/* SAĞ — Paraqraflar + düymə (mobil düymə burada) */}
-          <div className="flex flex-col gap-4">
-            <p className="text-[#465271] text-[14px] lg:text-[16px] leading-relaxed font-semibold">
+          {/* Right */}
+          <div className="flex flex-col gap-5">
+            <p className="text-[#465271] text-[15px] md:text-[17px] leading-relaxed font-medium">
               {t.para1}
             </p>
-            <p className="text-[#465271] text-[14px] lg:text-[16px] leading-relaxed font-semibold">
+
+            <p className="text-[#465271] text-[15px] md:text-[17px] leading-relaxed font-medium">
               {t.para2}
             </p>
-            {/* Düymə — yalnız mobil */}
+
+            {/* Mobile Button */}
             <div className="block lg:hidden mt-2">
               <CTAButton href={t.btnHref} label={t.btn} />
             </div>
           </div>
         </div>
 
-        {/* ── Banner şəkil ── */}
+        {/* Image */}
         <div
           data-aos="fade-up"
-          className="relative w-full h-[220px] sm:h-[340px] lg:h-[560px] rounded-3xl overflow-hidden"
+          className="relative w-full h-[240px] sm:h-[360px] lg:h-[620px] rounded-[32px] overflow-hidden"
         >
           <Image
             src={bannerImg}
-            alt="Klinika"
+            alt="Dr. Xatirə Aslanova"
             fill
-            quality={95}
+            quality={100}
             className="object-cover"
           />
         </div>
-
       </div>
     </section>
   );

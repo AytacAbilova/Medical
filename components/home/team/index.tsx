@@ -2,8 +2,10 @@ import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+import blogs from "@/data/blog.json";
+
 // ─── DATA ────────────────────────────────────────────────────
-interface TeamMember {
+interface BlogMember {
     name: string;
     role: string;
     img: string | StaticImageData;
@@ -12,16 +14,14 @@ interface TeamMember {
 
 const content = {
     az: {
-        title: "Komandamızla tanış olun",
-        desc: "Peşəkar həkimlər və tibb işçilərindən ibarət güclü komandamız.",
-        members: [
-            { name: "Dr. [Ad Soyad]", role: "Ürək-damar Cərrahı", img: "/assets/team/doctor1.jpg", href: "/about" },
-            { name: "Dr. [Ad Soyad]", role: "Kardioloq", img: "/assets/team/doctor2.jpg", href: "/about" },
-            { name: "Dr. [Ad Soyad]", role: "Anestezioloq", img: "/assets/team/doctor3.jpg", href: "/about" },
-            { name: "Dr. [Ad Soyad]", role: "Reanimatoloq", img: "/assets/team/doctor4.jpg", href: "/about" },
-            { name: "[Ad Soyad]", role: "Baş Tibb Bacısı", img: "/assets/team/doctor5.jpg", href: "/about" },
-            { name: "[Ad Soyad]", role: "Klinik Koordinator", img: "/assets/team/doctor6.jpg", href: "/about" },
-        ] satisfies TeamMember[],
+        title: "Faydalı məqalələrlə tanış olun",
+        desc: "İnfeksion xəstəliklər, parazitologiya və profilaktik tibblə bağlı maarifləndirici yazılar.",
+        members: blogs.slice(0, 6).map((blog) => ({
+            name: blog.title,
+            role: blog.category,
+            img: blog.img,
+            href: `/question/${blog.slug}`,
+        })) satisfies BlogMember[],
     },
 };
 
@@ -38,12 +38,13 @@ export default function OurTeam({ locale = "az" }: { locale?: "az" }) {
                         <h2 className="text-[26px] lg:text-[48px] font-extrabold text-[#001a56] leading-tight mb-3">
                             {t.title}
                         </h2>
+
                         <p className="text-[#465271] text-[14px] lg:text-[15px] lg:max-w-xl lg:mx-auto">
                             {t.desc}
                         </p>
                     </div>
 
-                    {/* Grid — mobil 2 sütun, desktop 3 sütun */}
+                    {/* Grid */}
                     <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-5">
                         {t.members.map((member, i) => (
                             <Link
@@ -66,17 +67,22 @@ export default function OurTeam({ locale = "az" }: { locale?: "az" }) {
 
                                 {/* Alt hissə */}
                                 <div className="flex flex-col gap-1 px-3 py-3 lg:px-6 lg:py-5">
-                                    <p className="text-[#001a56] font-extrabold text-[14px] lg:text-[18px] leading-tight">
+                                    <p className="text-[#001a56] font-extrabold text-[14px] lg:text-[18px] leading-tight line-clamp-2">
                                         {member.name}
                                     </p>
+
                                     <p className="text-[#465271] text-[11px] lg:text-sm">
                                         {member.role}
                                     </p>
+
                                     <div
                                         className="mt-2 w-7 h-7 lg:w-9 lg:h-9 rounded-full border border-gray-200 flex items-center justify-center
                      group-hover:bg-[#2A69AC] group-hover:border-[#2A69AC] transition-all duration-300"
                                     >
-                                        <ArrowRight size={12} className="text-gray-400 group-hover:text-white transition-colors duration-300" />
+                                        <ArrowRight
+                                            size={12}
+                                            className="text-gray-400 group-hover:text-white transition-colors duration-300"
+                                        />
                                     </div>
                                 </div>
                             </Link>

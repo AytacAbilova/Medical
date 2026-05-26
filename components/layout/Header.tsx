@@ -6,10 +6,8 @@ import Button from "../common/Button";
 import logo from '../../public/assets/images/image.png'
 import { useEffect, useState } from "react";
 import { X, Menu } from "lucide-react";
-import { servicesContent, type Locale, type ServiceItem } from "@/utils";
 
 export default function Header({ locale = "az" }: { locale?: Locale }) {
-  const services: ServiceItem[] = servicesContent[locale];
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -76,13 +74,7 @@ export default function Header({ locale = "az" }: { locale?: Locale }) {
                 <li><Link href="/about">Haqqında</Link></li>
                 <li className="has-dropdown">
                   <Link href="/services">Xidmətlər</Link>
-                  <ul className="dropdown">
-                    {services.map((s) => (
-                      <li key={s.slug}>
-                        <Link href={`/services/${s.slug}`}>{s.title}</Link>
-                      </li>
-                    ))}
-                  </ul>
+                  
                 </li>
                 <li><Link href="/faq">Sual-Cavab</Link></li>
                 <li><Link href="/question">Blog</Link></li>
