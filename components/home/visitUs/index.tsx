@@ -33,7 +33,7 @@ export default function VisitUs({
   const t = content[locale];
 
   return (
-    <section className="bg-white py-[60px] md:py-[120px]">
+    <section className="bg-white py-[60px] ">
       <div className="max-w-[1300px] mx-auto px-6 lg:px-10">
 
         <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.2fr] items-center gap-10 lg:gap-16">
