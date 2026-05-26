@@ -1,0 +1,83 @@
+{
+  "name": "Dr. Xatirə Aslanova",
+  "title": "Həkim İnfeksionist-Parazitoloq",
+  "titleShort": "İnfeksionist-Parazitoloq",
+  "clinic": "Parasitus Medical Center",
+  "clinicRole": "Baş həkim",
+  "experience": "25",
+  "phone": "+994 50 366 63 42",
+  "phoneClinical": "+994 12 436 98 47",
+  "phoneWhatsapp": "+994 70 314 19 00",
+  "email": "parasitus.clinic@gmail.com",
+  "address": "Yasamal rayonu, Murtuza Muxtarov küçəsi 179, Bakı",
+  "addressNote": "Caspian Plaza və Nizami metrosunun yaxınlığı",
+  "labHours": "08:00 – 17:00",
+  "instagram": "https://www.instagram.com/dr.aslanova_xatire/",
+  "instagramClinic": "https://www.instagram.com/parasitus_klinikasi/",
+  "facebook": "https://facebook.com/Dr.Xatire.Aslanova",
+  "licenseBadge": "Lisenziyalı Həkim",
+  "memberBadge": "QHİB – Tam Üzv",
+
+  "seo": {
+    "metaTitle": "Dr. Xatirə Aslanova | İnfeksionist-Parazitoloq | Parasitus Medical Center",
+    "metaDesc": "Dr. Xatirə Aslanova — 25 illik təcrübəli həkim infeksionist-parazitoloq. Parasitus Medical Center, Bakı. Helmint, protozoy, virus hepatitləri, parazitar xəstəliklərin diaqnostikası və müalicəsi.",
+    "keywords": "infeksionist parazitoloq bakı, parazit müalicəsi, helmintoz müalicəsi, virus hepatiti, lyamblioz, Dr Xatirə Aslanova, Parasitus Medical Center"
+  },
+
+  "badge": "Haqqında",
+  "title_hero": "İnfeksion xəstəliklərin və parazitologiyanın etibarlı ünvanı",
+  "desc": "Dr. Xatirə Aslanova Azərbaycanın infeksion xəstəliklər və tibbi parazitologiya sahəsində 25 illik fasiləsiz klinik təcrübəyə malik mütəxəssisidir. Parasitus Medical Center klinikasının baş həkimi vəzifəsində çalışır.",
+  "hospitals": "Parasitus Medical Center · V.Axundov adına ETTPİ (25 il)",
+
+  "bio": "Dr. Xatirə Aslanova Azərbaycanın infeksion xəstəliklər və tibbi parazitologiya sahəsində 25 illik fasiləsiz klinik təcrübəyə malik təcrübəli mütəxəssisidir. Helmint, protozoy, viral, bakterial mənşəli yoluxucu xəstəliklərin diaqnostikası və müalicəsi sahəsində ölkəmizdə tanınmış simalardandır.\n\nPeşə fəaliyyətinin əsas prinsipi etioloji müalicədir — xəstəliyin əlamətlərini deyil, törədici səbəbi aradan qaldırmaq. Xəstə təyinatı zamanı yaş, çəki, yanaşı xəstəliklər, allergik status, qaraciyər və böyrəyin funksional vəziyyəti kimi göstəriciləri ciddi nəzərə alır.\n\nCOVID-19 pandemiyası dövründə (2020–2021) ön cəbhədə fəaliyyət göstərmiş, bir çox rayona iş səfərləri etmiş, koronavirus seminarları təşkil etmişdir. Kütləvi vaksinasiya kampaniyasına dəstək verərək pandemiyaya nəzarətin əldə olunmasına töhfə vermişdir.\n\nKlinikasında \"MÜALİCƏNİ OT VƏ BİTKİLƏRLƏ ETMİRİK, ÖZÜMÜZ DƏRMAN HAZIRLAMIRIQ\" qaydası elan edilmişdir — sübuta əsaslanan tibb prinsiplərini qəti şəkildə müdafiə edir.",
+
+  "education": [
+    { "year": "1993 – 1999", "text": "Azərbaycan Tibb Universiteti — Müalicə-işi fakültəsi" },
+    { "year": "1999 – 2000", "text": "Ə.Əliyev adına ADHTİ — Yoluxucu Xəstəliklər üzrə təkmilləşdirmə" },
+    { "year": "2010 – 2011", "text": "Ankara Gazi Universitesi Tibb Fakültəsi — Enfeksiyon Hastalıkları və Klinik Mikrobiyologiya" },
+    { "year": "2013 – 2014", "text": "Ə.Əliyev adına ADHTİ — Yoluxucu Xəstəliklər üzrə təkrar təkmilləşdirmə" },
+    { "year": "2014",        "text": "Yoluxucu Xəstəliklər üzrə rəsmi sertifikasiya" }
+  ],
+
+  "workExperience": [
+    { "year": "1999 – indiyə", "text": "V.Axundov adına ETTPİ — Yoluxucu Xəstəliklər klinikası, həkim infeksionist-parazitoloq (25 il fasiləsiz)" },
+    { "year": "2018 – indiyə", "text": "Parasitus Medical Center — İnfeksionist-parazitoloq, Baş həkim" }
+  ],
+
+  "seminars": [
+    "COVID-19 maarifləndirmə seminarları — Masallı, İmişli rayonları (2020–2021)",
+    "Azərbaycan Qastroenteroloqlar və Hepatoloqlar İctimai Birliyi tədbirləri (2018-dən)",
+    "Çarter reyslərlə qayıdan vətəndaşların epidemioloji müayinəsi — COVID-19 (2020)"
+  ],
+
+  "certificates": [
+    "Yoluxucu Xəstəliklər üzrə rəsmi sertifikat (ADHTİ, 2014)",
+    "Beynəlxalq təkmilləşdirmə — Ankara Gazi Universitesi (2010–2011)",
+    "COVID-19 Pandemiya Dövrü Ön Cəbhə Fəaliyyəti Sertifikatı (2020–2021)"
+  ],
+
+  "memberships": [
+    "Azərbaycan Qastroenteroloqlar və Hepatoloqlar İctimai Birliyinin üzvü (2018-ci ildən)"
+  ],
+
+  "highlights": [
+    "25 illik fasiləsiz klinik təcrübə",
+    "Dəri leyşmaniozu diaqnostika və müalicəsində xüsusi ixtisas",
+    "COVID-19 pandemiyasında ön cəbhə həkimi",
+    "Sübuta əsaslanan tibb — alternativ üsullar yox",
+    "2008-ci ildən uzunmüddətli xəstə izlənməsi",
+    "Körpələrdən yaşlılara — bütün yaş qrupları"
+  ],
+
+  "specializations": [
+    { "title": "Helmintozlar",                    "desc": "Askaridoz, enterobioz, exinokokkoz, trixinelloz və digər qurd xəstəlikləri." },
+    { "title": "Protozoy xəstəlikləri",           "desc": "Lyamblioz, amöbiaz, leyşmanioz, toksoplazmoz, malyariya." },
+    { "title": "Virus hepatitləri",               "desc": "Hepatit A, B, C, D, E — diaqnostika, izlənmə, antiviral müalicə." },
+    { "title": "Mədə-bağırsaq infeksiyaları",     "desc": "H.pylori, rotavirus, salmonelloz, dizenteriya müalicəsi." },
+    { "title": "Peyvəndləmə",                     "desc": "Hepatit B, qrip, HPV, qızılca, tetanoz peyvəndləri." },
+    { "title": "Parazitoloji Check-up",           "desc": "Kompleks profilaktik müayinə paketi — qan, nəcis, anticisim, USM." }
+  ],
+
+  "cta": "Randevu al",
+  "contact": "24/7 Əlaqə"
+}

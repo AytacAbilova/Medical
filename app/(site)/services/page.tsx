@@ -1,69 +1,130 @@
-'use client';
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import {
+  Bug, Microscope, FlaskConical, Heart, Wind,
+  Baby, ShieldAlert, Eye, TestTube, Clock,
+  Pill, Syringe, Dog,
+} from "lucide-react";
+import { servicesContent } from "@/utils";
 
-import { servicesContent, type Locale, type ServiceItem } from '@/utils';
-import { useRouter } from 'next/navigation';
+// ikon map — utils-dəki title-a görə icon təyin et
+const iconMap: Record<string, React.ElementType> = {
+  "Açıq Ürək Əməliyyatı":                Bug,
+  "Koronar Bypass (CABG)":               Microscope,
+  "Minimal İnvaziv Cərrahiyyə":          FlaskConical,
+  "Anadangəlmə Ürək Qüsurları":          Heart,
+  "Aorta Cərrahiyyəsi":                  Wind,
+  "Periferik Damar Cərrahiyyəsi":        Baby,
+  "Varikoz Vena Müalicəsi":              ShieldAlert,
+  "Birləşdirilmiş Əməliyyatlar":         Eye,
+};
 
-interface Props {
-  locale?: Locale;
-}
-
-const images = [
-  "/assets/images/contactus.png",
-  "/assets/images/image2.png",
-  "/assets/images/image3.png",
-  "/assets/images/image4.png",
-  "/assets/images/image1.png",
-  "/assets/images/image3.png",
-  "/assets/images/image4.png",
-  "/assets/images/image1.png"
+const defaultIcons = [
+  Bug, Microscope, FlaskConical, Heart, Wind,
+  Baby, ShieldAlert, Eye, TestTube, Clock,
+  Pill, Syringe, Dog,
 ];
 
-export default function Services({ locale = "az" }: Props) {
-  const services = servicesContent[locale];
-  const router = useRouter();
+export default function ServicesPage() {
+  const services = servicesContent["az"];
 
   return (
-    <main className="bg-gray-50 text-gray-900">
-      <section className="max-w-[1400px] mx-auto px-6 md:px-10 py-24">
+    <main>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {services.map((s: ServiceItem, i: number) => {
-            const imgSrc = s.img || images[i % images.length]; 
+      {/* Header */}
+      <section className="bg-[#F8F9FB] pt-20 pb-16">
+        <div className="max-w-[900px] mx-auto px-6 text-center">
+          <p className="text-[#2388ff] text-xs font-bold uppercase tracking-[0.25em] mb-4">
+            Xidmətlər
+          </p>
+          <h1 className="text-3xl md:text-[48px] font-extrabold text-[#001a56] leading-tight mb-4">
+            Tibb Xidmətlərimiz
+          </h1>
+          <div className="w-12 h-1 bg-[#2388ff] rounded-full mx-auto mb-5" />
+          <p className="text-[#465271] text-[16px] leading-relaxed max-w-lg mx-auto">
+            Dr. Xatirə Aslanova Parasitus Medical Center klinikasında
+            körpələrdən yaşlılara qədər geniş spektrli infeksion xəstəliklər üzrə xidmət göstərir.
+          </p>
+        </div>
+      </section>
 
-            return (
-              <article
-                key={i}
-                data-aos="fade-up"
-                data-aos-offset={-300}
-                onClick={() => router.push(`/services/${s.slug.replace("/", "")}`)}
-                className="relative overflow-hidden rounded-3xl cursor-pointer group shadow-lg transition-all duration-500 hover:shadow-2xl"
-              >
-                <img
-                  src={imgSrc}
-                  alt={s.title}
-                  className="w-full h-80 md:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+      {/* Kart grid */}
+      <section className="bg-[#F8F9FB] pb-20">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {services.map((s, i) => {
+              const Icon = iconMap[s.title] ?? defaultIcons[i % defaultIcons.length];
+              const slug = s.slug.replace("/", "");
 
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black rounded-3xl" />
+              return (
+                <div
+                  key={i}
+                  className="bg-white rounded-2xl p-7 border border-gray-100
+                             hover:shadow-md hover:-translate-y-0.5
+                             transition-all duration-300 flex flex-col"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-[#EEF3FA] flex items-center justify-center mb-5">
+                    <Icon size={22} className="text-[#2388ff]" strokeWidth={1.8} />
+                  </div>
 
-                <div className="absolute bottom-0 left-4 right-4 p-6 z-20 transform translate-y-[30%] group-hover:translate-y-0 transition-transform duration-500">
-                  <h3 className="text-2xl font-extrabold text-white">
+                  <h3 className="text-[#001a56] font-extrabold text-[18px] leading-tight mb-3">
                     {s.title}
                   </h3>
 
-                  <p className="mt-2 text-sm lg:text-base text-slate-200">
-                    {s.desc}
+                  <p className="text-[#465271] text-[14px] leading-relaxed flex-1 mb-6">
+                    {s.shortDesc}
                   </p>
 
-                  <span className="mt-7 inline-flex items-center gap-2 text-[#C49B63] font-semibold">
-                    {locale === "az" ? "Ətraflı →" : "Learn More →"}
-                  </span>
+                  <Link
+                    href={`/services/${slug}`}
+                    className="inline-flex items-center gap-1.5 text-[#2388ff] font-semibold text-[14px]
+                               hover:gap-3 transition-all duration-200"
+                  >
+                    Daha çox <ArrowRight size={14} />
+                  </Link>
                 </div>
-              </article>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </section>
+
+      {/* CTA Banner */}
+      <section className="bg-[#F8F9FB] pb-16">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-10">
+          <div
+            className="rounded-3xl px-10 md:px-16 py-14 relative overflow-hidden"
+            style={{ background: "linear-gradient(135deg, #001a56 0%, #0a2d7a 100%)" }}
+          >
+            <div
+              className="absolute inset-0 opacity-[0.04] pointer-events-none"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 48px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 48px)",
+              }}
+            />
+            <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+              <div>
+                <h3 className="text-white font-extrabold text-2xl md:text-[32px] leading-snug mb-3">
+                  Sağlamlığınızı təxirə salmayın
+                </h3>
+                <p className="text-slate-400 text-[15px] max-w-md leading-relaxed">
+                  Bizimlə əlaqə saxlayın və sizə uyğun vaxtda peşəkar konsultasiyadan keçin.
+                </p>
+              </div>
+              <Link
+                href="/contact"
+                className="shrink-0 inline-flex items-center gap-2 bg-[#2388ff] hover:bg-[#1a6fd4]
+                           text-white font-bold text-[15px] px-8 py-4 rounded-2xl
+                           transition-colors duration-200 whitespace-nowrap"
+              >
+                Görüş təyin et <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }

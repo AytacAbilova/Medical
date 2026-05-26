@@ -43,7 +43,6 @@ export default function OurTeam({ locale = "az" }: { locale?: "az" }) {
                         </p>
                     </div>
 
-                    {/* Grid */}
                     {/* Grid — mobil 2 sütun, desktop 3 sütun */}
                     <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-5">
                         {t.members.map((member, i) => (
@@ -52,8 +51,7 @@ export default function OurTeam({ locale = "az" }: { locale?: "az" }) {
                                 href={member.href}
                                 data-aos="fade-up"
                                 data-aos-delay={i * 60}
-                                className="group bg-white rounded-2xl lg:rounded-3xl overflow-hidden border border-gray-100
-                 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                                className="group bg-white rounded-2xl lg:rounded-3xl overflow-hidden border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
                             >
                                 {/* Şəkil */}
                                 <div className="relative w-full h-[160px] sm:h-[220px] lg:h-[360px] overflow-hidden">
