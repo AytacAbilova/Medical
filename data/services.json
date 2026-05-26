@@ -1,0 +1,534 @@
+[
+  {
+    "slug": "helmintozlar",
+    "title": "Helmintozlar",
+    "shortDesc": "Askaridoz, enterobioz, exinokokkoz və digər qurd xəstəliklərinin diaqnostikası və müalicəsi.",
+    "desc": "Askaridoz, enterobioz, exinokokkoz və digər qurd xəstəliklərinin diaqnostikası və müalicəsi.",
+    "sections": [
+      {
+        "title": "Əhatə etdiyi xəstəliklər",
+        "items": [
+          "Askaridoz (Ascaris lumbricoides)",
+          "Enterobioz — bizquyruq (Enterobius vermicularis)",
+          "Teniarinxoz — öküz soliteri (Taenia saginata)",
+          "Tenioz — donuz soliteri (Taenia solium)",
+          "Opistorxoz (Opisthorchis), klonorxoz, fassiolyoz",
+          "Exinokokkoz (Echinococcus granulosus)",
+          "Trixinelloz (Trichinella spiralis)",
+          "Strongiloidoz, ankilostomidoz, nekatoroz, şistosomoz",
+          "Digər bağırsaq və ekstraintestinal parazitlər"
+        ]
+      },
+      {
+        "title": "Diaqnostika metodları",
+        "items": [
+          "Nəcis analizi (ümumi və mikroskopik)",
+          "Perianal yapışqan lent metodu",
+          "Qan analizləri — İgE və spesifik anticisimlər",
+          "USM (ultrasəs müayinəsi)",
+          "KT (kompüter tomoqrafiya)"
+        ]
+      },
+      {
+        "title": "Müalicə yanaşması",
+        "items": [
+          "Yaşa və çəkiyə uyğun dozada spesifik antihelmintik preparatlar",
+          "Ailə üzvlərinin kompleks müayinəsi və müalicəsi",
+          "Pəhriz və gigiyena qaydaları üzrə tövsiyələr"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "protozoy",
+    "title": "Protozoy xəstəlikləri",
+    "shortDesc": "Lyamblioz, amöbiaz, leyşmanioz, toksoplazmoz, malyariya və digər parazitar infeksiyalar.",
+    "desc": "Lyamblioz, amöbiaz, leyşmanioz, toksoplazmoz, malyariya və digər parazitar infeksiyalar.",
+    "sections": [
+      {
+        "title": "Əhatə etdiyi xəstəliklər",
+        "items": [
+          "Lyamblioz (Giardia lamblia)",
+          "Amöbiaz — yoğun bağırsağın xoralı zədələnməsi və daxili orqan absesləri",
+          "Blastosistoz (Blastocystis hominis)",
+          "Visseral leyşmanioz",
+          "Dəri leyşmaniozu — Şəki, Goranboy, Tərtər, Şəmkir, Bərdə, Göyçay, Qəbələ, Hacıqabul, Qazax, Zaqatala rayonlarında endemik",
+          "Toksoplazmoz",
+          "Malyariya",
+          "Acanthamoeba keratiti"
+        ]
+      },
+      {
+        "title": "Xüsusi ixtisas",
+        "items": [
+          "Leyşmanioz diaqnostikası və müalicəsində 25 illik təcrübə",
+          "Kosmetik defekt qalmadan tam sağaltma",
+          "Endemik rayonlardan gələn xəstələrin kompleks müayinəsi"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "hepatit",
+    "title": "Virus hepatitləri",
+    "shortDesc": "Hepatit A, B, C, D və E formalarının diaqnostikası, izlənməsi və antiviral müalicəsi.",
+    "desc": "Hepatit A, B, C, D və E formalarının diaqnostikası, izlənməsi və antiviral müalicəsi.",
+    "sections": [
+      {
+        "title": "Xidmət dairəsi",
+        "items": [
+          "Hepatit A, B, C, D və E formalarının diaqnostikası və müalicəsi",
+          "Hepatit C — antiviral kombinə müalicə (3 ayda tam sağalma mümkündür)",
+          "Hepatit B daşıyıcılarının uzunmüddətli nəzarəti",
+          "Qaraciyər funksional panelinin qiymətləndirilməsi",
+          "Sirroz və qaraciyər xərçəngi kimi ağırlaşmaların profilaktikası"
+        ]
+      },
+      {
+        "title": "Differensial diaqnostika",
+        "items": [
+          "Viral mənşəli hepatitlər",
+          "Spirtli içkilər səbəbli hepatit",
+          "Dərman preparatları mənşəli zədələnmə",
+          "Göbələk zəhərlənməsi ilə yaranan hepatit",
+          "Kimyəvi maddələr səbəbli qaraciyər zədələnməsi"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "mede-bagirsaq",
+    "title": "Mədə-bağırsaq infeksiyaları",
+    "shortDesc": "H.pylori, rotavirus, salmonelloz, dizenteriya və digər bağırsaq infeksiyaları.",
+    "desc": "H.pylori, rotavirus, salmonelloz, dizenteriya və digər bağırsaq infeksiyaları.",
+    "sections": [
+      {
+        "title": "H.pylori və xroniki xəstəliklər",
+        "items": [
+          "Helicobacter pylori mənşəli qastrit, duodenit",
+          "Mədə və onikibarmaq bağırsaq xorası",
+          "Eroziv bulbit, antral qastrit, panqastrit",
+          "Öd refluksu diaqnostikası",
+          "2-li və 3-lü antibiotik kombinə müalicə protokolları",
+          "Proton pompa ingibitorları və bismut preparatlarının təyini"
+        ]
+      },
+      {
+        "title": "Kəskin bağırsaq infeksiyaları",
+        "items": [
+          "Rotavirus, adenovirus infeksiyaları",
+          "Salmonelloz, dizenteriya",
+          "Kampilobakterioz, yersinioz, listerioz",
+          "Kolera",
+          "Qaraciyər absesi diaqnostikası",
+          "Bağırsaq mikroflorasının bərpası"
+        ]
+      },
+      {
+        "title": "Diaqnostika",
+        "items": [
+          "Mədə və 12-barmaq bağırsağın endoskopiyasına yönləndirmə",
+          "Biopsiya və nəfəs testi",
+          "Qandan və nəcisdən H.pylori antigeninin tapılması"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "teneffus",
+    "title": "Tənəffüs yolları infeksiyaları",
+    "shortDesc": "Qrip, pnevmoniya, bronxit, faringit, sinusit, otitis media və KRVİ müalicəsi.",
+    "desc": "Qrip, pnevmoniya, bronxit, faringit, sinusit, otitis media və KRVİ müalicəsi.",
+    "sections": [
+      {
+        "title": "Əhatə etdiyi xəstəliklər",
+        "items": [
+          "Qrip (influenza)",
+          "Pnevmoniya (ağciyər iltihabı)",
+          "Bronxit",
+          "Faringit, tonzilit (badamcıqların iltihabı)",
+          "Kəskin otitis media — orta qulaq iltihabı (uşaqların 80%-i 3 yaşına qədər keçirir)",
+          "Sinusit",
+          "Adenovirus infeksiyası",
+          "KRVİ — kəskin respirator virus infeksiyaları"
+        ]
+      },
+      {
+        "title": "Xüsusi yanaşma",
+        "items": [
+          "Badamcıqların erkən kəsdirilməsinə qarşı elmi mövqe",
+          "İmmun sistemin tərkib hissəsi kimi badamcıqların qorunması",
+          "Yalnız müalicəyə tabe olmayan dekompensasiya hallarında cərrahi məsləhət"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "usaq-infeksiyalari",
+    "title": "Uşaq infeksion xəstəlikləri",
+    "shortDesc": "Qızılca, su çiçəyi, skarlatina, əl-ayaq-ağız xəstəliyi və digər uşaq infeksiyaları.",
+    "desc": "Qızılca, su çiçəyi, skarlatina, əl-ayaq-ağız xəstəliyi və digər uşaq infeksiyaları.",
+    "sections": [
+      {
+        "title": "Əhatə etdiyi xəstəliklər",
+        "items": [
+          "Qızılca (rubeola, məxmərək)",
+          "Su çiçəyi (Varicella zoster)",
+          "Kəmərləyici dəmrov — sinir hüceyrələrindən aktivləşən infeksiya",
+          "Qızılyel — Streptococcus pyogenes və Staphylococcus aureus mənşəli",
+          "Əl-ayaq-ağız xəstəliyi (Koksaki virus)",
+          "Skarlatina"
+        ]
+      },
+      {
+        "title": "Əlavə xidmətlər",
+        "items": [
+          "Qızılcaya qarşı İgG anticisim analizi ilə immunitet səviyyəsinin təyini",
+          "Hamiləlik planlaşdıran qadınlar üçün rubella immunitet yoxlaması",
+          "Peyvənd tövsiyəsi və planlaşdırması"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "cyyi",
+    "title": "Cinsi yolla yoluxan infeksiyalar",
+    "shortDesc": "Siflis, qonoreya, xlamidioz, HPV, genital herpes, İİV/QİÇS diaqnostika və müalicəsi.",
+    "desc": "Siflis, qonoreya, xlamidioz, HPV, genital herpes, İİV/QİÇS diaqnostika və müalicəsi.",
+    "sections": [
+      {
+        "title": "Əhatə etdiyi infeksiyalar",
+        "items": [
+          "Siflis",
+          "Qonoreya",
+          "Xlamidial infeksiyalar",
+          "Trixomoniaz",
+          "Genital herpes (HSV-2)",
+          "HPV — insan papillomavirusu (uşaqlıq borusu xərçənginə səbəb ola bilir)",
+          "İİV/QİÇS",
+          "Yumşaq şankr"
+        ]
+      },
+      {
+        "title": "Diaqnostika və müalicə",
+        "items": [
+          "Pap Smear yaxma testi",
+          "PZR diaqnostikası",
+          "Antiviral müalicə protokolları",
+          "HPV peyvəndi — 11-12 yaşdan tövsiyə olunur (qızlar 26, oğlanlar 21 yaşa qədər)"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "torch",
+    "title": "TORCH infeksiyaları",
+    "shortDesc": "Hamiləlik planlaşdıran xanımlar üçün kompleks seroloji və PZR diaqnostikası.",
+    "desc": "Hamiləlik planlaşdıran xanımlar üçün kompleks seroloji və PZR diaqnostikası.",
+    "sections": [
+      {
+        "title": "Müayinə olunan infeksiyalar",
+        "items": [
+          "Toksoplazmoz",
+          "Məxmərək (rubella)",
+          "Sitomeqalovirus (CMV)",
+          "Herpes simplex virusu (HSV-1, HSV-2)",
+          "Su çiçəyi (Varicella zoster)",
+          "Sifilis",
+          "Hepatit B",
+          "Leptospiroz",
+          "EBV (Epstein-Barr virus)",
+          "İİV",
+          "Parvovirus B19"
+        ]
+      },
+      {
+        "title": "Niyə vacibdir?",
+        "items": [
+          "Bətndaxili infeksiyaların erkən aşkarlanması",
+          "Düşük, ölü doğuş, vaxtından əvvəl doğuş riskinin azaldılması",
+          "Bətndaxili inkişaf geriliyi və anadangəlmə qüsurların profilaktikası",
+          "Hamiləlikdən əvvəl kompleks seroloji müayinə"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "deri",
+    "title": "Dəri və selikli qişa infeksiyaları",
+    "shortDesc": "Dəri leyşmaniozu, onixomikoz, demodikoz, herpes labialis, konyuktivit müalicəsi.",
+    "desc": "Dəri leyşmaniozu, onixomikoz, demodikoz, herpes labialis, konyuktivit müalicəsi.",
+    "sections": [
+      {
+        "title": "Əhatə etdiyi xəstəliklər",
+        "items": [
+          "Dəri leyşmaniozu",
+          "Onixomikoz — dırnaq göbələyi (dermatofitlər tərəfindən törədilən)",
+          "Tinea capitis — saçlı dəri göbələyi (alopesiyaya səbəb ola bilir)",
+          "Demodikoz",
+          "Herpes labialis (HSV-1 mukokutanoz)",
+          "Gənə dişləməsi nəticəsindəki infeksiyalar",
+          "Parazitar mənşəli övrə və allergik səpgilər",
+          "Konyuktivit — gözün konyuktiva qişasının infeksion və allergik mənşəli zədələnməsi"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "sidik",
+    "title": "Sidik-cinsiyyət sistemi infeksiyaları",
+    "shortDesc": "Sistit, uretrit, pielonefrit, vulvovaginit və reproduktiv sistem infeksiyaları.",
+    "desc": "Sistit, uretrit, pielonefrit, vulvovaginit və reproduktiv sistem infeksiyaları.",
+    "sections": [
+      {
+        "title": "Əhatə etdiyi xəstəliklər",
+        "items": [
+          "Sistit (sidik kisəsinin iltihabı)",
+          "Uretrit",
+          "Pielonefrit (böyrəklərin iltihabı)",
+          "Vulvovaginit",
+          "Qadın reproduktiv sistem infeksiyaları",
+          "Kişi reproduktiv sistem infeksiyaları",
+          "Parazitlərlə bağlı vaginal axıntılar",
+          "Qız uşaqlarında Enterobius vermicularisin vaginal nahiyəyə miqrasiyası"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "verem",
+    "title": "Vərəm diaqnostikası",
+    "shortDesc": "Quantiferon testi ilə latent vərəm, ağciyər və ekstrapulmonar tuberkulyoz üzrə məsləhət.",
+    "desc": "Quantiferon testi ilə latent vərəm, ağciyər və ekstrapulmonar tuberkulyoz üzrə məsləhət.",
+    "sections": [
+      {
+        "title": "Diaqnostika",
+        "items": [
+          "Quantiferon testi — gizli (latent) vərəmin aşkarlanması",
+          "Rentgenoloji müayinə ilə uyğunlaşdırma",
+          "Bakterioloji testlər",
+          "Ağciyər vərəmi üzrə məsləhət"
+        ]
+      },
+      {
+        "title": "Ekstrapulmonar vərəm",
+        "items": [
+          "Limfa düyünlərinin vərəmi",
+          "Sümük vərəmi",
+          "Dəri vərəmi",
+          "Böyrək vərəmi",
+          "Beyin vərəmi",
+          "HİV xəstələrində ekstrapulmonar vərəm — xüsusi diqqət sahəsi"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "zoonoz",
+    "title": "Zoonoz infeksiyalar",
+    "shortDesc": "Bruselyoz, qarayara, leptospiroz, tularemiya, qudurma, ekinokokkoz müalicəsi.",
+    "desc": "Bruselyoz, qarayara, leptospiroz, tularemiya, qudurma, ekinokokkoz müalicəsi.",
+    "sections": [
+      {
+        "title": "Əhatə etdiyi xəstəliklər",
+        "items": [
+          "Bruselyoz — heyvandarlıqla məşğul olan şəxslər, fermerlər, baytarlar üçün peşə xəstəliyi",
+          "Qarayara (Bacillus anthracis) — mal-qara və insanlar üçün ölümcül",
+          "Leptospiroz — qızdırma, sarılıq, boğaz və əzələ ağrısı ilə müşayiət olunur",
+          "Listerioz",
+          "Tularemiya",
+          "Qudurma",
+          "Ekinokokkoz"
+        ]
+      },
+      {
+        "title": "Risk qrupları",
+        "items": [
+          "Heyvandarlıqla məşğul olan şəxslər",
+          "Fermerlər və baytarlar",
+          "Heyvanlarla sıx təmasda olanlar",
+          "Çiy süd və süd məhsulları istehlak edənlər"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "peyvend",
+    "title": "Peyvəndləmə",
+    "shortDesc": "Hepatit B, qızılca, qrip, HPV, tetanoz peyvəndləri üzrə məsləhət və icra.",
+    "desc": "Hepatit B, qızılca, qrip, HPV, tetanoz peyvəndləri üzrə məsləhət və icra.",
+    "sections": [
+      {
+        "title": "Tətbiq olunan peyvəndlər",
+        "items": [
+          "Hepatit B peyvəndi — 90-95% qoruyuculuq (həm B, həm D virusundan)",
+          "Qızılca-məxmərək-parotit peyvəndi",
+          "Qrip peyvəndi — 6 aydan yuxarı şəxslər hər il",
+          "HPV peyvəndi — 11-12 yaşdan (qızlar 26, oğlanlar 21 yaşa qədər)",
+          "Tetanoz immunoqlobulini",
+          "Dalağı çıxarılmış xəstələr üçün xüsusi peyvənd təqvimi",
+          "COVID-19 peyvəndləməsi"
+        ]
+      },
+      {
+        "title": "Kimə tövsiyə olunur?",
+        "items": [
+          "Yeni doğulmuş körpələr (dövlət tərəfindən pulsuz)",
+          "Dializ xəstələri",
+          "Bütün səhiyyə işçiləri",
+          "Hepatit B daşıyıcısı olan xəstənin ailə üzvləri",
+          "Mütəmadi qan köçürülməsi olunan şəxslər",
+          "Hamiləlik planlaşdıran qadınlar"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "checkup",
+    "title": "Parazitoloji Check-up",
+    "shortDesc": "Profilaktik aşkarlama paketi: qan, nəcis, anticisim testləri və USM müayinəsi.",
+    "desc": "Profilaktik aşkarlama paketi: qan, nəcis, anticisim testləri və USM müayinəsi.",
+    "sections": [
+      {
+        "title": "Paket daxilindəki müayinələr",
+        "items": [
+          "Ümumi qan analizi (eozinofiliya, EÇS göstəriciləri)",
+          "Nəcisin 3 dəfəlik mikroskopik müayinəsi",
+          "Perianal yapışqan lent testi (enterobioz üçün)",
+          "İgE səviyyəsinin təyini",
+          "Spesifik anticisim testləri (toksoplazmoz, exinokokkoz, lyamblioz)",
+          "USM müayinəsi (qaraciyər, ağciyər, dalaq, böyrəklər)"
+        ]
+      },
+      {
+        "title": "Endirim dövrləri",
+        "items": [
+          "Zəfər Günü (8 Noyabr)",
+          "Bayraq Günü (9 Noyabr)",
+          "1 İyun — Uşaqların Beynəlxalq Müdafiə Günü",
+          "Məhərrəmlik ayı",
+          "Ramazan Bayramı dövrü",
+          "Laboratoriya analizlərinə 30%-ə qədər endirim"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "yorgunluq",
+    "title": "Xroniki Yorğunluq Sindromu",
+    "shortDesc": "Uzun müddətli halsızlıq, saç tökülməsi, yaddaş zəifliyi — parazitar mənşə araşdırması.",
+    "desc": "Uzun müddətli halsızlıq, saç tökülməsi, yaddaş zəifliyi — parazitar mənşə araşdırması.",
+    "sections": [
+      {
+        "title": "Şikayətlər",
+        "items": [
+          "6 aydan artıq davam edən yorğunluq",
+          "Baş ağrısı, zehni yorğunluq",
+          "İşə və ya dərsə fokuslanma çətinliyi",
+          "Yaddaş zəifliyi, diqqətsizlik",
+          "Boğaz ağrısı",
+          "Saç tökülməsi, dırnaq qırılması",
+          "Oynaq və əzələ ağrıları",
+          "Limfa düyünlərinin həssaslığı",
+          "Yuxu pozğunluqları"
+        ]
+      },
+      {
+        "title": "Araşdırma istiqamətləri",
+        "items": [
+          "Parazitar infeksiyaların araşdırılması",
+          "İnfeksion mənşəli səbəblərin müəyyənləşdirilməsi",
+          "Vitamin və mineral çatışmazlıqlarının qiymətləndirilməsi",
+          "Etioloji müalicə protokolu"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "antibiotik",
+    "title": "Antibiotik / Antifungal müalicə",
+    "shortDesc": "Rezistentliyə qarşı düzgün preparat seçimi, yaş və çəkiyə uyğun doza hesablaması.",
+    "desc": "Rezistentliyə qarşı düzgün preparat seçimi, yaş və çəkiyə uyğun doza hesablaması.",
+    "sections": [
+      {
+        "title": "Düzgün antibiotik təyini prinsipləri",
+        "items": [
+          "Yaş və çəkiyə uyğun doza hesablaması",
+          "Qaraciyər və böyrək funksional testlərinə əsasən preparat seçimi",
+          "Allergik status nəzərə alınaraq müalicə planı",
+          "Rezistentlik problemlərinin qarşısının alınması",
+          "Müalicəni yarıda kəsmənin təhlükələri barədə məlumatlandırma"
+        ]
+      },
+      {
+        "title": "Xüsusi hallar",
+        "items": [
+          "Antifungallar yalnız yüksək risk qrupu üçün (immun çatışmazlıq, şəkərli diabet, kateter)",
+          "Hər antibiotik alan xəstəyə antifungal təyini səhv yanaşmadır",
+          "Ramazan ayında oruc tutan xəstələrə iftar-sahur rejiminə uyğun müalicə planı",
+          "18 yaşından aşağı uşaqlarda çəkiyə əsasən dozalama"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "laboratoriya",
+    "title": "Laboratoriya xidmətləri",
+    "shortDesc": "08:00–17:00 arası PZR, seroloji testlər, mikroskopiya, qaraciyər paneli, hemoqram.",
+    "desc": "08:00–17:00 arası PZR, seroloji testlər, mikroskopiya, qaraciyər paneli, hemoqram.",
+    "sections": [
+      {
+        "title": "Həyata keçirilən analizlər",
+        "items": [
+          "Qaraciyər funksional paneli",
+          "Hemoqram (tam qan sayımı)",
+          "EÇS (eritrositlərin çökməsi sürəti)",
+          "CRP (C-reaktiv zülal)",
+          "Anti-HCV, HBsAg",
+          "Anticisim testləri — İgG, İgM, İgE",
+          "Mikroskopiya",
+          "Seroloji testlər",
+          "PZR (polimeraz zəncir reaksiyası) analizləri",
+          "Sümük iliyinin morfoloji müayinəsi (Leyşmaniya aşkarlanması üçün)",
+          "Nəcis ümumi analizi",
+          "Nəcis yaxmasının mikroskopik müayinəsi"
+        ]
+      },
+      {
+        "title": "İş rejimi",
+        "items": [
+          "Laboratoriya iş saatları: 08:00 – 17:00",
+          "Yüksək keyfiyyətli avadanlıq",
+          "Qısa müddətdə nəticə",
+          "Klinikanın öz laboratoriyası — xarici yönləndirmə olmadan"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "izlenme",
+    "title": "Uzunmüddətli xəstə izlənməsi",
+    "shortDesc": "Xroniki infeksiyaları olan xəstələrin mütəmadi nəzarəti və dinamik müayinəsi.",
+    "desc": "Xroniki infeksiyaları olan xəstələrin mütəmadi nəzarəti və dinamik müayinəsi.",
+    "sections": [
+      {
+        "title": "İzlənmə xüsusiyyətləri",
+        "items": [
+          "2008-ci ildən bu günə qədər fasiləsiz izlənən xəstələr",
+          "Fərdi yanaşma və xəstə-həkim arasında etibarlı əlaqə",
+          "Körpələrdən yaşlılara — bütün yaş qrupları",
+          "Dinamik müayinə və müalicə korreksiyası"
+        ]
+      },
+      {
+        "title": "Anamnez metodologiyası",
+        "items": [
+          "Ətraflı anamnez toplama — qidalanma, səyahət tarixi, heyvanlarla təmas",
+          "Klinik müayinə",
+          "Laboratoriya nəticələri ilə birləşdirilmiş üçlü diaqnostik yanaşma",
+          "\"Yaxşı anamnez diaqnozda obyektiv müayinədən daha çox ipucu verir\" prinsipi"
+        ]
+      }
+    ]
+  }
+]

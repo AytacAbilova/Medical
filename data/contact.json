@@ -1,0 +1,44 @@
+{
+  "doctor": {
+    "name": "Dr. Xatirə Aslanova",
+    "title": "Həkim İnfeksionist-Parazitoloq",
+    "phone": "+994 50 366 63 42",
+    "phoneRaw": "tel:+994503666342"
+  },
+  "clinic": {
+    "name": "Parasitus Medical Center",
+    "phone1": "+994 12 436 98 47",
+    "phone1Raw": "tel:+994124369847",
+    "phone2": "+994 70 314 19 00",
+    "phone2Raw": "tel:+994703141900",
+    "email": "parasitus.clinic@gmail.com",
+    "address": "Yasamal rayonu, Murtuza Muxtarov küçəsi 179, Bakı",
+    "addressNote": "Caspian Plaza və Nizami metrosunun yaxınlığı",
+    "labHours": "08:00 – 17:00",
+    "appointmentNote": "Növbəyə yazılmaq üçün ən azı 2 gün əvvəldən telefonla əlaqə saxlamağınız tövsiyə olunur."
+  },
+  "social": {
+    "instagram": "https://www.instagram.com/dr.aslanova_xatire/",
+    "instagramClinic": "https://www.instagram.com/parasitus_klinikasi/",
+    "facebook": "https://www.facebook.com/Dr.Xatire.Aslanova"
+  },
+  "form": {
+    "title": "Bizimlə əlaqə",
+    "desc": "Suallarınız, randevu və məsləhət üçün bizimlə əlaqə saxlayın. Ən azı 2 gün əvvəldən müraciət etməyiniz tövsiyə olunur.",
+    "firstNameLabel": "Ad",
+    "lastNameLabel": "Soyad",
+    "emailLabel": "E-poçt",
+    "phoneLabel": "Telefon",
+    "messageLabel": "Mesajınız",
+    "submitBtn": "Göndər",
+    "firstNamePlaceholder": "Adınız",
+    "lastNamePlaceholder": "Soyadınız",
+    "emailPlaceholder": "example@email.com",
+    "phonePlaceholder": "+994 XX XXX XX XX",
+    "messagePlaceholder": "Mesajınızı bura yazın..."
+  },
+  "infoSection": {
+    "title": "Bizimlə əlaqə saxlayın",
+    "desc": "Sağlamlığınız üçün bizdən kömək almaqdan çəkinməyin. Hər yaşdan xəstəni qəbul edirik."
+  }
+}

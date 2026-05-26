@@ -38,7 +38,7 @@ const heroContents: Record<string, HeroData> = {
     isHome: true,
   },
 
-  "/blog": {
+  "/question": {
     isHome: true,
   },
     

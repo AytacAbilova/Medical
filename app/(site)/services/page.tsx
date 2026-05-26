@@ -5,7 +5,7 @@ import {
   Baby, ShieldAlert, Eye, TestTube, Clock,
   Pill, Syringe, Dog,
 } from "lucide-react";
-import { servicesContent } from "@/utils";
+import servicesData from "@/data/services.json";
 
 // ikon map — utils-dəki title-a görə icon təyin et
 const iconMap: Record<string, React.ElementType> = {
@@ -26,7 +26,7 @@ const defaultIcons = [
 ];
 
 export default function ServicesPage() {
-  const services = servicesContent["az"];
+  const services = servicesData;
 
   return (
     <main>

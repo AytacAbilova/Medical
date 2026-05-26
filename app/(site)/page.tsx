@@ -5,7 +5,6 @@ import OurServices from "@/components/home/ourServices";
 import WhyChooseUs from "@/components/home/chooseUs";
 import OurProjects from "@/components/home/ourProjects";
 import { ContactSection } from "@/components/home/contactUs";
-import ImageStrip from "@/components/home/symptoms";
 import AboutIntro from "@/components/home/intro";
 import OurValues from "@/components/home/ourValue";
 import VisitUs from "@/components/home/visitUs";
