@@ -54,15 +54,15 @@ export const metadata: Metadata = {
     "sinus venosus ASD korreksiyası",
   ],
 
-  authors: [{ name: "Dr. Beyrək Abbaszadə" }],
-  creator: "Dr. Beyrək Abbaszadə",
+  authors: [{ name: "Dr. Xatirə Aslanova" }],
+  creator: "Dr. Xatirə Aslanova",
 
   openGraph: {
-    title: "Ürək-damar cərrahı Dr. Beyrək Abbaszadə",
+    title: "Dr. Xatirə Aslanova - Pediatrik infeksionist",
     description:
       "Açıq ürək əməliyyatı, koronar bypass (CABG), minimal invaziv ürək cərrahiyyəsi, aorta cərrahiyyəsi və varikoz venaların müalicəsi. Bakı, Azərbaycan.",
-    url: "https://drbeyrek.az",
-    siteName: "Dr. Beyrək Abbaszadə",
+    url: "https://drxatireaslanova.az",
+    siteName: "Dr. Xatirə Aslanova",
     locale: "az_AZ",
     type: "website",
     images: [
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Ürək-damar cərrahı Dr. Beyrək Abbaszadə",
+    title: "Pediatrik infeksionist Dr. Xatirə Aslanova",
     description:
       "Açıq ürək əməliyyatı, koronar bypass (CABG), minimal invaziv ürək cərrahiyyəsi və aorta cərrahiyyəsi.",
     images: ["/assets/images/logo.png"],
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://drbeyrek.az",
+    canonical: "https://drxatireaslanova.az",
   },
 };
 

@@ -1,9 +1,6 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
 import { memo } from "react";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
-// import logo from "@/public/assets/images/logo.png";
 import { BsInstagram, BsYoutube } from "react-icons/bs";
 import { FaFacebook, FaXTwitter } from "react-icons/fa6";
 
@@ -55,12 +52,10 @@ const Footer = () => {
           background: "linear-gradient(160deg, #001a56 0%, #0a2d7a 55%, #1a4a9a 100%)",
         }}
       >
-        {/* ── Yuxarı: logo sol / nav sağ ── */}
         <div
           className="flex flex-col lg:flex-row gap-12 px-10 lg:px-16 pt-14 pb-12"
           style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}
         >
-          {/* SOL — Logo + sosial */}
           <div className="flex flex-col gap-8 lg:w-56 shrink-0">
             <div
               className="w-16 h-16 rounded-2xl flex items-center justify-center overflow-hidden"
