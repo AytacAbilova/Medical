@@ -91,7 +91,7 @@ export default function OurValues({
         {/* Grid */}
         <div
           data-aos="fade-up"
-          className="grid grid-cols-2 sm:grid-cols-3 gap-y-4 gap-x-2 mt-8"
+          className="grid grid-cols-2 sm:grid-cols-3  gap-x-2 mt-8"
         >
           {t.values.map((v, i) => {
             const Icon = v.icon;

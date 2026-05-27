@@ -42,11 +42,11 @@ export default function AboutIntro({
   const t = content[locale];
 
   return (
-    <section className="bg-white py-[60px] md:py-[120px]">
+    <section className="bg-white pb-[60px] md:py-[120px]">
       <div className="max-w-[1300px] mx-auto px-5 lg:px-10">
 
         {/* Top Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-10 lg:mb-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-12 gap-6 lg:gap-20 mb-10 lg:mb-16 items-start">
 
           {/* Left */}
           <div>
@@ -54,7 +54,7 @@ export default function AboutIntro({
               Parasitus Medical Center
             </span>
 
-            <h2 className="text-[30px] md:text-[52px] font-extrabold text-[#001a56] leading-[1.1] mb-6">
+            <h2 className="text-[30px] md:text-[52px] font-extrabold text-[#001a56] leading-[1.1] md:mb-6">
               {t.title}
             </h2>
 
