@@ -10,11 +10,11 @@ import { FaFacebook, FaXTwitter } from "react-icons/fa6";
 // ─── DATA ────────────────────────────────────────────────────
 const content = {
   az: {
-    name: "Dr. [Ad Soyad]",
-    specialty: "Ürək-damar Cərrahı",
+    name: "Dr. Xatirə Aslanova",
+    specialty: "Pediatrik infeksionist",
     phone: "+994 50 884 66 14",
     socialLabel: "Bizi izləyin",
-    email: "info@drbeyrek.az",
+    email: "info@drxatireaslanova.az",
     addresses: [
       "Lux International Hospital — Faiq Yusifov küç. 146A, Bakı",
       "Mərkəzi Klinika — Parlament pr. 76, Bakı",
@@ -35,35 +35,13 @@ const content = {
     newsletter: "Tibbi yeniliklər üçün abunə olun",
     placeholder: "E-poçt ünvanınız",
     subscribeBtn: "Abunə ol",
-    copyright: "Dr. [Ad Soyad]. Bütün hüquqlar qorunur.",
+    copyright: "Dr. Xatirə Aslanova. Bütün hüquqlar qorunur.",
     privacy: "Məxfilik",
     terms: "Şərtlər",
   },
 };
 
-// ─── KİÇİK KOMPONENTLƏR ──────────────────────────────────────
-interface ContactRowProps {
-  icon: React.ReactNode;
-  children: React.ReactNode;
-  href?: string;
-}
 
-function ContactRow({ icon, children, href }: ContactRowProps) {
-  const inner = (
-    <div className="flex items-start gap-3 group">
-      <div
-        className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 mt-0.5"
-        style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}
-      >
-        {icon}
-      </div>
-      <div className="text-slate-400 text-sm leading-relaxed group-hover:text-white transition-colors duration-200">
-        {children}
-      </div>
-    </div>
-  );
-  return href ? <a href={href}>{inner}</a> : inner;
-}
 
 // ─── FOOTER ──────────────────────────────────────────────────
 const Footer = () => {
@@ -88,7 +66,6 @@ const Footer = () => {
               className="w-16 h-16 rounded-2xl flex items-center justify-center overflow-hidden"
               style={{ background: "rgba(255,255,255,0.12)" }}
             >
-              {/* <Image src={logo} alt="Logo" width={44} height={44} className="object-contain" /> */}
             </div>
 
             <div>

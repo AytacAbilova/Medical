@@ -24,12 +24,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://drbeyrek.az"),
 
   title: {
-    default: "Ürək-damar cərrahı Dr. Beyrək Abbaszadə",
-    template: "%s | Dr. Beyrək Abbaszadə",
+    default: "Dr. Xatirə Aslanova - Pediatrik infeksionist",
+    template: "%s | Dr. Xatirə Aslanova",
   },
 
   description:
-    "Ürək-damar cərrahı Dr. Beyrək Abbaszadə: açıq ürək əməliyyatı, koronar bypass (CABG), minimal invaziv ürək cərrahiyyəsi, aorta cərrahiyyəsi, varikoz venaların müalicəsi və anadangəlmə ürək qüsurlarının cərrahi müalicəsi. Bakı, Azərbaycan.",
+    "Pediatrik infeksionist Dr. Xatirə Aslanova: açıq ürək əməliyyatı, koronar bypass (CABG), minimal invaziv ürək cərrahiyyəsi, aorta cərrahiyyəsi, varikoz venaların müalicəsi və anadangəlmə ürək qüsurlarının cərrahi müalicəsi. Bakı, Azərbaycan.",
 
   keywords: [
     "ürək əməliyyatı Bakı",
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     "varikoz venaların müalicəsi",
     "ASD əməliyyatı Azərbaycan",
     "minimal invaziv ürək cərrahiyyəsi",
-    "dr beyrək abbaszadə",
-    "dr beyrek bakı ürək cərrahı",
+    "dr xatirə aslanova",
+    "dr xatirə bakı ürək cərrahı",
     "Lux International Hospital bypass əməliyyatı",
     "Şirvanda ürək əməliyyatı",
     "anadangəlmə ürək qüsuru müalicəsi Bakı",
